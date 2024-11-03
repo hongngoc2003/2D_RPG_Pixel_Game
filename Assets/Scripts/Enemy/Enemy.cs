@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Entity {
+    [Header("Stunned info")]
+    public float stunnedDuration;
+    public Vector2 stunnedDir;
+    protected bool canBeStunned;
+    [SerializeField] protected GameObject counterImage;
+
     [SerializeField] protected LayerMask whatIsPlayer;
     [Header("Move info")]
     public float moveSpeed;
@@ -26,6 +32,22 @@ public class Enemy : Entity {
         base.Update();
 
         stateMachine.currentState.Update();
+    }
+    public virtual void OpenCounterAttackWindow() {
+        canBeStunned = true;
+        counterImage.SetActive(true);
+    }
+    public virtual void CloseCounterAttackWindow() {
+        canBeStunned = false;
+        counterImage.SetActive(false);
+    }
+
+    public virtual bool CanBeStunned() {
+        if (canBeStunned) {
+            CloseCounterAttackWindow();
+            return true;
+        }
+        return false;
     }
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
