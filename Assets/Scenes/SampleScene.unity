@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 774211001}
   - component: {fileID: 774211004}
   - component: {fileID: 774211003}
+  - component: {fileID: 774211005}
   m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
@@ -915,6 +916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9b325612456a947a0765f251fcbff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDirection: {x: 7, y: 12}
+  knockbackDurartion: 0.07
   attackCheck: {fileID: 1335547593}
   attackCheckRadius: 0.8
   groundCheck: {fileID: 1620862842}
@@ -993,12 +996,26 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 12
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &774211005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774211000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fc0d89e260b414b8a51c175beb360a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.15
+  hitMat: {fileID: 2100000, guid: 3c10efeb44a55d4409d35dd869ba164a, type: 2}
 --- !u!1 &879800050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085682237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: -0.36, z: 0}
+  m_LocalPosition: {x: 1.05, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,6 +1359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1195560130}
   - component: {fileID: 1195560129}
+  - component: {fileID: 1195560133}
   - component: {fileID: 1195560132}
   - component: {fileID: 1195560131}
   m_Layer: 6
@@ -1363,6 +1381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7411ddc83aa11924c88728831d04b5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDirection: {x: 0, y: 0}
+  knockbackDurartion: 0
   attackCheck: {fileID: 1085682238}
   attackCheckRadius: 0.8
   groundCheck: {fileID: 295805108}
@@ -1437,6 +1457,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06784159, y: -0.27535737}
   m_Size: {x: 0.79531085, y: 2.093448}
   m_Direction: 0
+--- !u!114 &1195560133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195560128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fc0d89e260b414b8a51c175beb360a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  hitMat: {fileID: 2100000, guid: 3c10efeb44a55d4409d35dd869ba164a, type: 2}
 --- !u!1 &1197643367
 GameObject:
   m_ObjectHideFlags: 0

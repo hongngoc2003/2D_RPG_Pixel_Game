@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    [Header("Knockback info")]
+    [SerializeField] protected Vector2 knockbackDirection;
+    [SerializeField] private float knockbackDurartion;
+    protected bool isKnocked;
+
     [Header("Collision info")]
     public Transform attackCheck;
     public float attackCheckRadius;
@@ -16,6 +21,7 @@ public class Entity : MonoBehaviour
     protected bool facingRight = true;
 
     #region Components
+    public EntityFX fx { get; private set; }
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     #endregion
@@ -24,12 +30,26 @@ public class Entity : MonoBehaviour
 
     }
     protected virtual void Start() {
+        fx= GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
     protected virtual void Update() {
 
     }
+
+    public virtual void Damage() {
+        StartCoroutine("HitKnockBack");
+        fx.StartCoroutine("FlashFX");
+    }
+
+    protected virtual IEnumerator HitKnockBack() {
+        isKnocked = true;
+        rb.velocity = new Vector2(knockbackDirection.x * -facingDir, knockbackDirection.y);
+        yield return new WaitForSeconds(knockbackDurartion);
+        isKnocked = false;
+    }
+
     #region Collision
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
@@ -42,9 +62,16 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region Velocity
-    public void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public void SetZeroVelocity() {
+        if (isKnocked)
+            return;
+        rb.velocity = new Vector2(0, 0);
+    }
+
 
     public void SetVelocity(float _xVelocity, float _yVelocity) {
+        if (isKnocked)
+            return;
 
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
