@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3702269600597717411}
   - component: {fileID: 7199093474440253517}
   - component: {fileID: 6617480456684332570}
+  - component: {fileID: 9049405384658656461}
   m_Layer: 0
   m_Name: Clone
   m_TagString: Untagged
@@ -105,3 +106,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &9049405384658656461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236739661540353665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d22eae2e40e744795928cd7da18edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorLosingSpeed: 1
+  cloneDuration: 1.5

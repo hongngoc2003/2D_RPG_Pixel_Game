@@ -6219,3 +6219,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0
   clonePrefab: {fileID: 3236739661540353665, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
+  cloneDuration: 1.5
