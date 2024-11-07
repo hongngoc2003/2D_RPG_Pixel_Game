@@ -13,10 +13,11 @@ public class SwordSkillController : MonoBehaviour
     private bool canRotate = true;
     private bool isReturning;
 
-    public float bounceSpeed;
-    public bool isBouncing = true;
-    public int amountOfBounce = 4;
-    public List<Transform> enemyTargets;
+    [Header("Bounce info")]
+    [SerializeField] private float bounceSpeed;
+    private bool isBouncing;
+    private int amountOfBounce;
+    private List<Transform> enemyTargets;
     private int targetIndex;
 
 
@@ -26,40 +27,53 @@ public class SwordSkillController : MonoBehaviour
         circleCol = GetComponent<CircleCollider2D>();
     }
     private void Update() {
-        if(canRotate) 
+        if (canRotate)
             transform.right = rb.velocity;
 
-        if(isReturning) {
+        if (isReturning) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, returnSpeed * Time.deltaTime);
-            
-                if(Vector2.Distance(transform.position, player.transform.position) < 1)
-                    player.CatchSword();
+
+            if (Vector2.Distance(transform.position, player.transform.position) < 1)
+                player.CatchSword();
         }
 
-        if(isBouncing && enemyTargets.Count > 0) {
+        BounceLogic();
+
+    }
+
+    private void BounceLogic() {
+        if (isBouncing && enemyTargets.Count > 0) {
+
             transform.position = Vector2.MoveTowards(transform.position, enemyTargets[targetIndex].position, bounceSpeed * Time.deltaTime);
 
-            if(Vector2.Distance(transform.position, enemyTargets[targetIndex].position )< .1f) {
+            if (Vector2.Distance(transform.position, enemyTargets[targetIndex].position) < .1f) {
                 targetIndex++;
                 amountOfBounce--;
 
-                if(amountOfBounce <= 0) {
+                if (amountOfBounce <= 0) {
                     isBouncing = false;
                     isReturning = true;
                 }
 
-                if(targetIndex >= enemyTargets.Count)
+                if (targetIndex >= enemyTargets.Count)
                     targetIndex = 0;
             }
         }
-
     }
+
     public void SetupSword(Vector2 _dir, float _gravityScale, Player _player) {
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
         player = _player;
 
         anim.SetBool("Rotation", true);
+    }
+
+    public void SetupBounce(bool _isBouncing, int _amountOfBOunce) {
+        isBouncing = _isBouncing;
+        amountOfBounce = _amountOfBOunce;
+
+        enemyTargets = new List<Transform>();
     }
     public void ReturnSword() {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
