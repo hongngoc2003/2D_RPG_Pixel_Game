@@ -14,9 +14,18 @@ public class SwordSkill : Skill
     public SwordType swordType = SwordType.Regular;
 
     [Header("Bounce info")]
-    [SerializeField] private int amountOfBounce;
+    [SerializeField] private int amountBounce;
     [SerializeField] private float bounceGravity;
 
+    [Header("Pierce info")]
+    [SerializeField] private int amountPierce;
+    [SerializeField] private float pierceGravity;
+
+    [Header("Spin info")]
+    [SerializeField] private float hitCoolDown = .35f;
+    [SerializeField] private float maxTravelDistance = 7;
+    [SerializeField] private float spinDuration = 2;
+    [SerializeField] private float spinGravity = 1;
 
 
     [Header("Skill info")]
@@ -38,8 +47,17 @@ public class SwordSkill : Skill
         base.Start();
 
         GenerateDots();
-    }
 
+        SetUpGravity();
+    }
+    private void SetUpGravity() {
+        if(swordType == SwordType.Bounce)
+            swordGravity = bounceGravity;
+        else if(swordType == SwordType.Pierce)
+            swordGravity = pierceGravity;
+        else if(swordType == SwordType.Spin)
+            swordGravity = spinGravity;
+    }
     protected override void Update() {
         if (Input.GetKeyUp(KeyCode.Mouse1))
             finalDir = new Vector2(AimDirection().normalized.x * launchForce.x, AimDirection().normalized.y * launchForce.y);
@@ -54,11 +72,14 @@ public class SwordSkill : Skill
     public void CreateSword() {
         GameObject newSword = Instantiate(swordPrefab, player.transform.position, transform.rotation);
         SwordSkillController newSwordScript = newSword.GetComponent<SwordSkillController>();
-   
-        if(swordType == SwordType.Bounce) {
-            swordGravity = bounceGravity;
-            newSwordScript.SetupBounce(true, amountOfBounce);
-        }
+
+        if (swordType == SwordType.Bounce)
+            newSwordScript.SetupBounce(true, amountBounce);
+        else if (swordType == SwordType.Pierce)
+            newSwordScript.SetupPierce(amountPierce);
+        else if (swordType == SwordType.Spin)
+            newSwordScript.SetupSpin(true, maxTravelDistance, spinDuration, hitCoolDown);
+
 
         newSwordScript.SetupSword(finalDir, swordGravity, player);
 

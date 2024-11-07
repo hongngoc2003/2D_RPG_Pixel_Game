@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036747605629392810}
-  m_LocalRotation: {x: -0, y: -0, z: 0.8441245, w: 0.53614736}
+  m_LocalRotation: {x: -0, y: -0, z: 0.84978175, w: 0.5271348}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 657895976333515787}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 115.156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 116.376}
 --- !u!212 &8256805095146478971
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -154,9 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnSpeed: 12
   bounceSpeed: 20
-  isBouncing: 1
-  amountOfBounce: 4
-  enemyTargets: []
+  pierceAmount: 0
 --- !u!50 &135531579677060451
 Rigidbody2D:
   serializedVersion: 4
@@ -191,6 +189,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06824899, y: 0}
+  m_Offset: {x: 0.21139818, y: 0.0044529736}
   serializedVersion: 2
-  m_Radius: 0.71335435
+  m_Radius: 0.3910051
