@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SwordSkillController : MonoBehaviour
@@ -9,12 +10,11 @@ public class SwordSkillController : MonoBehaviour
     private CircleCollider2D circleCol;
     private Player player;
 
-    [SerializeField] private float returnSpeed = 12;
     private bool canRotate = true;
     private bool isReturning;
 
     [Header("Bounce info")]
-    [SerializeField] private float bounceSpeed;
+    private float bounceSpeed;
     private bool isBouncing;
     private int bounceAmount;
     private List<Transform> enemyTargets;
@@ -32,6 +32,9 @@ public class SwordSkillController : MonoBehaviour
 
     private float hitTimer;
     private float hitCooldown;
+
+    private float freezeTimeDuration;
+    private float returnSpeed;
 
     private float spinDir;
     private void Awake() {
@@ -54,6 +57,9 @@ public class SwordSkillController : MonoBehaviour
 
         SpinLogic();
 
+    }
+    private void DestroySword() {
+        Destroy(gameObject);
     }
 
     private void SpinLogic() {
@@ -80,7 +86,7 @@ public class SwordSkillController : MonoBehaviour
 
                     foreach (var hit in colliders) {
                         if (hit.GetComponent<Enemy>() != null)
-                            hit.GetComponent<Enemy>().Damage();
+                            SwordSkillDamage(hit.GetComponent<Enemy>());
                     }
                 }
             }
@@ -98,8 +104,9 @@ public class SwordSkillController : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(transform.position, enemyTargets[targetIndex].position, bounceSpeed * Time.deltaTime);
 
+            
             if (Vector2.Distance(transform.position, enemyTargets[targetIndex].position) < .1f) {
-                enemyTargets[targetIndex].GetComponent<Enemy>().Damage();
+                SwordSkillDamage(enemyTargets[targetIndex].GetComponent<Enemy>()); ;
 
                 targetIndex++;
                 bounceAmount--;
@@ -115,20 +122,26 @@ public class SwordSkillController : MonoBehaviour
         }
     }
 
-    public void SetupSword(Vector2 _dir, float _gravityScale, Player _player) {
+    public void SetupSword(Vector2 _dir, float _gravityScale, Player _player, float _freezeTimeDuration, float _returnSpeed) {
+        player = _player;
+        freezeTimeDuration = _freezeTimeDuration;
+        returnSpeed = _returnSpeed;
+
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
-        player = _player;
 
         if(pierceAmount <= 0)
             anim.SetBool("Rotation", true);
 
         spinDir = Mathf.Clamp(rb.velocity.x, -1, 1);
+
+        Invoke("DestroySword", 7);
     }
 
-    public void SetupBounce(bool _isBouncing, int _amountOfBOunce) {
+    public void SetupBounce(bool _isBouncing, int _amountBounce, float _bounceSpeed) {
         isBouncing = _isBouncing;
-        bounceAmount = _amountOfBOunce;
+        bounceAmount = _amountBounce;
+        bounceSpeed = _bounceSpeed;
 
         enemyTargets = new List<Transform>();
     }
@@ -151,17 +164,26 @@ public class SwordSkillController : MonoBehaviour
         if (isReturning)
             return;
 
-        collision.GetComponent<Enemy>()?.Damage();
+        if(collision.GetComponent<Enemy>() != null) {
+            Enemy enemy = collision.GetComponent<Enemy>();
+
+            SwordSkillDamage(enemy);
+        }
 
         SetupTargetsForBounce(collision);
 
         StuckInto(collision);
     }
 
+    private void SwordSkillDamage(Enemy enemy) {
+        enemy.Damage();
+        enemy.StartCoroutine("FreezeTimeFor", freezeTimeDuration);
+    }
+
     private void SetupTargetsForBounce(Collider2D collision) {
         if (collision.GetComponent<Enemy>() != null) {
             if (isBouncing && enemyTargets.Count <= 0) {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 10);
 
                 foreach (var hit in colliders) {
                     if (hit.GetComponent<Enemy>() != null)
