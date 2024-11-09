@@ -288,7 +288,7 @@ Transform:
   - {fileID: 137140668}
   - {fileID: 2015116605}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295805107
 GameObject:
@@ -502,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3702269600597717411, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3702269600597717411, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5341,7 +5341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657895976333515787, guid: 4980b690604f2fc4f90f4260a6bace7a, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 657895976333515787, guid: 4980b690604f2fc4f90f4260a6bace7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6873,7 +6873,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835377387
 GameObject:
@@ -7145,7 +7145,7 @@ MonoBehaviour:
   keyCodeList: 6a0000006700000068000000
   maxSize: 15
   growSpeed: 1
-  canGrow: 0
+  shrinkSpeed: 2
 --- !u!212 &2046311658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7206,12 +7206,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046311655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9173868, y: -2.0865786, z: 0}
+  m_LocalPosition: {x: 4.77, y: -1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057996045
 GameObject:
@@ -7355,7 +7355,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2146356742
 MonoBehaviour:
@@ -7422,7 +7422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9057177150207118661, guid: 6979a1472d9efa84584bd8ab7af6a765, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9057177150207118661, guid: 6979a1472d9efa84584bd8ab7af6a765, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7477,9 +7477,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackHole_Hotkey
       objectReference: {fileID: 0}
+    - target: {fileID: 6447781005096043909, guid: 76d242363bb22a645a2f2558f792178a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6447781005096043912, guid: 76d242363bb22a645a2f2558f792178a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6447781005096043912, guid: 76d242363bb22a645a2f2558f792178a, type: 3}
       propertyPath: m_LocalPosition.x
