@@ -75,9 +75,14 @@ public class Player : Entity
     protected override void Update()
     {
         base.Update();
+
         stateMachine.currentState.Update();
 
         CheckForDashInput();
+
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            skill.crystal.CanUseSkill();
+        }
     }
     public void AssignNewSword(GameObject _newSword) {
         sword = _newSword;
