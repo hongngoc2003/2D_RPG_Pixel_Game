@@ -7323,6 +7323,9 @@ MonoBehaviour:
   coolDown: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  canExplode: 1
+  canMoveToEnemy: 1
+  moveSpeed: 3
 --- !u!1001 &2377356311433631923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7333,10 +7336,6 @@ PrefabInstance:
     - target: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
       propertyPath: m_Name
       value: Crystal
-      objectReference: {fileID: 0}
-    - target: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2377356312315965349, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
       propertyPath: m_RootOrder
