@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170629341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.74, y: -2.6, z: 0}
+  m_LocalPosition: {x: -6.57, y: -2.6, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7256,11 +7256,12 @@ MonoBehaviour:
   canAttack: 1
   clonePrefab: {fileID: 3236739661540353665, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
   cloneDuration: 1.5
-  createCloneOnDashStart: 0
-  createCloneOnDashOver: 0
+  createCloneOnDashStart: 1
+  createCloneOnDashOver: 1
   canCreateCloneOnCounterAttack: 1
   canDuplicateClone: 1
   chanceToDuplicate: 50
+  cloneCrystal: 1
 --- !u!114 &2146356743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7310,7 +7311,7 @@ MonoBehaviour:
   maxSize: 15
   shrinkSpeed: 6
   growSpeed: 3
-  amountOfAttack: 4
+  amountOfAttack: 15
   attackCooldown: 0.35
   blackHoleDuration: 3
 --- !u!114 &2146356745
@@ -7329,10 +7330,10 @@ MonoBehaviour:
   crystalDuration: 1.5
   crystalPrefab: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
   CrystalTurnIntoClone: 1
-  canExplode: 0
-  canMoveToEnemy: 0
+  canExplode: 1
+  canMoveToEnemy: 1
   moveSpeed: 3
-  canUseMultiStack: 0
+  canUseMultiStack: 1
   amountOfStack: 3
   multiStackCooldown: 4
   useTimeWindow: 2.5
