@@ -25,6 +25,8 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public SpriteRenderer sr { get; private set; } 
+    public CharacterStats stats { get; private set; }
+    public CapsuleCollider2D capsuleCol { get; private set; }
     #endregion
 
     protected virtual void Awake() {
@@ -35,12 +37,14 @@ public class Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        stats = GetComponent<CharacterStats>();
+        capsuleCol = GetComponent<CapsuleCollider2D>();
     }
     protected virtual void Update() {
 
     }
 
-    public virtual void Damage() {
+    public virtual void DamageEffect() {
         StartCoroutine("HitKnockBack");
         fx.StartCoroutine("FlashFX");
     }
@@ -101,6 +105,10 @@ public class Entity : MonoBehaviour
             sr.color = Color.clear;
         else
             sr.color = Color.white;
+
+    }
+
+    public virtual void Die() {
 
     }
 }
