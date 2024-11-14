@@ -1380,6 +1380,9 @@ MonoBehaviour:
   evasion:
     baseValue: 10
     modifiers: 
+  magicResist:
+    baseValue: 3
+    modifiers: 
   damage:
     baseValue: 2
     modifiers: 
@@ -1389,6 +1392,18 @@ MonoBehaviour:
   critPower:
     baseValue: 0
     modifiers: 
+  fireDmg:
+    baseValue: 12
+    modifiers: 
+  iceDmg:
+    baseValue: 0
+    modifiers: 
+  lightningDmg:
+    baseValue: 0
+    modifiers: 
+  isIgnited: 0
+  isFreezed: 0
+  isShocked: 0
   currentHealth: 0
 --- !u!1 &1197643367
 GameObject:
