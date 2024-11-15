@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour {
     [Header("Major stats")]
@@ -36,11 +37,13 @@ public class CharacterStats : MonoBehaviour {
     private float ignitedDmgTimer;
     private int igniteDmg;
 
-    [SerializeField] private int currentHealth;
+    public int currentHealth;
+
+    public System.Action onHealthChanged;
 
     protected virtual void Start() {
         critPower.SetDefaultValue(150);
-        currentHealth = maxHealth.GetValue();
+        currentHealth = GetFullHealthValue();
     }
 
     protected virtual void Update() {
@@ -63,7 +66,9 @@ public class CharacterStats : MonoBehaviour {
 
         if( ignitedDmgTimer < 0 && isIgnited) {
             Debug.Log("burnin " + igniteDmg);
-            currentHealth -= igniteDmg;
+
+            DecreaseHealthBy(igniteDmg);
+
             if(currentHealth < 0 ) {
                 Die();
             }
@@ -84,7 +89,7 @@ public class CharacterStats : MonoBehaviour {
 
 
         totalDamage = CheckTargetArmor(_targetStat, totalDamage);
-        //_targetStat.TakeDamage(totalDamage);
+        _targetStat.TakeDamage(totalDamage);
         DoMagicalDmg(_targetStat);
     }
 
@@ -188,12 +193,21 @@ public class CharacterStats : MonoBehaviour {
         return false;
     }
     public virtual void TakeDamage(int _damage) {
-        currentHealth -= _damage;
+
+        DecreaseHealthBy(_damage);
 
         Debug.Log(_damage);
 
         if (currentHealth <= 0) {
             Die();
+        }
+
+    }
+    protected virtual void DecreaseHealthBy(int _dmg) {
+        currentHealth -= _dmg;
+
+        if (onHealthChanged != null) {
+            onHealthChanged();
         }
     }
     protected virtual void Die() {
@@ -213,5 +227,8 @@ public class CharacterStats : MonoBehaviour {
         float critDmg = _damage * totalCritPower;
 
         return Mathf.RoundToInt(critDmg);
+    }
+    public int GetFullHealthValue() {
+        return maxHealth.GetValue() + vitality.GetValue() * 5;
     }
 }
