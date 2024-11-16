@@ -45,6 +45,12 @@ public class Entity : MonoBehaviour
     protected virtual void Update() {
 
     }
+    public virtual void SlowEntityBy(float _slowPercent, float _slowDuration) {
+
+    }
+    protected virtual void ReturnDefaultSpeed() {
+        anim.speed = 1;
+    }
 
     public virtual void DamageEffect() {
         StartCoroutine("HitKnockBack");

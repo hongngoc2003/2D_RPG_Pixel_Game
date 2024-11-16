@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour {
+    private EntityFX fx;
+
     [Header("Major stats")]
     public Stat strength;
     public Stat agility;
@@ -31,12 +33,15 @@ public class CharacterStats : MonoBehaviour {
     private float ignitedTimer;
     private float freezedTimer;
     private float shockedTimer;
-
+    [SerializeField] private float ailmentDuration = 4;
 
     private float ignitedDmgCooldown = .3f;
     private float ignitedDmgTimer;
     private int igniteDmg;
 
+    private int shockDmg;
+    [SerializeField] private GameObject thunderStrikePrefab;
+ 
     public int currentHealth;
 
     public System.Action onHealthChanged;
@@ -44,6 +49,8 @@ public class CharacterStats : MonoBehaviour {
     protected virtual void Start() {
         critPower.SetDefaultValue(150);
         currentHealth = GetFullHealthValue();
+
+        fx = GetComponent<EntityFX>();
     }
 
     protected virtual void Update() {
@@ -74,9 +81,15 @@ public class CharacterStats : MonoBehaviour {
             }
             ignitedDmgTimer = ignitedDmgCooldown;
         }
+
+        if (isShocked)
+            Debug.Log("shocking");
+        if (isFreezed)
+            Debug.Log("freezing");
     }
 
     public void SetupIgniteDmg(int _dmg) => igniteDmg = _dmg;
+    public void SetupThunderStrikeDmg(int _dmg) => shockDmg = _dmg;
     public virtual void DoDamage(CharacterStats _targetStat) {
         if (TargetCanAvoidAttack(_targetStat))
             return;
@@ -89,8 +102,8 @@ public class CharacterStats : MonoBehaviour {
 
 
         totalDamage = CheckTargetArmor(_targetStat, totalDamage);
-        _targetStat.TakeDamage(totalDamage);
         DoMagicalDmg(_targetStat);
+        _targetStat.TakeDamage(totalDamage);
     }
 
     public virtual void DoMagicalDmg(CharacterStats _targetStats) {
@@ -103,7 +116,7 @@ public class CharacterStats : MonoBehaviour {
 
         _targetStats.TakeDamage(totalMagicalDmg);
 
-        if(Mathf.Max(_fireDmg, _iceDmg, _iceDmg) <= 0) {
+        if(Mathf.Max(_fireDmg, _iceDmg, _lightningDmg) <= 0) {
             return;
         }
 
@@ -112,7 +125,7 @@ public class CharacterStats : MonoBehaviour {
         bool canApplyShock = _lightningDmg > _fireDmg && _lightningDmg > _iceDmg;
 
         while(!canApplyIgnite &&  !canApplyFreeze && !canApplyShock) {
-            if(Random.value < .5f && _fireDmg > 0) {
+            if(Random.value < .3f && _fireDmg > 0) {
                 canApplyIgnite = true;
                 _targetStats.ApplyAilment(canApplyIgnite, canApplyFreeze, canApplyShock);
                 Debug.Log("fire");
@@ -137,6 +150,9 @@ public class CharacterStats : MonoBehaviour {
 
         if (canApplyIgnite)
             _targetStats.SetupIgniteDmg(Mathf.RoundToInt(_fireDmg * .2f));
+        if (canApplyShock)
+            _targetStats.SetupThunderStrikeDmg(Mathf.RoundToInt(_lightningDmg * .1f)) ;
+
 
         _targetStats.ApplyAilment(canApplyIgnite, canApplyFreeze, canApplyShock);
     }
@@ -148,29 +164,79 @@ public class CharacterStats : MonoBehaviour {
     }
 
     public void ApplyAilment(bool _ignite, bool _freeze, bool _shock) {
-        if(isIgnited || isFreezed || isShocked) {
-            return;
-        }
+        bool canApplyIgnite = !isIgnited && !isFreezed && !isShocked;
+        bool canApplyFreeze = !isIgnited && !isFreezed && !isShocked;
+        bool canApplyShock = !isIgnited && !isFreezed;
 
-        if(_ignite) {
+        if(_ignite && canApplyIgnite) {
             isIgnited = _ignite;
-            ignitedTimer = 2f;
+            ignitedTimer = ailmentDuration;
+
+            fx.IgniteFXFor(ailmentDuration);
         }
 
-        if (isFreezed) {
+        if (_freeze && canApplyFreeze) {
             isFreezed = _freeze;
-            freezedTimer = 2f;
+            freezedTimer = ailmentDuration;
+
+            float slowPercent = .2f;
+            GetComponent<Entity>().SlowEntityBy(slowPercent, ailmentDuration);
+            fx.FreezeFXFor(ailmentDuration);
         }
 
-        if(isShocked) {
-            isShocked = _shock;
-            shockedTimer = 2f;
+        if(_shock && canApplyShock) {
+            if(!isShocked) {
+                ApplyShock(_shock);
+            } else {
+                if (GetComponent<Player>() != null)
+                    return;
+
+                HitNearestTargetWithThunderStrike();
+            }
         }
+
+
 
         isIgnited  = _ignite;
         isFreezed = _freeze;
         isShocked = _shock;
     }
+
+    public void ApplyShock(bool _shock) {
+        if (isShocked)
+            return;
+
+        isShocked = _shock;
+        shockedTimer = ailmentDuration;
+
+        fx.ShockFXFor(ailmentDuration);
+    }
+
+    private void HitNearestTargetWithThunderStrike() {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 25);
+        float closestDistance = Mathf.Infinity;
+        Transform closestEnemy = null;
+
+        foreach (var hit in colliders) {
+            if (hit.GetComponent<Enemy>() != null && Vector2.Distance(transform.position, hit.transform.position) > .1f) {
+                float distanceToEnemy = Vector2.Distance(transform.position, hit.transform.position);
+
+                if (distanceToEnemy < closestDistance) {
+                    closestDistance = distanceToEnemy;
+                    closestEnemy = hit.transform;
+                }
+            }
+
+            if (closestEnemy == null)
+                closestEnemy = transform;
+        }
+
+        if (closestEnemy != null) {
+            GameObject newThunderStrike = Instantiate(thunderStrikePrefab, transform.position, Quaternion.identity);
+            newThunderStrike.GetComponent<ThunderStrikeController>().Setup(shockDmg, closestEnemy.GetComponent<CharacterStats>());
+        }
+    }
+
     private int CheckTargetArmor(CharacterStats _targetStat, int totalDamage) {
         if (_targetStat.isFreezed)
             totalDamage -= Mathf.RoundToInt(_targetStat.armor.GetValue() * 0.8f);

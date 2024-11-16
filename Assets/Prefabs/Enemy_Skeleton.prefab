@@ -59,7 +59,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -261313079
+  m_SortingLayerID: -1768169261
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &289060152
@@ -536,6 +536,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.15
   hitMat: {fileID: 2100000, guid: 3c10efeb44a55d4409d35dd869ba164a, type: 2}
+  freezeColor:
+  - {r: 0.53314346, g: 0.9056604, b: 0.88442695, a: 1}
+  - {r: 0.77007836, g: 0.9339623, b: 0.9172394, a: 1}
+  igniteColor:
+  - {r: 0.8207547, g: 0.2121573, b: 0.2121573, a: 1}
+  - {r: 0.8867924, g: 0.49693838, b: 0.49693838, a: 1}
+  shockColor:
+  - {r: 0.8773585, g: 0.8464578, b: 0.5992524, a: 1}
+  - {r: 0.8490566, g: 0.73385584, b: 0.53186184, a: 1}
 --- !u!114 &1902008706045283627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +570,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 50
+    baseValue: 100
     modifiers: 
   armor:
     baseValue: 0
@@ -582,10 +591,10 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   fireDmg:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   iceDmg:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   lightningDmg:
     baseValue: 5
@@ -593,6 +602,8 @@ MonoBehaviour:
   isIgnited: 0
   isFreezed: 0
   isShocked: 0
+  ailmentDuration: 4
+  thunderStrikePrefab: {fileID: 3291667689569802291, guid: c51e95ceac0d4e94d848819b1dc2c4ae, type: 3}
   currentHealth: 0
 --- !u!70 &2979534466135659463
 CapsuleCollider2D:

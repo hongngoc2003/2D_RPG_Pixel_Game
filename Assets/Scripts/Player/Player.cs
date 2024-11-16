@@ -13,10 +13,14 @@ public class Player : Entity
     public float moveSpeed = 12f;
     public float jumpForce;
     public float swordReturnImpact;
+    private float defaultMoveSpeed;
+    private float defaultJumpForce;
+
 
     [Header("Dash info")]
     public float dashSpeed;
     public float dashDuration;
+    private float defaultDashSpeed;
     public float dashDir { get; private set; }
 
     public SkillManager skill {  get; private set; }
@@ -71,6 +75,10 @@ public class Player : Entity
         skill = SkillManager.instance;
 
         stateMachine.Initialize(idleState);
+
+        defaultMoveSpeed = moveSpeed;
+        defaultJumpForce = jumpForce;
+        defaultDashSpeed = dashSpeed;
     }
 
 
@@ -85,6 +93,21 @@ public class Player : Entity
         if(Input.GetKeyDown(KeyCode.Q)) {
             skill.crystal.CanUseSkill();
         }
+    }
+    public override void SlowEntityBy(float _slowPercent, float _slowDuration) {
+        moveSpeed = moveSpeed * (1 - _slowPercent);
+        jumpForce = jumpForce * (1 - _slowPercent);
+        dashSpeed = dashSpeed * (1 - _slowPercent);
+        anim.speed = anim.speed * (1 - _slowPercent);
+
+        Invoke("ReturnDefaultSpeed", _slowDuration);
+    }
+    protected override void ReturnDefaultSpeed() {
+        base.ReturnDefaultSpeed();
+
+        moveSpeed = defaultMoveSpeed;
+        jumpForce = defaultJumpForce;
+        dashSpeed = defaultDashSpeed;
     }
     public void AssignNewSword(GameObject _newSword) {
         sword = _newSword;
