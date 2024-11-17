@@ -19,6 +19,12 @@ public class EntityFX : MonoBehaviour {
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
     }
+    public void MakeTransparent(bool _transparent) {
+        if (_transparent)
+            sr.color = Color.clear;
+        else
+            sr.color = Color.white;
+    }
     private IEnumerator FlashFX() {
         sr.material = hitMat;
         Color currentColor = sr.color;
