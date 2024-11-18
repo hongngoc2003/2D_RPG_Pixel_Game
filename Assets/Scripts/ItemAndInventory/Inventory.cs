@@ -5,6 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
     public static Inventory instance;
 
+    public List<InventoryItem> equipment;
+    public Dictionary<ItemDataEquipment, InventoryItem> equipmentDictionary;
+
     public List<InventoryItem> inventory;
     public Dictionary<ItemData, InventoryItem> inventoryDictionary;
 
@@ -14,10 +17,11 @@ public class Inventory : MonoBehaviour {
     [Header("Inventory UI")]
     [SerializeField] private Transform inventorySlotParent;
     [SerializeField] private Transform stashSlotParent;
+    [SerializeField] private Transform equipmentSlotParent;
 
     private UIItemSlot[] inventoryItemSlot;
     private UIItemSlot[] stashItemSlot;
-
+    private UIEquipmentSlot[] equipmentSlot;
 
     private void Awake() {
         if (instance == null)
@@ -32,10 +36,62 @@ public class Inventory : MonoBehaviour {
         stash = new List<InventoryItem>();
         stashDictionary = new Dictionary<ItemData, InventoryItem>();
 
+        equipment = new List<InventoryItem>();
+        equipmentDictionary = new Dictionary<ItemDataEquipment, InventoryItem>();
+
         inventoryItemSlot = inventorySlotParent.GetComponentsInChildren<UIItemSlot>();
         stashItemSlot = stashSlotParent.GetComponentsInChildren<UIItemSlot>();
+        equipmentSlot = equipmentSlotParent.GetComponentsInChildren<UIEquipmentSlot>();
     }
+
+    public void EquipItem(ItemData _item) {
+        ItemDataEquipment newEquipment = _item as ItemDataEquipment;
+        InventoryItem newItem = new InventoryItem(newEquipment);
+
+        ItemDataEquipment oldEquipment = null;
+
+        foreach (KeyValuePair<ItemDataEquipment, InventoryItem> item in equipmentDictionary) {
+            if (item.Key.equipmentType == newEquipment.equipmentType)
+                oldEquipment = item.Key;
+        }
+        if(oldEquipment != null) {
+            UnEquipedItem(oldEquipment);
+            AddItem(oldEquipment);
+        }
+
+
+        equipment.Add(newItem);
+        equipmentDictionary.Add(newEquipment, newItem);
+        RemoveItem(_item);
+
+        UpdateUISlot();
+    }
+
+    private void UnEquipedItem(ItemDataEquipment itemToDelete) {
+        if (equipmentDictionary.TryGetValue(itemToDelete, out InventoryItem value)) {
+            equipment.Remove(value);
+            equipmentDictionary.Remove(itemToDelete);
+        }
+    }
+
     private void UpdateUISlot() {
+        for (int i = 0; i < equipmentSlot.Length; i++) {
+            foreach (KeyValuePair<ItemDataEquipment, InventoryItem> item in equipmentDictionary) {
+                if (item.Key.equipmentType == equipmentSlot[i].slotType)
+                    equipmentSlot[i].UpdateSlot(item.Value);
+            }
+        }
+
+        for (int i = 0; i < inventoryItemSlot.Length; i++)
+        {
+            inventoryItemSlot[i].CleanUpSlot();
+        }
+
+        for (int i = 0; i < stashItemSlot.Length; i++)
+        {
+            stashItemSlot[i].CleanUpSlot();
+        }
+
         for (int i = 0; i < inventory.Count; i++)
         {
             inventoryItemSlot[i].UpdateSlot(inventory[i]);
