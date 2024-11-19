@@ -582,7 +582,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 6
+    baseValue: 10
     modifiers: 
   critRate:
     baseValue: 0
@@ -605,6 +605,8 @@ MonoBehaviour:
   ailmentDuration: 4
   thunderStrikePrefab: {fileID: 3291667689569802291, guid: c51e95ceac0d4e94d848819b1dc2c4ae, type: 3}
   currentHealth: 0
+  level: 7
+  percentModifier: 0.397
 --- !u!70 &2979534466135659463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
