@@ -1194,6 +1194,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1902008706045283627, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: damage.baseValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_Name
       value: Enemy_Skeleton (1)
@@ -12072,6 +12076,18 @@ PrefabInstance:
     - target: {fileID: 984246099, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902008706045283627, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: level
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902008706045283627, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: percentModifier
+      value: 0.397
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902008706045283627, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: damage.baseValue
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_Name
