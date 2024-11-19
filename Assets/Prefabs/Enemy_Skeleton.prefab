@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 7812048749259749381}
   - component: {fileID: 1902008706045283627}
   - component: {fileID: 2979534466135659463}
+  - component: {fileID: 7659059268808366987}
   m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
@@ -605,7 +606,7 @@ MonoBehaviour:
   ailmentDuration: 4
   thunderStrikePrefab: {fileID: 3291667689569802291, guid: c51e95ceac0d4e94d848819b1dc2c4ae, type: 3}
   currentHealth: 0
-  level: 7
+  level: 3
   percentModifier: 0.397
 --- !u!70 &2979534466135659463
 CapsuleCollider2D:
@@ -623,6 +624,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.017217569, y: -0.24793455}
   m_Size: {x: 0.80991745, y: 1.5371915}
   m_Direction: 0
+--- !u!114 &7659059268808366987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812048749259749376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52ddf6e8af62c9498bed1431af4ae28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfDrop: 2
+  possibleDrops:
+  - {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
+  - {fileID: 11400000, guid: 4eddf602c77b5e74c902f7699e2c7b91, type: 2}
+  - {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
+  - {fileID: 11400000, guid: 748c0d0c442414f48981a6b5ced6d52a, type: 2}
+  - {fileID: 11400000, guid: 404e38c306c447c4db8dbd9658030d3d, type: 2}
+  dropPrefab: {fileID: 5260536415290718826, guid: fe7e4f545012cef48a5f23c34cb86a09, type: 3}
+  item: {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
 --- !u!1 &7812048750222809793
 GameObject:
   m_ObjectHideFlags: 0
