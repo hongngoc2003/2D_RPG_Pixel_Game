@@ -46,7 +46,7 @@ public class CharacterStats : MonoBehaviour {
 
     public System.Action onHealthChanged;
 
-    protected bool isDead;
+    public bool isDead {  get; private set; }
 
     protected virtual void Start() {
         critPower.SetDefaultValue(150);
