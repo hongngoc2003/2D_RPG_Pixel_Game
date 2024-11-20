@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ThunderExplodeController : MonoBehaviour
 {
-    private PlayerStats playerStats;
-
-    private void Start() {
-        playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
-    }
-    private void OnTriggerEnter2D(Collider2D collision) {
+    protected virtual void OnTriggerEnter2D(Collider2D collision) {
         if(collision.GetComponent<Enemy>() != null) {
+            PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
             EnemyStats enemyTarget = collision.GetComponent<EnemyStats>();
-
             playerStats.DoMagicalDmg(enemyTarget);
         }
     }

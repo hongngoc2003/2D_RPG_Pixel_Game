@@ -4225,7 +4225,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   fireDmg:
-    baseValue: 100
+    baseValue: 0
     modifiers: 
   iceDmg:
     baseValue: 0
@@ -10501,6 +10501,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
   - {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
   - {fileID: 11400000, guid: 8759735cca92dc84b8a3a938c634be5a, type: 2}
+  - {fileID: 11400000, guid: 539d0bdab78c5124b855513cc8b570d5, type: 2}
   equipment: []
   inventory: []
   stash: []
