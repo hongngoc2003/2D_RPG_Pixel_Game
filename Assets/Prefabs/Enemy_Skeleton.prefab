@@ -644,7 +644,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 748c0d0c442414f48981a6b5ced6d52a, type: 2}
   - {fileID: 11400000, guid: 404e38c306c447c4db8dbd9658030d3d, type: 2}
   dropPrefab: {fileID: 5260536415290718826, guid: fe7e4f545012cef48a5f23c34cb86a09, type: 3}
-  item: {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
 --- !u!1 &7812048750222809793
 GameObject:
   m_ObjectHideFlags: 0

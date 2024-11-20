@@ -10,9 +10,10 @@ public enum EquipmentType {
 }
 
 [CreateAssetMenu(fileName = "New Item Data", menuName = "Data/Equipment")]
-
 public class ItemDataEquipment : ItemData {
     public EquipmentType equipmentType;
+
+    public ItemEffect[] itemEffects;
 
     [Header("Major stats")]
     public int strength;
@@ -84,5 +85,13 @@ public class ItemDataEquipment : ItemData {
         playerStats.iceDmg.RemoveModifier(iceDmg);
         playerStats.fireDmg.RemoveModifier(fireDmg);
 
+    }
+
+    public void ExecuteItemEffects() {
+
+        foreach (var item in itemEffects)
+        {
+            item.ExecuteEffect();
+        }
     }
 }

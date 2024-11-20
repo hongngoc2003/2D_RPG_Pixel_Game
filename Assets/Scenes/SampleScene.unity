@@ -10439,6 +10439,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4eddf602c77b5e74c902f7699e2c7b91, type: 2}
   - {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
   - {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
+  - {fileID: 11400000, guid: 8759735cca92dc84b8a3a938c634be5a, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -11641,10 +11642,6 @@ PrefabInstance:
     - target: {fileID: 984246099, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659059268808366987, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: dropPrefab
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_Name
