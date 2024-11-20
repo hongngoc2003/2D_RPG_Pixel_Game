@@ -13,6 +13,8 @@ public enum EquipmentType {
 public class ItemDataEquipment : ItemData {
     public EquipmentType equipmentType;
 
+    public float itemCooldown;
+
     public ItemEffect[] itemEffects;
 
     [Header("Major stats")]

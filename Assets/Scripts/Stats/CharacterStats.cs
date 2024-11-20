@@ -251,10 +251,20 @@ public class CharacterStats : MonoBehaviour {
     protected virtual void DecreaseHealthBy(int _dmg) {
         currentHealth -= _dmg;
 
-        if (onHealthChanged != null) {
+        if (onHealthChanged != null) 
             onHealthChanged();
-        }
     }
+
+    public virtual void IncreaseHealthBy(int _amount) {
+        currentHealth += _amount;
+
+        if(currentHealth > GetFullHealthValue())
+            currentHealth = GetFullHealthValue();
+
+        if (onHealthChanged != null) 
+            onHealthChanged();
+    }
+
     protected virtual void Die() {
         isDead = true;
     }
