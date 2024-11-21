@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class UIStatSlot : MonoBehaviour
+{
+    [SerializeField] private string statName;
+    [SerializeField] private StatType statType;
+    [SerializeField] private TextMeshProUGUI statValueText;
+    [SerializeField] private TextMeshProUGUI statNameText;
+
+    private void OnValidate() {
+        gameObject.name = "Stat - " + statName;
+
+        if(statNameText != null )
+            statNameText.text = statName;
+    }
+
+    void Update() {
+        UpdateStatValueUI();
+    }
+
+    public void UpdateStatValueUI() {
+        PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
+
+        if(playerStats != null) {
+            statValueText.text = playerStats.GetStats(statType).GetValue().ToString();
+        }
+
+    }
+}
