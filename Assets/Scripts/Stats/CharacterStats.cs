@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -92,8 +93,9 @@ public class CharacterStats : MonoBehaviour {
 
 
         totalDamage = CheckTargetArmor(_targetStat, totalDamage);
-        //DoMagicalDmg(_targetStat);
         _targetStat.TakeDamage(totalDamage);
+
+        DoMagicalDmg(_targetStat);
     }
     public virtual void DoMagicalDmg(CharacterStats _targetStats) {
         int _fireDmg = fireDmg.GetValue();
@@ -265,6 +267,17 @@ public class CharacterStats : MonoBehaviour {
             onHealthChanged();
     }
 
+    public virtual void IncreaseStatBy(int _modifier, float _duration, Stat _statToModify) {
+        StartCoroutine(StatModCoroutine(_modifier, _duration, _statToModify));
+    }
+
+    private IEnumerator StatModCoroutine(int _modifier, float _duration, Stat _statToModify) {
+        _statToModify.AddModifier(_modifier);
+
+        yield return new WaitForSeconds(_duration);
+
+        _statToModify.RemoveModifier(_modifier);
+    }
     protected virtual void Die() {
         isDead = true;
     }
