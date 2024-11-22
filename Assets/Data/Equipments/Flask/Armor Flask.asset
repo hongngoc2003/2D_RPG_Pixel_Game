@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Armor Flask
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: 
+  itemName: Armor Flask
   icon: {fileID: -1740531083, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 20
   equipmentType: 3
@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6da4615c16497a7469881b7710a15c2d, type: 2}
   strength: 0
   agility: 0
-  intelligent: 0
+  intelligence: 0
   vitality: 0
   health: 0
   armor: 0

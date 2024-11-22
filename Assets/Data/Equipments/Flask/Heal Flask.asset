@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d712f50daf149114182386227eb25722, type: 2}
   strength: 0
   agility: 0
-  intelligent: 0
+  intelligence: 0
   vitality: 0
   health: 0
   armor: 0
