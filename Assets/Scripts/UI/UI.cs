@@ -7,6 +7,7 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private GameObject characterUI;
     public UIItemTooltip itemTooltip;
+    public UIStatTooltip statTooltip;
 
     private void Start() {
         

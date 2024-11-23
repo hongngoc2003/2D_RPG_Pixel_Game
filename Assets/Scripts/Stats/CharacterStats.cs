@@ -7,7 +7,7 @@ public enum StatType {
     agility,
     intelligent,
     vitality,
-    maxHealth,
+    health,
     armor,
     evasion,
     magicResist,
@@ -350,7 +350,7 @@ public class CharacterStats : MonoBehaviour {
         else if (_statType == StatType.agility) return agility;
         else if (_statType == StatType.intelligent) return intelligent;
         else if (_statType == StatType.vitality) return vitality;
-        else if (_statType == StatType.maxHealth) return maxHealth;
+        else if (_statType == StatType.health) return maxHealth;
         else if (_statType == StatType.armor) return armor;
         else if ((_statType == StatType.damage)) return damage;
         else if ((_statType == StatType.critRate)) return critRate;
