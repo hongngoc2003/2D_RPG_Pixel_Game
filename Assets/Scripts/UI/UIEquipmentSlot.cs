@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIEquipmentSlot : UIItemSlot
-{
+public class UIEquipmentSlot : UIItemSlot {
     public EquipmentType slotType;
 
     private void OnValidate() {
@@ -12,11 +8,15 @@ public class UIEquipmentSlot : UIItemSlot
     }
 
     public override void OnPointerDown(PointerEventData eventData) {
-        if(item ==  null || item.data == null) 
+        if (item == null || item.data == null)
             return;
 
         Inventory.instance.UnequipedItem(item.data as ItemDataEquipment);
         Inventory.instance.AddItem(item.data as ItemDataEquipment);
+
+        ui.itemTooltip.HideTooltip();
         CleanUpSlot();
+
+
     }
 }

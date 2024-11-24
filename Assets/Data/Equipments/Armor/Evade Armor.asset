@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed485771444635c459ef0f12a6a2801d, type: 2}
   strength: 0
   agility: 0
-  intelligent: 0
+  intelligence: 0
   vitality: 0
   health: 100
   armor: 0
@@ -34,4 +34,6 @@ MonoBehaviour:
   fireDmg: 0
   iceDmg: 0
   lightningDmg: 0
-  craftingMaterials: []
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
+    stackSize: 1

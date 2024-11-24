@@ -17,9 +17,11 @@ MonoBehaviour:
   icon: {fileID: -1581127718, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 78.3
   equipmentType: 1
+  itemCooldown: 0
+  itemEffects: []
   strength: 0
   agility: 0
-  intelligent: 0
+  intelligence: 0
   vitality: 0
   health: 30
   armor: 10
@@ -31,4 +33,6 @@ MonoBehaviour:
   fireDmg: 0
   iceDmg: 0
   lightningDmg: 0
-  craftingMaterials: []
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
+    stackSize: 4

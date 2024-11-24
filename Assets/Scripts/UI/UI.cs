@@ -10,6 +10,7 @@ public class UI : MonoBehaviour {
     public UIItemTooltip itemTooltip;
     public UIStatTooltip statTooltip;
 
+    public UICraftWindow craftWindow;
     private void Start() {
         SwitchTo(null);
 
