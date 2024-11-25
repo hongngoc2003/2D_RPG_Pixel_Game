@@ -6,7 +6,7 @@ public class UI : MonoBehaviour {
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionUI;
 
-
+    public UISkillTooltip skillTooltip;
     public UIItemTooltip itemTooltip;
     public UIStatTooltip statTooltip;
 
