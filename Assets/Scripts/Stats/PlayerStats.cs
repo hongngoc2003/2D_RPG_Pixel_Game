@@ -26,4 +26,8 @@ public class PlayerStats : CharacterStats
             currentArmor.ExecuteItemEffects(PlayerManager.instance.player.transform);
         }
     }
+
+    public override void OnEvasion() {
+        PlayerManager.instance.player.skill.dodge.CreateMirageOnDodge();
+    }
 }

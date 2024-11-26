@@ -105,31 +105,31 @@ public class Inventory : MonoBehaviour {
             }
         }
 
-        for (int i = 0; i < inventoryItemSlot.Length; i++)
-        {
+        for (int i = 0; i < inventoryItemSlot.Length; i++) {
             inventoryItemSlot[i].CleanUpSlot();
         }
 
-        for (int i = 0; i < stashItemSlot.Length; i++)
-        {
+        for (int i = 0; i < stashItemSlot.Length; i++) {
             stashItemSlot[i].CleanUpSlot();
         }
 
-        for (int i = 0; i < inventory.Count; i++)
-        {
+        for (int i = 0; i < inventory.Count; i++) {
             inventoryItemSlot[i].UpdateSlot(inventory[i]);
         }
 
-        for (int i = 0; i < stash.Count; i++)
-        {
+        for (int i = 0; i < stash.Count; i++) {
             stashItemSlot[i].UpdateSlot(stash[i]);
         }
 
-        for (int i = 0; i < statSlot.Length; i++)
-        {
+        UpdateStatsUI();
+    }
+
+    public void UpdateStatsUI() {
+        for (int i = 0; i < statSlot.Length; i++) {
             statSlot[i].UpdateStatValueUI();
         }
     }
+
     public void AddItem(ItemData _item) {
         if(_item.itemType == ItemType.Equipment && CanAddItem()) 
             AddToInventory(_item);

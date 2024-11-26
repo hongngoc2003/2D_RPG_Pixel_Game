@@ -305,6 +305,11 @@ public class CharacterStats : MonoBehaviour {
         totalMagicalDmg = Mathf.Clamp(totalMagicalDmg, 0, int.MaxValue);
         return totalMagicalDmg;
     }
+    
+    public virtual void OnEvasion() {
+
+    }
+
     private bool TargetCanAvoidAttack(CharacterStats _targetStat) {
         int totalEvasion = _targetStat.evasion.GetValue() + _targetStat.agility.GetValue();
 
@@ -312,6 +317,7 @@ public class CharacterStats : MonoBehaviour {
             totalEvasion += 20;
 
         if (Random.Range(0, 100) < totalEvasion) {
+            _targetStat.OnEvasion();
             return true;
         }
         return false;

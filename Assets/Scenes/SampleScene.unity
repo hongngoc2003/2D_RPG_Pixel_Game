@@ -14474,7 +14474,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   evasion:
-    baseValue: 10
+    baseValue: 0
     modifiers: 
   magicResist:
     baseValue: 0
@@ -28912,6 +28912,7 @@ GameObject:
   - component: {fileID: 2146356743}
   - component: {fileID: 2146356745}
   - component: {fileID: 2146356746}
+  - component: {fileID: 2146356747}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -29082,6 +29083,24 @@ MonoBehaviour:
   parryRestoreUnlockButton: {fileID: 575182964}
   restoreHealthPercent: 0.387
   parryWithMirageUnlockButton: {fileID: 897494058}
+--- !u!114 &2146356747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146356738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2310d6ffcf9e3684f83cd18d24bec787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  unlockDodgeButton: {fileID: 1724460088}
+  dodgeUnlocked: 0
+  evasionAmount: 10
+  unlockMirageDodgeButton: {fileID: 1066289996}
+  dodgeMirageUnlocked: 0
 --- !u!1 &7382034823804725729
 GameObject:
   m_ObjectHideFlags: 0
