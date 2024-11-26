@@ -21,6 +21,7 @@ MonoBehaviour:
   itemEffects:
   - {fileID: 11400000, guid: 99e3a9422422aec46988d54e4d4e3f74, type: 2}
   - {fileID: 11400000, guid: f2c62a92696ff5e46b68fdcb5f76cc9b, type: 2}
+  itemEffectDescription: Third attack launch an ice and fire ball
   strength: 0
   agility: 0
   intelligence: 0
