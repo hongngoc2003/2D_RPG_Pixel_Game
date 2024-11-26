@@ -23983,8 +23983,7 @@ MonoBehaviour:
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
   unlocked: 0
   shouldBeLocked: []
-  shouldBeUnlocked:
-  - {fileID: 735110685}
+  shouldBeUnlocked: []
 --- !u!114 &1724460089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29047,17 +29046,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
-  crystalDuration: 0
+  crystalDuration: 1.5
   crystalPrefab: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
-  CrystalTurnIntoClone: 0
+  unlockCrystalButton: {fileID: 201371113}
+  unlockCrystalTurnIntoCloneButton: {fileID: 735110685}
+  crystalTurnIntoClone: 0
+  unlockExplosiveButton: {fileID: 652621588}
   canExplode: 0
+  unlockMovingCrystalButton: {fileID: 2028359347}
   canMoveToEnemy: 0
-  moveSpeed: 0
+  moveSpeed: 5
+  unlockMultiCrystalButton: {fileID: 1865396973}
   canUseMultiStack: 0
-  amountOfStack: 0
-  multiStackCooldown: 0
-  useTimeWindow: 0
-  crystalLeft: []
+  amountOfStack: 3
+  multiStackCooldown: 4
+  useTimeWindow: 2.5
+  crystalLeft:
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
 --- !u!114 &2146356746
 MonoBehaviour:
   m_ObjectHideFlags: 0
