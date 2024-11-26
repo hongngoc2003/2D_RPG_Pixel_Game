@@ -27,9 +27,11 @@ public class PlayerCounterAttackState : PlayerState {
                     stateTimer = 10;
                     player.anim.SetBool("SuccessfulCounterAttack", true);
 
+                    player.skill.parry.UseSkill(); //dung cho restore parry
+
                     if(cancreateClone) {
                         cancreateClone = false;
-                        player.skill.clone.CreateCloneOnCounterAttack(hit.transform);
+                        player.skill.parry.MakeMirageOnParry(hit.transform);
                     }
 
                 }

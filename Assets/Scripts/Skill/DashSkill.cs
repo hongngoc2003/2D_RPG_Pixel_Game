@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class DashSkill : Skill
 {
     [Header("Dash")]
-    public bool dashUnlocked;
     [SerializeField] private UISkillTreeSlot dashUnlockedButton;
+    public bool dashUnlocked {get; private set;}
 
     [Header("Clone on dash")]
-    public bool cloneOnDashUnlocked;
     [SerializeField] private UISkillTreeSlot cloneOnDashUnlockedButton;
+    public bool cloneOnDashUnlocked { get; private set;}
 
     [Header("Clone on arrival")]
-    public bool cloneOnArrivalUnlocked;
     [SerializeField] private UISkillTreeSlot cloneOnArrivalUnlockedButton;
+    public bool cloneOnArrivalUnlocked {  get; private set;}
 
 
     protected override void Start() {

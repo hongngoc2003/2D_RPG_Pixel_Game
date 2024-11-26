@@ -6919,7 +6919,7 @@ GameObject:
   - component: {fileID: 575182965}
   - component: {fileID: 575182964}
   m_Layer: 5
-  m_Name: SkillTreeSlot UI - Special Parry
+  m_Name: SkillTreeSlot UI - Parry Restore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6957,8 +6957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f91bfcae6c2cf4eb4929eb68afea66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPrice: 0
-  skillName: Special Parry
+  skillPrice: 3000
+  skillName: Parry Restore
   skillDescription: 'You can parry enemies attacks
 
     Sucessful parry will restore
@@ -7566,7 +7566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f91bfcae6c2cf4eb4929eb68afea66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPrice: 0
+  skillPrice: 100
   skillName: Parry
   skillDescription: 'You can parry enemies attacks
 
@@ -10790,7 +10790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f91bfcae6c2cf4eb4929eb68afea66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPrice: 0
+  skillPrice: 5000
   skillName: Parry Mirage
   skillDescription: 'You can parry enemies attacks
 
@@ -28912,6 +28912,7 @@ GameObject:
   - component: {fileID: 2146356744}
   - component: {fileID: 2146356743}
   - component: {fileID: 2146356745}
+  - component: {fileID: 2146356746}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -28932,11 +28933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 1
-  dashUnlocked: 0
   dashUnlockedButton: {fileID: 1420474294}
-  cloneOnDashUnlocked: 0
   cloneOnDashUnlockedButton: {fileID: 2074968452}
-  cloneOnArrivalUnlocked: 0
   cloneOnArrivalUnlockedButton: {fileID: 1762118904}
 --- !u!114 &2146356740
 MonoBehaviour:
@@ -28981,7 +28979,6 @@ MonoBehaviour:
   canAttack: 0
   clonePrefab: {fileID: 3236739661540353665, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
   cloneDuration: 1.5
-  canCreateCloneOnCounterAttack: 0
   canDuplicateClone: 0
   chanceToDuplicate: 50
   cloneCrystal: 0
@@ -29061,6 +29058,23 @@ MonoBehaviour:
   multiStackCooldown: 0
   useTimeWindow: 0
   crystalLeft: []
+--- !u!114 &2146356746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146356738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0134c3d423526440b2886ed1efcc440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  parryUnlockButton: {fileID: 593403068}
+  parryRestoreUnlockButton: {fileID: 575182964}
+  restoreHealthPercent: 0.387
+  parryWithMirageUnlockButton: {fileID: 897494058}
 --- !u!1 &7382034823804725729
 GameObject:
   m_ObjectHideFlags: 0
