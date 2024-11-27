@@ -324,7 +324,7 @@ public class CharacterStats : MonoBehaviour {
 
     }
 
-    private bool TargetCanAvoidAttack(CharacterStats _targetStat) {
+    protected bool TargetCanAvoidAttack(CharacterStats _targetStat) {
         int totalEvasion = _targetStat.evasion.GetValue() + _targetStat.agility.GetValue();
 
         if (isShocked)
@@ -336,7 +336,7 @@ public class CharacterStats : MonoBehaviour {
         }
         return false;
     }
-    private int CheckTargetArmor(CharacterStats _targetStat, int totalDamage) {
+    protected int CheckTargetArmor(CharacterStats _targetStat, int totalDamage) {
         if (_targetStat.isFreezed)
             totalDamage -= Mathf.RoundToInt(_targetStat.armor.GetValue() * 0.8f);
         else
@@ -345,7 +345,7 @@ public class CharacterStats : MonoBehaviour {
         totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue);
         return totalDamage;
     }
-    private bool CanCrit() {
+    protected bool CanCrit() {
         int totalCritChance = critRate.GetValue() + agility.GetValue();
 
         if(Random.Range(0,100) <= totalCritChance) {
@@ -354,7 +354,7 @@ public class CharacterStats : MonoBehaviour {
 
         return false;
     }
-    private int CalculateCritDmg(int _damage) {
+    protected int CalculateCritDmg(int _damage) {
         float totalCritPower = (this.critPower.GetValue() + strength.GetValue()) * .01f;
         float critDmg = _damage * totalCritPower;
 

@@ -1,8 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlackHoleSkill : Skill {
+
+    [SerializeField] private UISkillTreeSlot blackholeUnlockButton;
+    public bool blackholeUnlocked {  get; private set; }
+    
     [SerializeField] private GameObject blackHolePrefab;
     [SerializeField] private float maxSize;
     [SerializeField] private float shrinkSpeed;
@@ -13,6 +18,11 @@ public class BlackHoleSkill : Skill {
     [SerializeField] private float blackHoleDuration;
 
     BlackHoleSkillController currentBlackHole;
+
+    private void UnlockBlackhole() {
+        if (blackholeUnlockButton.unlocked)
+            blackholeUnlocked = true;
+    }
 
     public override bool CanUseSkill() {
         return base.CanUseSkill();
@@ -30,6 +40,8 @@ public class BlackHoleSkill : Skill {
 
     protected override void Start() {
         base.Start();
+
+        blackholeUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBlackhole);
     }
 
     protected override void Update() {

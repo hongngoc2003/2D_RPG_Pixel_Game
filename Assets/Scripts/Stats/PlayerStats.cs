@@ -30,4 +30,25 @@ public class PlayerStats : CharacterStats
     public override void OnEvasion() {
         PlayerManager.instance.player.skill.dodge.CreateMirageOnDodge();
     }
+
+    public void CloneDoDamge(CharacterStats _targetStat, float _multiplier) {
+        if (TargetCanAvoidAttack(_targetStat))
+            return;
+
+
+        int totalDamage = damage.GetValue() + strength.GetValue();
+        if(_multiplier > 0)
+            totalDamage = Mathf.RoundToInt(totalDamage * _multiplier);
+
+        if (CanCrit()) {
+            totalDamage += CalculateCritDmg(totalDamage);
+        }
+
+
+        totalDamage = CheckTargetArmor(_targetStat, totalDamage);
+        _targetStat.TakeDamage(totalDamage);
+
+        DoMagicalDmg(_targetStat);
+
+    }
 }
