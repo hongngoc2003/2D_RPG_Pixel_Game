@@ -7,10 +7,12 @@ public class UISkillTooltip : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI skillText;
     [SerializeField] private TextMeshProUGUI skillName;
+    [SerializeField] private TextMeshProUGUI skillCost;
 
-    public void ShowToolTip(string _skillDescription, string _skillName) {
+    public void ShowToolTip(string _skillDescription, string _skillName, int _skillCost) {
         skillName.text = _skillName;
         skillText.text = _skillDescription;
+        skillCost.text = "Cost: " + _skillCost;
         gameObject.SetActive(true);
     }
 

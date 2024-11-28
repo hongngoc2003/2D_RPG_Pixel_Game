@@ -17,8 +17,6 @@ public class ItemDataEquipment : ItemData {
     [Header("Unique effect")]
     public float itemCooldown;
     public ItemEffect[] itemEffects;
-    [TextArea]
-    public string itemEffectDescription;
 
     [Header("Major stats")]
     public int strength;
@@ -126,18 +124,25 @@ public class ItemDataEquipment : ItemData {
         AddDescription(iceDmg, "Ice Dmg");
         AddDescription(lightningDmg, "Lightning Dmg");
 
-        if(descriptionLength < 5) {
+        sb.AppendLine();
+
+        for (int i = 0; i < itemEffects.Length; i++)
+        {
+            if (itemEffects[i].effectDescription.Length > 0) {
+                sb.AppendLine();
+                sb.AppendLine(itemEffects[i].effectDescription);
+                descriptionLength++;
+            }
+
+        }
+
+
+        if (descriptionLength < 5) {
             for (int i = 0; i < 5 - descriptionLength; i++)
             {
                 sb.AppendLine();
                 sb.Append("");
             }
-        }
-
-        if(itemEffectDescription.Length > 0) {
-            sb.AppendLine(itemEffectDescription);
-            sb.Append(itemEffectDescription);
-
         }
 
         return sb.ToString();
