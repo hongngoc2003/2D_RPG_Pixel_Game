@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
     public Player player;
     public int currency;
+
+
     private void Awake() {
         if (instance != null) 
             Destroy(instance.gameObject);
@@ -22,4 +24,6 @@ public class PlayerManager : MonoBehaviour
         currency = currency - _price;
         return true;
     }
+
+    public int GetCurrency() => currency;
 }
