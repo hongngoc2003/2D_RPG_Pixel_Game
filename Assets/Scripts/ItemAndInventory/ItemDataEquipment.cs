@@ -126,6 +126,8 @@ public class ItemDataEquipment : ItemData {
 
         sb.AppendLine();
 
+
+
         for (int i = 0; i < itemEffects.Length; i++)
         {
             if (itemEffects[i].effectDescription.Length > 0) {
