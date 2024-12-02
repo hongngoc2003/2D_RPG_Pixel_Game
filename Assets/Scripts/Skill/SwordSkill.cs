@@ -140,6 +140,15 @@ public class SwordSkill : Skill
     #endregion
 
     #region Unlock region
+
+    protected override void CheckUnlock() {
+        UnlockSword();
+        UnlockBounce();
+        UnlockSpin();
+        UnlockPierce();
+        UnlockTimeStop();
+        UnlockVulnerable();
+    }
     private void UnlockTimeStop() {
         if(timeStopUnlockButton.unlocked)
             timeStopUnlocked = true;

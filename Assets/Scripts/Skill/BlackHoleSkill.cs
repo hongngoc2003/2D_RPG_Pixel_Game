@@ -62,4 +62,8 @@ public class BlackHoleSkill : Skill {
     public float GetBlackHoleRadius() {
         return maxSize / 2;
     }
+
+    protected override void CheckUnlock() {
+        UnlockBlackhole();
+    }
 }
