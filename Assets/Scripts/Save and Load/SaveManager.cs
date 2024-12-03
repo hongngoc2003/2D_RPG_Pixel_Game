@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class SaveManager : MonoBehaviour {
 
@@ -13,7 +13,7 @@ public class SaveManager : MonoBehaviour {
     private FileDataHandler dataHandler;
 
     [ContextMenu("Delete save file")]
-    private void DeleteSaveData() {
+    public void DeleteSaveData() {
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         dataHandler.Delete();
     }
@@ -38,12 +38,12 @@ public class SaveManager : MonoBehaviour {
 
         gameData = dataHandler.Load();
 
-        if(this.gameData == null) {
+        if (this.gameData == null) {
             Debug.Log("No saved data found");
             NewGame();
         }
 
-        foreach(ISaveManager saveManager in saveManagers) {
+        foreach (ISaveManager saveManager in saveManagers) {
             saveManager.LoadData(gameData);
         }
     }
@@ -63,5 +63,13 @@ public class SaveManager : MonoBehaviour {
     private List<ISaveManager> FindAllSaveManager() {
         IEnumerable<ISaveManager> saveManagers = FindObjectsOfType<MonoBehaviour>().OfType<ISaveManager>();
         return new List<ISaveManager>(saveManagers);
+    }
+
+    public bool HasNoSaveData() {
+        if (dataHandler.Load() == null) {
+            return true;
+        }
+
+        return false;
     }
 }
