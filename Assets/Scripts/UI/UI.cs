@@ -24,6 +24,7 @@ public class UI : MonoBehaviour {
 
     private void Awake() {
         SwitchTo(skillTreeUI); //can assign event ben uiskilltreeslot truoc khi assign event o skill script
+        fadeScreen.gameObject.SetActive(true);
     }
 
     private void Start() {
