@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyStats : CharacterStats {
     private Enemy enemy;
     private ItemDrop myDropSystem;
+    public Stat soulsDropAmount;
 
     [Header("Level details")]
     [SerializeField] private int level = 1;
@@ -12,9 +13,12 @@ public class EnemyStats : CharacterStats {
     [Range(0f, 1f)]
     [SerializeField] private float percentModifier = .4f;
     protected override void Start() {
+        soulsDropAmount.SetDefaultValue(100);
+
         ApplyLevelModifiers();
 
         base.Start();
+
         enemy = GetComponent<Enemy>();
         myDropSystem = GetComponent<ItemDrop>();
 
@@ -38,6 +42,8 @@ public class EnemyStats : CharacterStats {
         Modify(iceDmg);
         Modify(fireDmg);
         Modify(lightningDmg);
+
+        Modify(soulsDropAmount);
     }
 
     private void Modify(Stat _stat) {
@@ -54,6 +60,8 @@ public class EnemyStats : CharacterStats {
     protected override void Die() {
         base.Die();
         enemy.Die();
+
+        PlayerManager.instance.currency += soulsDropAmount.GetValue();
 
         myDropSystem.GenerateDrop();
     }

@@ -74,7 +74,7 @@ public class UI : MonoBehaviour {
     private void CheckForIngameUI() {
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).gameObject.activeSelf)
+            if (transform.GetChild(i).gameObject.activeSelf && transform.GetChild(i).GetComponent<UIFadeScreen>() == null)
                 return;
         }
 

@@ -11269,13 +11269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1195560134}
   slider: {fileID: 42516212}
-  currentSouls: {fileID: 781719046}
   dashImage: {fileID: 306867577}
   parryImage: {fileID: 1836651560}
   crystalImage: {fileID: 499491586}
   swordImage: {fileID: 336152617}
   blackholeImage: {fileID: 893820991}
   flaskImage: {fileID: 2055698625}
+  currentSouls: {fileID: 781719046}
+  soulsAmount: 0
 --- !u!114 &778505528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14421,6 +14422,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closestCheckpointId: 
   checkpoints: []
+  lastFallPrefab: {fileID: 2420422133957113670, guid: 3e3ff01649c858e49a46b63635d5c3c9, type: 3}
+  lostCurrencyAmount: 0
+  lostCurrencyX: 0
+  lostCurrencyY: 0
 --- !u!4 &929489385
 Transform:
   m_ObjectHideFlags: 0
@@ -28172,7 +28177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1195560129}
-  currency: 100000
+  currency: 5000
 --- !u!4 &1721977744
 Transform:
   m_ObjectHideFlags: 0
