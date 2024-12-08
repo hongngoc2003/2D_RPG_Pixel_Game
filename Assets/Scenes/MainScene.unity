@@ -898,6 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766397f50be2ae04e99611e9dba605eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxMinDistance: 10
   sfx:
   - {fileID: 592168246}
   - {fileID: 1103090729}
@@ -958,7 +959,7 @@ Transform:
   - {fileID: 1541942387}
   - {fileID: 524603943}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &58907324
 GameObject:
@@ -5137,7 +5138,7 @@ Transform:
   - {fileID: 1197643368}
   - {fileID: 1615969917}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317111348
 GameObject:
@@ -5866,17 +5867,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7659059268808366987, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: dropPrefab
-      value: 
-      objectReference: {fileID: 5260536415290718826, guid: fe7e4f545012cef48a5f23c34cb86a09, type: 3}
     - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_Name
       value: Enemy_Skeleton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_RootOrder
@@ -6501,7 +6494,7 @@ Transform:
   - {fileID: 689037011}
   - {fileID: 903015620}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &399156677 stripped
 RectTransform:
@@ -8601,7 +8594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07656002, y: 3.7534132, z: -10.717938}
+  m_LocalPosition: {x: -38.107166, y: 3.7534132, z: -10.717938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16517,7 +16510,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930037006
 GameObject:
@@ -20325,7 +20318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195560128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.62, y: -2.68, z: 0}
+  m_LocalPosition: {x: -46.9, y: 0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34295,7 +34288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836490064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07656002, y: 3.7534132, z: -10.717938}
+  m_LocalPosition: {x: -38.107166, y: 3.7534132, z: -10.717938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34555,7 +34548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852634252
 GameObject:
@@ -37073,7 +37066,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990120841
 GameObject:
@@ -37144,7 +37137,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38910,10 +38903,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Skeleton (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -39157,7 +39146,7 @@ RectTransform:
   - {fileID: 879257567}
   - {fileID: 1328331097}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39508,6 +39497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 2
+  coolDownTimer: 0
   dashUnlockedButton: {fileID: 1420474294}
   cloneOnDashUnlockedButton: {fileID: 2074968452}
   cloneOnArrivalUnlockedButton: {fileID: 1762118904}
@@ -39551,6 +39541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 2
+  coolDownTimer: 0
   attackMultiplier: 0
   clonePrefab: {fileID: 3236739661540353665, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
   cloneDuration: 1.5
@@ -39578,6 +39569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 5
+  coolDownTimer: 0
   swordType: 1
   bounceUnlockButton: {fileID: 1579487307}
   amountBounce: 4
@@ -39616,6 +39608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 60
+  coolDownTimer: 0
   blackholeUnlockButton: {fileID: 1019282530}
   blackHolePrefab: {fileID: 1486728744174530325, guid: 2fcfc5afaefd61f4b926c2c844db996e, type: 3}
   maxSize: 15
@@ -39637,6 +39630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 3
+  coolDownTimer: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
   unlockCrystalButton: {fileID: 201371113}
@@ -39669,6 +39663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 1
+  coolDownTimer: 0
   parryUnlockButton: {fileID: 593403068}
   parryRestoreUnlockButton: {fileID: 575182964}
   restoreHealthPercent: 0.387
@@ -39686,6 +39681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
+  coolDownTimer: 0
   unlockDodgeButton: {fileID: 1724460088}
   dodgeUnlocked: 0
   evasionAmount: 10
@@ -40132,33 +40128,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Skeleton
       objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1
+      value: -37.43
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.62
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_LocalPosition.z

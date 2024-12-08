@@ -3,6 +3,8 @@ using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour {
     public static AudioManager instance;
+
+    [SerializeField] private float sfxMinDistance;
     [SerializeField] private AudioSource[] sfx;
     [SerializeField] private AudioSource[] bgm;
     public bool playBgm;
@@ -29,7 +31,10 @@ public class AudioManager : MonoBehaviour {
         PlayBGM(bgmIndex);
     }
 
-    public void PlaySFX(int _sfxIndex) {
+    public void PlaySFX(int _sfxIndex, Transform _source) {
+        if(_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinDistance) 
+            return;
+
         if (_sfxIndex < sfx.Length) {
             sfx[_sfxIndex].pitch = Random.Range(.85f, 1.1f);
             sfx[_sfxIndex].Play();
