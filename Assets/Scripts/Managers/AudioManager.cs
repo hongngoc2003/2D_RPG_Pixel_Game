@@ -10,11 +10,15 @@ public class AudioManager : MonoBehaviour {
     public bool playBgm;
     private int bgmIndex;
 
+    private bool canPlaySFX;
+
     private void Awake() {
         if (instance != null)
             Destroy(instance.gameObject);
         else
             instance = this;
+
+        Invoke("AllowSFX", 1f);
     }
 
     private void Update() {
@@ -32,6 +36,9 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void PlaySFX(int _sfxIndex, Transform _source) {
+        if (canPlaySFX == false)
+            return;
+
         if(_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinDistance) 
             return;
 
@@ -54,4 +61,6 @@ public class AudioManager : MonoBehaviour {
             bgm[i].Stop();
         }
     }
+
+    private void AllowSFX() => canPlaySFX = true;
 }
