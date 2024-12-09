@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -30,6 +31,21 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    private IEnumerator DecreaseVolume(AudioSource _audio) {
+        float defaultVolume = _audio.volume;
+
+        while (_audio.volume > .1f) {
+            _audio.volume -= _audio.volume * .2f;
+            yield return new WaitForSeconds(.5f);
+
+            if(_audio.volume <= .1f) {
+                _audio.Stop();
+                _audio.volume = defaultVolume;
+                break;
+            }
+        }
+    }
+
     public void PlayRandomBGM() {
         bgmIndex = Random.Range(0, bgm.Length);
         PlayBGM(bgmIndex);
@@ -39,7 +55,7 @@ public class AudioManager : MonoBehaviour {
         if (canPlaySFX == false)
             return;
 
-        if(_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinDistance) 
+        if (_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinDistance)
             return;
 
         if (_sfxIndex < sfx.Length) {
@@ -49,7 +65,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void StopSFX(int _index) => sfx[_index].Stop();
-
+    public void StopSFXWithTime(int _index) => StartCoroutine(DecreaseVolume(sfx[_index]));
     public void PlayBGM(int _bgmIndex) {
         StopAllBGM();
         bgmIndex = _bgmIndex;
