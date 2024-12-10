@@ -5,7 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackDirection;
+    [SerializeField] protected Vector2 knockbackPower;
     [SerializeField] private float knockbackDurartion;
     protected bool isKnocked;
 
@@ -28,6 +28,8 @@ public class Entity : MonoBehaviour
     public CharacterStats stats { get; private set; }
     public CapsuleCollider2D capsuleCol { get; private set; }
     #endregion
+
+    public int knockbackDir { get; private set; }
 
     public System.Action onFlipped;
 
@@ -55,10 +57,16 @@ public class Entity : MonoBehaviour
     public virtual void DamageImpact() {
         StartCoroutine("HitKnockBack");
     }
+    public virtual void SetupKnockbackDir(Transform _dmgDir) {
+        if (_dmgDir.position.x > transform.position.x)
+            knockbackDir = -1;
+        else if (_dmgDir.position.x < transform.position.x)
+            knockbackDir = 1;
+    }
 
     protected virtual IEnumerator HitKnockBack() {
         isKnocked = true;
-        rb.velocity = new Vector2(knockbackDirection.x * -facingDir, knockbackDirection.y);
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
         yield return new WaitForSeconds(knockbackDurartion);
         isKnocked = false;
     }

@@ -20318,7 +20318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7411ddc83aa11924c88728831d04b5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDirection: {x: 0, y: 0}
+  knockbackPower: {x: 0, y: 0}
   knockbackDurartion: 0
   attackCheck: {fileID: 1085682238}
   attackCheckRadius: 0.8
@@ -41662,6 +41662,14 @@ PrefabInstance:
     - target: {fileID: 7812048749259749376, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_Name
       value: Enemy_Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812048749259749377, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: knockbackPower.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812048749259749377, guid: 939720528a099a548a897b4960657058, type: 3}
+      propertyPath: knockbackPower.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7812048749259749378, guid: 939720528a099a548a897b4960657058, type: 3}
       propertyPath: m_RootOrder
