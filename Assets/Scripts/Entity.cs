@@ -69,7 +69,11 @@ public class Entity : MonoBehaviour
         rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
         yield return new WaitForSeconds(knockbackDurartion);
         isKnocked = false;
+
+        SetupZeroKnockbackPower();
     }
+
+
 
     #region Collision
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
@@ -118,6 +122,11 @@ public class Entity : MonoBehaviour
 
     #endregion
 
+    protected virtual void SetupZeroKnockbackPower() {
+
+    }
+
+    public void SetupKnockbackPower(Vector2 _knockbackPower) => knockbackPower = _knockbackPower; 
 
     public virtual void Die() {
 

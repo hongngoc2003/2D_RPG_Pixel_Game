@@ -150,6 +150,10 @@ public class Player : Entity
         }
     }
 
+    protected override void SetupZeroKnockbackPower() {
+        knockbackPower = new Vector2(0, 0);
+    }
+
     public override void Die() {
         base.Die();
         stateMachine.ChangeState(deadState);

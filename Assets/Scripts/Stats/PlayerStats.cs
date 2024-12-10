@@ -24,6 +24,11 @@ public class PlayerStats : CharacterStats
     protected override void DecreaseHealthBy(int _dmg) {
         base.DecreaseHealthBy(_dmg);
 
+        if(_dmg > GetFullHealthValue() * .3f) {
+            PlayerManager.instance.player.SetupKnockbackPower(new Vector2(5,5));
+            Debug.Log("high dmg");
+        }
+
         ItemDataEquipment currentArmor = Inventory.instance.GetEquipment(EquipmentType.Armor);
         if (currentArmor != null) {
             currentArmor.ExecuteItemEffects(PlayerManager.instance.player.transform);
