@@ -102,6 +102,7 @@ public class CharacterStats : MonoBehaviour {
     public void SetupIgniteDmg(int _dmg) => igniteDmg = _dmg;
     public void SetupThunderStrikeDmg(int _dmg) => shockDmg = _dmg;
     public virtual void DoDamage(CharacterStats _targetStat) {
+
         if (TargetCanAvoidAttack(_targetStat))
             return;
 
@@ -111,8 +112,8 @@ public class CharacterStats : MonoBehaviour {
 
         if(CanCrit()) {
             totalDamage += CalculateCritDmg(totalDamage);
+            fx.CreateCriticalHitFX(_targetStat.transform);
         }
-
 
         totalDamage = CheckTargetArmor(_targetStat, totalDamage);
         _targetStat.TakeDamage(totalDamage);

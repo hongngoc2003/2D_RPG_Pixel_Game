@@ -20,6 +20,8 @@ public class EntityFX : MonoBehaviour {
     [SerializeField] private ParticleSystem chillFX;
     [SerializeField] private ParticleSystem shockFX;
 
+    [Header("Hit FX")]
+    [SerializeField] private GameObject hitFX;
 
     private void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -93,4 +95,14 @@ public class EntityFX : MonoBehaviour {
             sr.color = freezeColor[1];
     }
 
+    public void CreateCriticalHitFX(Transform _target) {
+        float zRotation = Random.Range(-90, 90);
+        float xPosition = Random.Range(-.5f, .5f);
+        float yPosition = Random.Range(-.5f, .5f);
+
+        GameObject newhitFX = Instantiate(hitFX, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity);
+        newhitFX.transform.Rotate(new Vector3(0, 0, zRotation));
+
+        Destroy(newhitFX, .5f);
+    }
 }
