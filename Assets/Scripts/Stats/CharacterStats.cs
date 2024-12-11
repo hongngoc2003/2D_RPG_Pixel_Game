@@ -67,6 +67,8 @@ public class CharacterStats : MonoBehaviour {
     public bool isDead {  get; private set; }
 
     private bool isVulnerable;
+
+    public bool isInvicible {  get; private set; }
     protected virtual void Start() {
         critPower.SetDefaultValue(150);
         currentHealth = GetFullHealthValue();
@@ -259,6 +261,10 @@ public class CharacterStats : MonoBehaviour {
 
     public virtual void TakeDamage(int _damage) {
 
+        if(isInvicible) {
+            return;
+        }
+
         DecreaseHealthBy(_damage);
 
         GetComponent<Entity>().DamageImpact();
@@ -314,6 +320,12 @@ public class CharacterStats : MonoBehaviour {
     protected virtual void Die() {
         isDead = true;
     }
+    public void KillEntity() {
+        if (!isDead)
+            Die();  
+    }
+
+    public void MakeInvicible(bool _invicible) => isInvicible = _invicible;
 
     #region Calculation
     private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDmg) {

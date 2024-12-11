@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Entity
-{
+public class Player : Entity {
 
     [Header("Attack details")]
     public Vector2[] attackMovement;
@@ -23,7 +21,7 @@ public class Player : Entity
     private float defaultDashSpeed;
     public float dashDir { get; private set; }
 
-    public SkillManager skill {  get; private set; }
+    public SkillManager skill { get; private set; }
     public GameObject sword { get; private set; }
 
 
@@ -34,7 +32,7 @@ public class Player : Entity
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
-    public PlayerWallSlideState wallSlide { get; private set; }    
+    public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
@@ -45,16 +43,15 @@ public class Player : Entity
     public PlayerDeadState deadState { get; private set; }
     #endregion
 
-    protected override void Awake()
-    {
+    protected override void Awake() {
         base.Awake();
-        
+
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        airState  = new PlayerAirState(this, stateMachine, "Jump");
+        airState = new PlayerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
@@ -68,8 +65,7 @@ public class Player : Entity
         deadState = new PlayerDeadState(this, stateMachine, "Dead");
     }
 
-    protected override void Start()
-    {   
+    protected override void Start() {
         base.Start();
 
         skill = SkillManager.instance;
@@ -82,19 +78,21 @@ public class Player : Entity
     }
 
 
-    protected override void Update()
-    {
+    protected override void Update() {
+        if (Time.timeScale == 0)
+            return;
+
         base.Update();
 
         stateMachine.currentState.Update();
 
         CheckForDashInput();
 
-        if(Input.GetKeyDown(KeyCode.Q) && skill.crystal.crystalUnlocked) {
+        if (Input.GetKeyDown(KeyCode.Q) && skill.crystal.crystalUnlocked) {
             skill.crystal.CanUseSkill();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
             Inventory.instance.UseFlask();
         }
     }
@@ -120,9 +118,8 @@ public class Player : Entity
         stateMachine.ChangeState(catchSword);
         Destroy(sword);
     }
-    public IEnumerator BusyFor(float _seconds)
-    {
-        isBusy = true;        
+    public IEnumerator BusyFor(float _seconds) {
+        isBusy = true;
 
         yield return new WaitForSeconds(_seconds);
         isBusy = false;
@@ -130,22 +127,20 @@ public class Player : Entity
 
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    private void CheckForDashInput()
-    {
+    private void CheckForDashInput() {
         if (IsWallDetected())
             return;
 
         if (skill.dash.dashUnlocked == false)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) && SkillManager.instance.dash.CanUseSkill())
-        {
+        if (Input.GetKeyDown(KeyCode.E) && SkillManager.instance.dash.CanUseSkill()) {
             dashDir = Input.GetAxisRaw("Horizontal");
 
             if (dashDir == 0)
                 dashDir = facingDir;
 
-            
+
             stateMachine.ChangeState(dashState);
         }
     }
