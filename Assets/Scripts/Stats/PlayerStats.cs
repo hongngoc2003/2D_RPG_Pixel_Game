@@ -26,7 +26,8 @@ public class PlayerStats : CharacterStats
 
         if(_dmg > GetFullHealthValue() * .3f) {
             PlayerManager.instance.player.SetupKnockbackPower(new Vector2(5,5));
-            Debug.Log("high dmg");
+            PlayerManager.instance.player.fx.ScreenShake(PlayerManager.instance.player.fx.shakeHighDmg);
+
         }
 
         ItemDataEquipment currentArmor = Inventory.instance.GetEquipment(EquipmentType.Armor);

@@ -1,9 +1,17 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityFX : MonoBehaviour {
     private SpriteRenderer sr;
+
+    [Header("Screen shake fx")]
+    private CinemachineImpulseSource screenShake;
+    [SerializeField] private float shakeMultiplier;
+    public Vector3 shakeSwordImpact;
+    public Vector3 shakeHighDmg;
+    
 
     [Header("FlashFX")]
     [SerializeField] private float flashDuration;
@@ -26,6 +34,13 @@ public class EntityFX : MonoBehaviour {
     private void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
+        screenShake = GetComponent<CinemachineImpulseSource>();
+    }
+
+    public void ScreenShake(Vector3 _shakePower) {
+        screenShake.m_DefaultVelocity = new Vector3
+            (_shakePower.x * PlayerManager.instance.player.facingDir, _shakePower.y) * shakeMultiplier;
+        screenShake.GenerateImpulse();
     }
     public void MakeTransparent(bool _transparent) {
         if (_transparent)
