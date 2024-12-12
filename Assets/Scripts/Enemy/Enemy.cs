@@ -22,6 +22,7 @@ public class Enemy : Entity {
     public float battleTime;
 
     public EnemyStateMachine stateMachine { get; private set; }
+    public EntityFX fx { get; private set; }
     public string lastAnimBoolName {  get; private set; }
 
 
@@ -31,6 +32,11 @@ public class Enemy : Entity {
         stateMachine = new EnemyStateMachine();
 
         defaultMoveSpeed = moveSpeed;
+    }
+
+    protected override void Start() {
+        base.Start();
+        fx = GetComponent<EntityFX>();
     }
     protected override void Update() {
         base.Update();

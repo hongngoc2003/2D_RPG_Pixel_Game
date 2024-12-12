@@ -21,7 +21,6 @@ public class Entity : MonoBehaviour
     protected bool facingRight = true;
 
     #region Components
-    public EntityFX fx { get; private set; }
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public SpriteRenderer sr { get; private set; } 
@@ -37,7 +36,6 @@ public class Entity : MonoBehaviour
 
     }
     protected virtual void Start() {
-        fx= GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();

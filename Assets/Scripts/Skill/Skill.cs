@@ -29,7 +29,7 @@ public class Skill : MonoBehaviour
             coolDownTimer = coolDown;
             return true;
         }
-        Debug.Log("Cooldowning");
+        player.fx.CreatePopupText("Cooldowning");
         return false;
     }
     public virtual void UseSkill() {

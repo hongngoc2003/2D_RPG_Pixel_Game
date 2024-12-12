@@ -58,7 +58,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1768169261
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -14974,6 +14974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fc0d89e260b414b8a51c175beb360a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupTextPrefab: {fileID: 2977659286374397038, guid: a23f16c4e376cd24dbc51359fc8294a7, type: 3}
   flashDuration: 0.15
   hitMat: {fileID: 2100000, guid: 3c10efeb44a55d4409d35dd869ba164a, type: 2}
   freezeColor:

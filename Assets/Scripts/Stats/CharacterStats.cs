@@ -290,6 +290,9 @@ public class CharacterStats : MonoBehaviour {
     protected virtual void DecreaseHealthBy(int _dmg) {
         if(isVulnerable) 
             _dmg = Mathf.RoundToInt(_dmg * 1.1f);
+
+        if (_dmg > 0)
+            fx.CreatePopupText(_dmg.ToString());
         
         currentHealth -= _dmg;
 
