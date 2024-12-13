@@ -188,7 +188,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1768169261
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1378493327, guid: 5b37f7e31a19796489c254db0005907c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 2573825937690337815}
   - component: {fileID: 2573825937690337816}
   m_Layer: 7
-  m_Name: Enemy_Slime
+  m_Name: Enemy_Slime_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,8 +384,8 @@ Transform:
   m_GameObject: {fileID: 2573825937690337817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.09, y: -3.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2573825937464124571}
   - {fileID: 2573825937516063696}
@@ -557,9 +557,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackPower: {x: 7, y: 12}
+  knockbackOffset: {x: 0.5, y: 2}
   knockbackDurartion: 0.07
   attackCheck: {fileID: 2573825938287006668}
-  attackCheckRadius: 0.81
+  attackCheckRadius: 0.6
   groundCheck: {fileID: 2573825937641897758}
   groundCheckDistance: 0.75
   wallCheck: {fileID: 2573825938717600686}
@@ -573,12 +574,18 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeed: 1.5
+  moveSpeed: 2
   idleTime: 2
+  aggroDistance: 2
   attackDistance: 0.95
-  attackCooldown: 0
+  attackCooldown: 0.15
   lastTimeAttack: 0
   battleTime: 5
+  slimeType: 2
+  amountSlimeCreate: 0
+  slimePrefab: {fileID: 0}
+  minCreateVec: {x: 10, y: 10}
+  maxCreateVec: {x: 18, y: 18}
 --- !u!1 &2573825937756565602
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class Enemy : Entity {
     private float defaultMoveSpeed;
 
     [Header("Attack info")]
+    public float aggroDistance = 2;
     public float attackDistance;
     public float attackCooldown;
     [HideInInspector] public float lastTimeAttack;
