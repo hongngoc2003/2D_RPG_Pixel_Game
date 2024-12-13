@@ -10,8 +10,6 @@ public class EntityFX : MonoBehaviour {
     [Header("Popuptext")]
     [SerializeField] private GameObject popupTextPrefab;
 
-
-
     [Header("FlashFX")]
     [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMat;
@@ -33,7 +31,6 @@ public class EntityFX : MonoBehaviour {
     protected virtual void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
-
     }
 
     public void CreatePopupText(string _text) {

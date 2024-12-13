@@ -79,7 +79,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnDrawGizmos() {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance * facingDir, wallCheck.position.y));
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
@@ -119,6 +119,13 @@ public class Entity : MonoBehaviour
     }
 
     #endregion
+
+    public virtual void SetupDefaultFacingDir(int _dir) {
+        facingDir = _dir;
+
+        if (facingDir == -1)
+            facingRight = false;
+    }
 
     protected virtual void SetupZeroKnockbackPower() {
 
