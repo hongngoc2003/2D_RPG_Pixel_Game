@@ -22,6 +22,12 @@ public class PlayerCounterAttackState : PlayerState {
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(player.attackCheck.position, player.attackCheckRadius);
         foreach (var hit in colliders) {
+            
+            ArrowController arrow = hit.GetComponent<ArrowController>();
+            if (arrow != null) {
+                UnityEngine.Object.Destroy(arrow.gameObject);
+            }
+
             if (hit.GetComponent<Enemy>() != null) {
                 if (hit.GetComponent<Enemy>().CanBeStunned()) {
                     stateTimer = 10;
