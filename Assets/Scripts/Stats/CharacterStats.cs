@@ -103,6 +103,9 @@ public class CharacterStats : MonoBehaviour {
     public void SetupThunderStrikeDmg(int _dmg) => shockDmg = _dmg;
     public virtual void DoDamage(CharacterStats _targetStat) {
 
+        if(_targetStat.isInvicible)
+            return;
+
         if (TargetCanAvoidAttack(_targetStat))
             return;
 

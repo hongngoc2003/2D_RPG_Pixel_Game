@@ -545,7 +545,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 75
+    baseValue: 1000
     modifiers: 
   armor:
     baseValue: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  stunnedDuration: 0.4
+  stunnedDuration: 2
   stunnedDir: {x: 4, y: 12}
   counterImage: {fileID: 718994639623070504}
   whatIsPlayer:
@@ -660,8 +660,8 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 1.5
   idleTime: 2
-  aggroDistance: 0
-  attackDistance: 0.95
+  aggroDistance: 4
+  attackDistance: 1.55
   attackCooldown: 0.7
   lastTimeAttack: 0
   battleTime: 5
