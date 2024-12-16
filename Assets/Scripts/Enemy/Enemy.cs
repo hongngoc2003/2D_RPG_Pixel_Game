@@ -9,23 +9,23 @@ using UnityEngine;
 
 public class Enemy : Entity {
     [Header("Stunned info")]
-    public float stunnedDuration;
-    public Vector2 stunnedDir;
+    public float stunnedDuration = 0.4f;
+    public Vector2 stunnedDir = new Vector2(4,12);
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
     [SerializeField] protected LayerMask whatIsPlayer;
     [Header("Move info")]
-    public float moveSpeed;
-    public float idleTime;
-    private float defaultMoveSpeed;
+    public float moveSpeed = 1.5f;
+    public float idleTime = 2;
+    private float defaultMoveSpeed;  
 
     [Header("Attack info")]
     public float aggroDistance = 2;
-    public float attackDistance;
-    public float attackCooldown;
+    public float attackDistance = 2;
+    public float attackCooldown = .4f;
     [HideInInspector] public float lastTimeAttack;
-    public float battleTime;
+    public float battleTime = 5;
 
     public EnemyStateMachine stateMachine { get; private set; }
     public EntityFX fx { get; private set; }
@@ -104,8 +104,10 @@ public class Enemy : Entity {
         return false;
     }
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+    public virtual void AnimationSpecialAttackTrigger() {
 
-    public virtual RaycastHit2D isPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+    }
+    public virtual RaycastHit2D isPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 15, whatIsPlayer);
     protected override void OnDrawGizmos() {
         base.OnDrawGizmos();
         Gizmos.color = Color.yellow;

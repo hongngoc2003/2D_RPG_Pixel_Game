@@ -14922,7 +14922,7 @@ MonoBehaviour:
   knockbackOffset: {x: 0.5, y: 2}
   knockbackDurartion: 0.07
   attackCheck: {fileID: 7812048750843931505}
-  attackCheckRadius: 1.14
+  attackCheckRadius: 1.2
   groundCheck: {fileID: 7812048750222809794}
   groundCheckDistance: 1
   wallCheck: {fileID: 7812048749103899109}

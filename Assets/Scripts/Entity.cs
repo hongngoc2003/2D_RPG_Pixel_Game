@@ -5,18 +5,18 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackPower;
-    [SerializeField] protected Vector2 knockbackOffset;
-    [SerializeField] private float knockbackDurartion;
+    [SerializeField] protected Vector2 knockbackPower = new Vector2(7,12);
+    [SerializeField] protected Vector2 knockbackOffset = new Vector2(.5f, 2);
+    [SerializeField] private float knockbackDurartion = .07f;
     protected bool isKnocked;
 
     [Header("Collision info")]
     public Transform attackCheck;
-    public float attackCheckRadius;
+    public float attackCheckRadius = 1.2f;
     [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
+    [SerializeField] protected float groundCheckDistance = 1;
     [SerializeField] protected Transform wallCheck;
-    [SerializeField] protected float wallCheckDistance;
+    [SerializeField] protected float wallCheckDistance = .8f;
     [SerializeField] protected LayerMask whatIsGround;
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
