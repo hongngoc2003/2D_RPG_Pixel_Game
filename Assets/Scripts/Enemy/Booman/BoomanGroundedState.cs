@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherGroundedState : EnemyState
-{
-    protected EnemyArcher enemy;
+public class BoomanGroundedState : EnemyState {
+    protected EnemyBooman enemy;
     protected Transform player;
-    public ArcherGroundedState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, EnemyArcher _enemy) : base(_enemyBase, _stateMachine, _animBoolName) {
+
+    public BoomanGroundedState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, EnemyBooman _enemy) : base(_enemyBase, _stateMachine, _animBoolName) {
         this.enemy = _enemy;
     }
-
     public override void Enter() {
         base.Enter();
         player = PlayerManager.instance.player.transform;
@@ -26,5 +25,4 @@ public class ArcherGroundedState : EnemyState
             stateMachine.ChangeState(enemy.battleState);
 
     }
-
 }

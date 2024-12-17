@@ -55,15 +55,15 @@ public class EnemyArcher : Enemy
         }
         return false;
     }
-    public override void AnimationSpecialAttackTrigger() {
-        GameObject newArrow = Instantiate(arrowPrefab, attackCheck.position,Quaternion.identity);
-
-        newArrow.GetComponent<ArrowController>().SetupArrow(arrowSpeed * facingDir, stats);
-    }
     public override void Die() {
         base.Die();
 
         stateMachine.ChangeState(deadState);
+    }
+    public override void AnimationSpecialAttackTrigger() {
+        GameObject newArrow = Instantiate(arrowPrefab, attackCheck.position,Quaternion.identity);
+
+        newArrow.GetComponent<ArrowController>().SetupArrow(arrowSpeed * facingDir, stats);
     }
 
     public bool GroundBehindCheck() => Physics2D.BoxCast(groundBehindCheck.position, groundBehindCheckSize, 0, Vector2.zero, 0, whatIsGround);
