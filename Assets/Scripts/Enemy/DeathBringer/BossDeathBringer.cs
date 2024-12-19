@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class BossDeathBringer : Enemy
 {
+    public bool bossFightBegin;
+
+    [Header("Spell cast details")]
+    [SerializeField] private GameObject spellPrefab;
+    public int amountOfSpell;
+    public float spellCooldown;
+    public float lastTimeCast;
+    [SerializeField] private float spellStateCooldown;
+    
+
     [Header("Teleport details")]
     [SerializeField] private BoxCollider2D arena;
     [SerializeField] private Vector2 aroundCheckSize;
+    public float chanceToTeleport;
+    public float defaultChanceToTeleport = 25;
+
  
     #region States
 
@@ -21,6 +34,8 @@ public class BossDeathBringer : Enemy
 
     protected override void Awake() {
         base.Awake();
+
+        SetupDefaultFacingDir(-1);
 
         idleState = new DeathBringerIdleState(this, stateMachine, "Idle", this);
         battleState = new DeathBringerBattleState(this, stateMachine, "Move", this);
@@ -40,6 +55,22 @@ public class BossDeathBringer : Enemy
         base.Die();
 
         stateMachine.ChangeState(deadState);
+    }
+
+    public void CastSpell() {
+        Player player = PlayerManager.instance.player;
+
+        float xOffset = 0;
+
+        if(player.rb.velocity.x != 0)
+            xOffset = player.facingDir * 2;
+
+        Vector3 spellPosition = new Vector3
+            (player.transform.position.x + xOffset, player.transform.position.y + 1.5f);
+
+        GameObject newSpell = Instantiate(spellPrefab, spellPosition, Quaternion.identity);
+
+        newSpell.GetComponent<DeathBringerSpellController>().SetupSpell(stats);
     }
 
     public void FindPosition() {
@@ -64,5 +95,21 @@ public class BossDeathBringer : Enemy
 
         Gizmos.DrawLine (transform.position, new Vector3(transform.position.x, transform.position.y - GroundBelow().distance));
         Gizmos.DrawWireCube(transform.position, aroundCheckSize);
+    }
+
+    public bool CanTeleport() {
+        if(Random.Range(0,100) <= chanceToTeleport) {
+            chanceToTeleport = defaultChanceToTeleport;
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool CanDoSpellCast() {
+        if (Time.time >= lastTimeCast + spellStateCooldown ) {
+            return true;
+        }
+        return false;
     }
 }

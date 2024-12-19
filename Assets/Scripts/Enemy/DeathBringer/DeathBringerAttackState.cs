@@ -11,6 +11,8 @@ public class DeathBringerAttackState : EnemyState
 
     public override void Enter() {
         base.Enter();
+
+        enemy.chanceToTeleport += 10;
     }
 
     public override void Exit() {
@@ -23,7 +25,12 @@ public class DeathBringerAttackState : EnemyState
 
         enemy.SetZeroVelocity();
 
-        if (triggerCalled)
-            stateMachine.ChangeState(enemy.battleState);
+        if (triggerCalled) {
+            if(enemy.CanTeleport())
+                stateMachine.ChangeState(enemy.teleportState);
+            else
+                stateMachine.ChangeState(enemy.battleState);
+
+        }
     }
 }
