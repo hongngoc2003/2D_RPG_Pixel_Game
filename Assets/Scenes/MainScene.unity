@@ -54580,11 +54580,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7276638304498850121, guid: cc2c31c278d1cb340a7f29a4e7494262, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7276638304498850121, guid: cc2c31c278d1cb340a7f29a4e7494262, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7276638305338842819, guid: cc2c31c278d1cb340a7f29a4e7494262, type: 3}
       propertyPath: arena
