@@ -34,6 +34,10 @@ public class DeathBringerBattleState : EnemyState {
             }
         }
 
+        float distanceToPlayerX = Mathf.Abs(player.position.x - enemy.transform.position.x);
+        if (distanceToPlayerX < 1)
+            stateMachine.ChangeState(enemy.attackState);
+
         if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
         else if (player.position.x < enemy.transform.position.x)

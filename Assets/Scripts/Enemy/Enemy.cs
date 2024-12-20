@@ -10,7 +10,7 @@ using UnityEngine;
 public class Enemy : Entity {
     [Header("Stunned info")]
     public float stunnedDuration = 0.4f;
-    public Vector2 stunnedDir = new Vector2(4,12);
+    public Vector2 stunnedDir = new Vector2(4, 12);
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
@@ -18,7 +18,7 @@ public class Enemy : Entity {
     [Header("Move info")]
     public float moveSpeed = 1.5f;
     public float idleTime = 2;
-    private float defaultMoveSpeed;  
+    private float defaultMoveSpeed;
 
     [Header("Attack info")]
     public float aggroDistance = 2;
@@ -107,7 +107,18 @@ public class Enemy : Entity {
     public virtual void AnimationSpecialAttackTrigger() {
 
     }
-    public virtual RaycastHit2D isPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 15, whatIsPlayer);
+    public virtual RaycastHit2D isPlayerDetected() {
+        RaycastHit2D playerDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 20, whatIsPlayer);
+        RaycastHit2D wallDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 20, whatIsGround);
+
+        if (wallDetected) {
+            if (wallDetected.distance < playerDetected.distance) {
+                return default(RaycastHit2D);
+            }
+        }
+
+        return playerDetected;
+    }
     protected override void OnDrawGizmos() {
         base.OnDrawGizmos();
         Gizmos.color = Color.yellow;
