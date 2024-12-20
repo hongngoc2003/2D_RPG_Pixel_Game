@@ -11,21 +11,24 @@ public class ItemDrop : MonoBehaviour
     [SerializeField] private GameObject dropPrefab;
 
     public virtual void GenerateDrop() {
-        for (int i = 0; i < possibleDrops.Length; i++)
+        if (possibleDrops.Length == 0)
+            return;
+
+        foreach (ItemData item in possibleDrops)
         {
-            if(Random.Range(0,100) <= possibleDrops[i].dropChance) {
-                dropList.Add(possibleDrops[i]);
-            }
+            if(item != null && Random.Range(0,100) < item.dropChance)
+                dropList.Add(item);
         }
 
         for (int i = 0; i < amountOfDrop; i++)
         {
-            if (dropList.Count == 0) 
-                return;
-            
-            ItemData randomItem = dropList[Random.Range(0, dropList.Count - 1)];
-            dropList.Remove(randomItem);
-            DropItem(randomItem);
+            if(dropList.Count > 0) {
+                int randomIndex = Random.Range(0, dropList.Count);
+                ItemData itemToDrop = dropList[randomIndex];
+
+                DropItem(itemToDrop);
+                dropList.Remove(itemToDrop);
+            }
         }
     }
     protected void DropItem(ItemData _itemData) {

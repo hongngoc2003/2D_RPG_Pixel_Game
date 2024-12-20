@@ -15085,7 +15085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52ddf6e8af62c9498bed1431af4ae28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfDrop: 2
+  amountOfDrop: 5
   possibleDrops:
   - {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
   - {fileID: 11400000, guid: 4eddf602c77b5e74c902f7699e2c7b91, type: 2}

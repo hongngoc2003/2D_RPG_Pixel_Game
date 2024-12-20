@@ -204,36 +204,36 @@ public class Inventory : MonoBehaviour, ISaveManager {
         return true;
     }
     public bool CanCraft(ItemDataEquipment _itemToCraft, List<InventoryItem> _requiredMaterials) {
-        List<InventoryItem> materialsToRemove = new List<InventoryItem>();
-
-
-        for (int i = 0; i < _requiredMaterials.Count; i++) {
-            if (stashDictionary.TryGetValue(_requiredMaterials[i].data, out InventoryItem stashValue)) {
-                if (stashValue.stackSize < _requiredMaterials[i].stackSize) {
-                    Debug.Log("not enough materials");
+        //Ktra xem trong stash co du material can ko
+        foreach (var requiredItem in _requiredMaterials)
+        {
+            if(stashDictionary.TryGetValue(requiredItem.data, out InventoryItem stashItem)) {
+                if(stashItem.stackSize < requiredItem.stackSize) {
+                    Debug.Log("Not enough materials: " + requiredItem.data.name);
                     return false;
-                } else {
-                    materialsToRemove.Add(stashValue);
-                }
-
+                } 
             } else {
-                Debug.Log("not enough materials");
+                Debug.Log("Material not found in stash: " + requiredItem.data.name);
                 return false;
             }
         }
 
-        for (int i = 0; i < materialsToRemove.Count; i++) {
-            RemoveItem(materialsToRemove[i].data);
+        //Neu du material thi craft va tru stackSize
+        foreach (var requiredMaterial in _requiredMaterials)
+        {
+            for (int i = 0; i < requiredMaterial.stackSize; i++)
+            {
+                RemoveItem(requiredMaterial.data);
+            }
         }
 
         AddItem(_itemToCraft);
-        Debug.Log("created");
-
+        Debug.Log("Craft successfully: " + _itemToCraft.name);
         return true;
     }
     public List<InventoryItem> GetEquipmentList() => equipment;
     public List<InventoryItem> GetStashList() => stash;
-
+        
     public ItemDataEquipment GetEquipment(EquipmentType _type) {
         ItemDataEquipment equippedItem = null;
 

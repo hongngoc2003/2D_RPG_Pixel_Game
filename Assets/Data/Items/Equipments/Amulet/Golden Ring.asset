@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0c890a0e2d56f43850d667270446fe, type: 3}
   m_Name: Golden Ring
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 1
   itemName: Golden Ring
   icon: {fileID: -878758905, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 980aebb2cffaf31439edb152afbc93b6
   dropChance: 20.2
   equipmentType: 2
   itemCooldown: 0
