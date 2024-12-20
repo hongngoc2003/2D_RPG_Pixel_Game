@@ -25,11 +25,6 @@ public class EnemyStats : CharacterStats {
     }
 
     private void ApplyLevelModifiers() {
-        Modify(strength);
-        Modify(agility);
-        Modify(intelligent);
-        Modify(vitality);
-
         Modify(damage);
         Modify(critRate);
         Modify(critPower);

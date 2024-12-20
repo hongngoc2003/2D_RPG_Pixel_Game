@@ -3,10 +3,6 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 public enum StatType {
-    strength,
-    agility,
-    intelligent,
-    vitality,
     health,
     armor,
     evasion,
@@ -21,12 +17,6 @@ public enum StatType {
 
 public class CharacterStats : MonoBehaviour {
     private EntityFX fx;
-
-    [Header("Major stats")]
-    public Stat strength;
-    public Stat agility;
-    public Stat intelligent;
-    public Stat vitality;
 
     [Header("Defensive stats")]
     public Stat maxHealth;
@@ -111,7 +101,7 @@ public class CharacterStats : MonoBehaviour {
 
         _targetStat.GetComponent<Entity>().SetupKnockbackDir(transform);
 
-        int totalDamage = damage.GetValue() + strength.GetValue();
+        int totalDamage = damage.GetValue();
 
         if(CanCrit()) {
             totalDamage += CalculateCritDmg(totalDamage);
@@ -128,7 +118,7 @@ public class CharacterStats : MonoBehaviour {
         int _iceDmg = iceDmg.GetValue();
         int _lightningDmg = lightningDmg.GetValue();
 
-        int totalMagicalDmg = _fireDmg + _iceDmg + _lightningDmg + intelligent.GetValue();
+        int totalMagicalDmg = _fireDmg + _iceDmg + _lightningDmg;
         totalMagicalDmg = CheckTargetResistance(_targetStats, totalMagicalDmg);
 
         _targetStats.TakeDamage(totalMagicalDmg);
@@ -336,7 +326,7 @@ public class CharacterStats : MonoBehaviour {
 
     #region Calculation
     private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDmg) {
-        totalMagicalDmg -= _targetStats.magicResist.GetValue() + (_targetStats.intelligent.GetValue() * 3);
+        totalMagicalDmg -= _targetStats.magicResist.GetValue();
         totalMagicalDmg = Mathf.Clamp(totalMagicalDmg, 0, int.MaxValue);
         return totalMagicalDmg;
     }
@@ -346,7 +336,7 @@ public class CharacterStats : MonoBehaviour {
     }
 
     protected bool TargetCanAvoidAttack(CharacterStats _targetStat) {
-        int totalEvasion = _targetStat.evasion.GetValue() + _targetStat.agility.GetValue();
+        int totalEvasion = _targetStat.evasion.GetValue();
 
         if (isShocked)
             totalEvasion += 20;
@@ -367,7 +357,7 @@ public class CharacterStats : MonoBehaviour {
         return totalDamage;
     }
     protected bool CanCrit() {
-        int totalCritChance = critRate.GetValue() + agility.GetValue();
+        int totalCritChance = critRate.GetValue();
 
         if(Random.Range(0,100) <= totalCritChance) {
             return true;
@@ -376,22 +366,18 @@ public class CharacterStats : MonoBehaviour {
         return false;
     }
     protected int CalculateCritDmg(int _damage) {
-        float totalCritPower = (this.critPower.GetValue() + strength.GetValue()) * .01f;
+        float totalCritPower = (this.critPower.GetValue()) * .01f;
         float critDmg = _damage * totalCritPower;
 
         return Mathf.RoundToInt(critDmg);
     }
     public int GetFullHealthValue() {
-        return maxHealth.GetValue() + vitality.GetValue() * 5;
+        return maxHealth.GetValue();
     }
     #endregion
 
     public Stat GetStats(StatType _statType) {
-        if (_statType == StatType.strength) return strength;
-        else if (_statType == StatType.agility) return agility;
-        else if (_statType == StatType.intelligent) return intelligent;
-        else if (_statType == StatType.vitality) return vitality;
-        else if (_statType == StatType.health) return maxHealth;
+        if (_statType == StatType.health) return maxHealth;
         else if (_statType == StatType.armor) return armor;
         else if ((_statType == StatType.damage)) return damage;
         else if ((_statType == StatType.critRate)) return critRate;

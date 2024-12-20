@@ -38,20 +38,17 @@ public class UIStatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             if(statType == StatType.health)
                 statValueText.text = playerStats.GetFullHealthValue().ToString();
             if (statType == StatType.damage)
-                statValueText.text = (playerStats.damage.GetValue() + playerStats.strength.GetValue()).ToString();
+                statValueText.text = (playerStats.damage.GetValue()).ToString();
             if(statType == StatType.critPower)
-                statValueText.text = (playerStats.critPower.GetValue() + playerStats.strength.GetValue()).ToString();
+                statValueText.text = (playerStats.critPower.GetValue()).ToString();
             if (statType == StatType.critRate)
-                statValueText.text = (playerStats.critRate.GetValue() + playerStats.agility.GetValue()).ToString();
+                statValueText.text = (playerStats.critRate.GetValue()).ToString();
             if (statType == StatType.evasion)
-                statValueText.text = (playerStats.evasion.GetValue() + playerStats.agility.GetValue()).ToString();
+                statValueText.text = (playerStats.evasion.GetValue()).ToString();
             if (statType == StatType.critPower)
-                statValueText.text = (playerStats.critPower.GetValue() + playerStats.strength.GetValue()).ToString();
+                statValueText.text = (playerStats.critPower.GetValue()).ToString();
             if (statType == StatType.magicResist)
-                statValueText.text = (playerStats.magicResist.GetValue() + playerStats.intelligent.GetValue() * 3).ToString() ;
-
-
-
+                statValueText.text = (playerStats.magicResist.GetValue()).ToString() ;
 
         }
 

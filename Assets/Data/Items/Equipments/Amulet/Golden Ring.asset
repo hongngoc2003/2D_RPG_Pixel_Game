@@ -20,12 +20,8 @@ MonoBehaviour:
   equipmentType: 2
   itemCooldown: 0
   itemEffects:
-  - {fileID: 0}
-  strength: 0
-  agility: 0
-  intelligence: 20
-  vitality: 0
-  health: 0
+  - {fileID: 11400000, guid: 723fca48b2bfccb439bb15f8d6781645, type: 2}
+  health: 3
   armor: 0
   evasion: 0
   magicResist: 0

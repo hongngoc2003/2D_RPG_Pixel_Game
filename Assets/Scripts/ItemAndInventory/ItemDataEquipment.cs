@@ -18,12 +18,6 @@ public class ItemDataEquipment : ItemData {
     public float itemCooldown;
     public ItemEffect[] itemEffects;
 
-    [Header("Major stats")]
-    public int strength;
-    public int agility;
-    public int intelligence;
-    public int vitality;
-
     [Header("Defensive stats")]
     public int health;
     public int armor;
@@ -48,11 +42,6 @@ public class ItemDataEquipment : ItemData {
     public void AddModifiers() {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
 
-        playerStats.strength.AddModifier(strength);
-        playerStats.agility.AddModifier(agility);
-        playerStats.intelligent.AddModifier(intelligence);
-        playerStats.vitality.AddModifier(vitality);
-
         playerStats.damage.AddModifier(damage);
         playerStats.critRate.AddModifier(critRate);
         playerStats.critPower.AddModifier(critPower);
@@ -70,11 +59,6 @@ public class ItemDataEquipment : ItemData {
 
     public void RemoveModifiers() {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
-
-        playerStats.strength.RemoveModifier(strength);
-        playerStats.agility.RemoveModifier(agility);
-        playerStats.intelligent.RemoveModifier(intelligence);
-        playerStats.vitality.RemoveModifier(vitality);
 
         playerStats.damage.RemoveModifier(damage);
         playerStats.critRate.RemoveModifier(critRate);
@@ -102,13 +86,7 @@ public class ItemDataEquipment : ItemData {
     public override string GetDescription() {
         sb.Length = 0;
         descriptionLength = 0;
-        
-        AddDescription(strength, "Strength");
-        AddDescription(agility, "Agility");
-        AddDescription(intelligence, "Intelligence");
-        AddDescription(vitality, "Vitality");
-
-        
+      
         AddDescription(health, "Health");
         AddDescription(armor, "Armor");
         AddDescription(evasion, "Evasion");
