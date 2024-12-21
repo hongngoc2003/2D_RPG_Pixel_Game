@@ -12,7 +12,7 @@ public class UISkillTooltip : MonoBehaviour
     public void ShowToolTip(string _skillDescription, string _skillName, int _skillCost) {
         skillName.text = _skillName;
         skillText.text = _skillDescription;
-        skillCost.text = "Cost: " + _skillCost;
+        skillCost.text = "$" + _skillCost;
         gameObject.SetActive(true);
     }
 

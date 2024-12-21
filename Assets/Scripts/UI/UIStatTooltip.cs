@@ -10,7 +10,6 @@ public class UIStatTooltip : UITooltip
     public void ShowStatTooltip(string _text) {
         description.text = _text;
         AdjustPosition();
-
         gameObject.SetActive(true);
     }
 

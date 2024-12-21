@@ -1,7 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class UISkillTreeSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISaveManager
@@ -9,10 +11,11 @@ public class UISkillTreeSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private UI ui;
     [SerializeField] private int skillPrice;
     [SerializeField] private string skillName;
-    [TextArea]
-    [SerializeField] private string skillDescription;
+    
+    private string skillDescription;
     [SerializeField] private Color lockedSkillColor;
 
+    [SerializeField] private LocalizedString localizedSkillDescription;
 
     public bool unlocked;
     private Image skillImage;
@@ -38,6 +41,18 @@ public class UISkillTreeSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
         if(unlocked) {
             skillImage.color = Color.white;
         }
+
+        localizedSkillDescription.StringChanged += UpdateLocalizedDescription;
+        UpdateLocalizedDescription(localizedSkillDescription.GetLocalizedString());
+    }
+
+    private void OnDestroy() {
+        // Hủy đăng ký sự kiện khi object bị phá hủy
+        localizedSkillDescription.StringChanged -= UpdateLocalizedDescription;
+    }
+
+    private void UpdateLocalizedDescription(string newDescription) {
+        skillDescription = newDescription;
     }
 
     public void UnlockSkillSlot() {

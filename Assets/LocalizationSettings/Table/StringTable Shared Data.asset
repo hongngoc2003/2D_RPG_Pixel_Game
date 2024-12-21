@@ -19,56 +19,124 @@ MonoBehaviour:
     m_Key: tryAgain
     m_Metadata:
       m_Items: []
-  - m_Id: 147605774336
-    m_Key: newGame
-    m_Metadata:
-      m_Items: []
-  - m_Id: 194655547121664
-    m_Key: hpBarSetting
-    m_Metadata:
-      m_Items: []
-  - m_Id: 251432456249344
-    m_Key: deadMsg
-    m_Metadata:
-      m_Items: []
-  - m_Id: 251587137986560
-    m_Key: language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 251690598883328
-    m_Key: character
-    m_Metadata:
-      m_Items: []
   - m_Id: 251824674004992
     m_Key: skillTree
-    m_Metadata:
-      m_Items: []
-  - m_Id: 251980110716928
-    m_Key: craft
     m_Metadata:
       m_Items: []
   - m_Id: 252078932713472
     m_Key: options
     m_Metadata:
       m_Items: []
-  - m_Id: 252176441892864
-    m_Key: continue
+  - m_Id: 257943702167552
+    m_Key: offStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147605774336
+    m_Key: newGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274854708076544
+    m_Key: healthDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274854066348032
+    m_Key: evasionDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274853487534080
+    m_Key: magicResDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274852757725184
+    m_Key: swordThrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274851826589696
+    m_Key: timeStop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274851226804224
+    m_Key: vulnerable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274793689341952
+    m_Key: swordSpin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274740908220416
+    m_Key: swordPierce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259571566075904
+    m_Key: magicRes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273940660183040
+    m_Key: lightningDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258999102300160
+    m_Key: lightning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251587137986560
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259721302728704
+    m_Key: inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273938399453184
+    m_Key: iceDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258924183642112
+    m_Key: ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194655547121664
+    m_Key: hpBarSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259280804339712
+    m_Key: health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273852080676864
+    m_Key: fireDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258727881826304
+    m_Key: fire
     m_Metadata:
       m_Items: []
   - m_Id: 252322357534720
     m_Key: exit
     m_Metadata:
       m_Items: []
-  - m_Id: 257943702167552
-    m_Key: offStat
+  - m_Id: 259452061966336
+    m_Key: evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259811694174208
+    m_Key: equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 263928034451456
+    m_Key: dmgDes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258217170788352
+    m_Key: dmg
     m_Metadata:
       m_Items: []
   - m_Id: 258105665216512
     m_Key: defStat
     m_Metadata:
       m_Items: []
-  - m_Id: 258217170788352
-    m_Key: dmg
+  - m_Id: 251432456249344
+    m_Key: deadMsg
     m_Metadata:
       m_Items: []
   - m_Id: 258316470935552
@@ -79,40 +147,108 @@ MonoBehaviour:
     m_Key: critPower
     m_Metadata:
       m_Items: []
-  - m_Id: 258727881826304
-    m_Key: fire
+  - m_Id: 273832702992384
+    m_Key: crDes
     m_Metadata:
       m_Items: []
-  - m_Id: 258924183642112
-    m_Key: ice
+  - m_Id: 251980110716928
+    m_Key: craft
     m_Metadata:
       m_Items: []
-  - m_Id: 258999102300160
-    m_Key: lightning
+  - m_Id: 273849190801408
+    m_Key: cpDes
     m_Metadata:
       m_Items: []
-  - m_Id: 259280804339712
-    m_Key: health
+  - m_Id: 252176441892864
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251690598883328
+    m_Key: character
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273941503238144
+    m_Key: armorDes
     m_Metadata:
       m_Items: []
   - m_Id: 259397372436480
     m_Key: armor
     m_Metadata:
       m_Items: []
-  - m_Id: 259452061966336
-    m_Key: evasion
+  - m_Id: 352838232137728
+    m_Key: swordBounce
     m_Metadata:
       m_Items: []
-  - m_Id: 259571566075904
-    m_Key: magicRes
+  - m_Id: 355657207078912
+    m_Key: aggresiveMirage
     m_Metadata:
       m_Items: []
-  - m_Id: 259721302728704
-    m_Key: inventory
+  - m_Id: 356777505677312
+    m_Key: blackhole
     m_Metadata:
       m_Items: []
-  - m_Id: 259811694174208
-    m_Key: equipment
+  - m_Id: 356855498760192
+    m_Key: crystalMirage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356858044702720
+    m_Key: crystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356858740957184
+    m_Key: mirageTele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358338885672960
+    m_Key: explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358339573538816
+    m_Key: dodge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358622055718912
+    m_Key: controlledDestruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358751961702400
+    m_Key: parryMirage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358915220791296
+    m_Key: parryRestore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358981838921728
+    m_Key: parry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361831121903616
+    m_Key: dashDoubleClone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361832833179648
+    m_Key: dashClone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361834485735424
+    m_Key: dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361835823718400
+    m_Key: multipleDestruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 362084818575360
+    m_Key: dodgeMirage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365530175070208
+    m_Key: timeMirage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366807898480640
+    m_Key: multipleMirage
     m_Metadata:
       m_Items: []
   m_Metadata:

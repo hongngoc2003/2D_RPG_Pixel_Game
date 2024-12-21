@@ -118,6 +118,205 @@ MonoBehaviour:
     m_Localized: Equipment
     m_Metadata:
       m_Items: []
+  - m_Id: 263928034451456
+    m_Localized: Physical dmg you do
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273832702992384
+    m_Localized: 'Chance to have critical attack
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273849190801408
+    m_Localized: 'Increase power of your critical attack
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273852080676864
+    m_Localized: 'Fire dmg you do
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273938399453184
+    m_Localized: 'Ice dmg you do
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273940660183040
+    m_Localized: 'Lightning dmg you do
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273941503238144
+    m_Localized: 'Decrease physical dmg you take
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274854708076544
+    m_Localized: 'Maximum health you have
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274854066348032
+    m_Localized: 'Your chance to avoid attack
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274853487534080
+    m_Localized: 'Decrease your magical dmg you take
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274852757725184
+    m_Localized: 'You can throw your sword to hit enemies
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274851826589696
+    m_Localized: 'Hitting enemy with ability will stop his life clock
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274851226804224
+    m_Localized: 'Stopped enemy takes more damage from all sources
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274793689341952
+    m_Localized: 'You can throw your sword to spin it at one place
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274740908220416
+    m_Localized: 'Sword now can pierce N enemies
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352838232137728
+    m_Localized: 'Sword now can bounce between N targets
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365530175070208
+    m_Localized: Your mirage can attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 355657207078912
+    m_Localized: 'Mirage has additional 80% dmg, can apply on-hit effect
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356777505677312
+    m_Localized: 'Create a blackhole that stops all enemies inside
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356855498760192
+    m_Localized: 'Instead of mirage you spawn crystal
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356858044702720
+    m_Localized: 'Leave a crystal behind
+
+      By clicking ability again, you can
+      return to crystal
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356858740957184
+    m_Localized: 'You leave your mirage instead of you when you tele '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358338885672960
+    m_Localized: 'Crystal can explode doing damage and knockback
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358339573538816
+    m_Localized: 'You have 10% chance to avoid incoming attack
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358622055718912
+    m_Localized: 'Crystal slowly moves toward enemies
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358751961702400
+    m_Localized: 'Successful parry will summon mirage that attacks enemies
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358915220791296
+    m_Localized: 'Successful parry will restore health
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358981838921728
+    m_Localized: 'You can parry enemies''s attacks
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361834485735424
+    m_Localized: 'You can dash to avoid attacks
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 362084818575360
+    m_Localized: 'You can summon time image on dodge
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361835823718400
+    m_Localized: 'You can spawn up to 3 crystals
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361832833179648
+    m_Localized: 'You leave mirror image behind
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361831121903616
+    m_Localized: 'You create mirror image on arrival
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366807898480640
+    m_Localized: "Mirage has 20% dmg, has chance to spawn another mirage\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

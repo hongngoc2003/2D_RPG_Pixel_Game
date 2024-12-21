@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
 
 public class UIStatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -12,9 +13,9 @@ public class UIStatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private StatType statType;
     [SerializeField] private TextMeshProUGUI statValueText;
     [SerializeField] private TextMeshProUGUI statNameText;
+    [SerializeField] private LocalizedString localizedStatDescription;
 
-    [TextArea]
-    [SerializeField] private string statDescription;
+    private string statDescription;
     private void OnValidate() {
         gameObject.name = "Stat - " + statName;
 
@@ -26,6 +27,17 @@ public class UIStatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         UpdateStatValueUI();
 
         ui = GetComponentInParent<UI>();
+        localizedStatDescription.StringChanged += UpdateLocalizedDescription;
+        UpdateLocalizedDescription(localizedStatDescription.GetLocalizedString());
+    }
+
+    private void OnDestroy() {
+        // Hủy đăng ký sự kiện khi object bị phá hủy
+        localizedStatDescription.StringChanged -= UpdateLocalizedDescription;
+    }
+
+    private void UpdateLocalizedDescription(string newDescription) {
+        statDescription = newDescription;
     }
 
     public void UpdateStatValueUI() {

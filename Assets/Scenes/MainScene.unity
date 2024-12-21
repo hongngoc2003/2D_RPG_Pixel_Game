@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &60315759
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_text: Skill tree
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &64191266
@@ -1451,7 +1451,18 @@ MonoBehaviour:
   statType: 8
   statValueText: {fileID: 72485229}
   statNameText: {fileID: 1021382367}
-  statDescription: Ice dmg you do
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273938399453184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &72485229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,10 +2156,10 @@ RectTransform:
   m_Father: {fileID: 943279700}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1050, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89811856
 MonoBehaviour:
@@ -2405,7 +2416,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2468,7 +2479,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &110212775
@@ -3409,7 +3420,18 @@ MonoBehaviour:
   statType: 9
   statValueText: {fileID: 183169584}
   statNameText: {fileID: 1689418563}
-  statDescription: Lightning dmg you do
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273940660183040
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &183169584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3838,14 +3860,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 1000
   skillName: Crystal
-  skillDescription: 'Leave a crystal behind.
-
-    By clicking abiltiy again ,you
-    can return to crystal'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 356858044702720
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &201371114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4371,7 +4401,18 @@ MonoBehaviour:
   statType: 6
   statValueText: {fileID: 247847555}
   statNameText: {fileID: 440961532}
-  statDescription: Increase power of your critical attack
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273849190801408
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &247847555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4632,10 +4673,10 @@ RectTransform:
   m_Father: {fileID: 390996986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257796752
 MonoBehaviour:
@@ -4876,8 +4917,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5501,8 +5542,8 @@ RectTransform:
   m_Father: {fileID: 1542174427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5578,14 +5619,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 2500
   skillName: Crystal Mirage
-  skillDescription: "Instead of mirage you spawn crystal.\n ( With all it\u2019s
-    qualities and modifers)"
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 356855498760192
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 1657382415}
   shouldBeUnlocked:
   - {fileID: 1397278829}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &320283075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12592,7 +12643,18 @@ MonoBehaviour:
   statType: 4
   statValueText: {fileID: 438243358}
   statNameText: {fileID: 976145414}
-  statDescription: Physical dmg you do
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 263928034451456
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &438243358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14349,11 +14411,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 500
   skillName: Sword Throw
-  skillDescription: You can throw your sword to hit enemies
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274852757725184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &536379854
 GameObject:
   m_ObjectHideFlags: 0
@@ -14923,17 +14996,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Parry Restore
-  skillDescription: 'You can parry enemies attacks
-
-    Sucessful parry will restore
-    health .
-
-'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358915220791296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 593403068}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &575182965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15143,7 +15222,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &581211343
@@ -15742,14 +15821,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 100
   skillName: Parry
-  skillDescription: 'You can parry enemies attacks
-
-    Sucsessful parry will stun
-    enemies'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358981838921728
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &593403069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16719,18 +16806,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Explosion
-  skillDescription: 'Leave a crystal behind.
-
-    By clicking abiltiy again ,you
-    can return to crystal.
-
-    Crystal can explode doing damage and knockback'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358338885672960
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 735110685}
   shouldBeUnlocked:
   - {fileID: 201371113}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &652621589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17069,7 +17162,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -111.242065, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &681941162
@@ -17794,12 +17887,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 1000
   skillName: Time Stop
-  skillDescription: Hitting enemy with ability , will stop his life clock
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274851826589696
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 527616773}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &728444408
 GameObject:
   m_ObjectHideFlags: 0
@@ -17834,7 +17938,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18038,18 +18142,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Mirage Tele
-  skillDescription: 'Leave a crystal behind.
-
-    By clicking abiltiy again ,you
-    can return to crystal.
-
-    You leave mirage instead of you'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 356858740957184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 652621588}
   shouldBeUnlocked:
   - {fileID: 201371113}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &735110686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18626,7 +18736,18 @@ MonoBehaviour:
   statType: 1
   statValueText: {fileID: 776737286}
   statNameText: {fileID: 789364092}
-  statDescription: Decrease physical dmg you take
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273941503238144
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &776737286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19012,7 +19133,18 @@ MonoBehaviour:
   statType: 7
   statValueText: {fileID: 778829071}
   statNameText: {fileID: 1934430932}
-  statDescription: Fire dmg you do
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273852080676864
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &778829071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19150,8 +19282,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sword Throw
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19655,7 +19787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &807863849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19735,7 +19867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &807864635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21218,17 +21350,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 5000
   skillName: Parry Mirage
-  skillDescription: 'You can parry enemies attacks
-
-    Sucessful parry will restore
-    health .
-
-    Sucessful parry will summone mirage image that attacks enemies'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358751961702400
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 575182964}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &897494059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21345,13 +21483,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 300
   skillName: Time Mirage
-  skillDescription: 'Your mirage can attack
-
-    Your mirage has 30% of your attack'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 365530175070208
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &900029860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21718,14 +21865,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 2000
   skillName: Vulnerability
-  skillDescription: 'Stopped enemy takes more damage from all sources
-
-'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274851226804224
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 712554652}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &903015619
 GameObject:
   m_ObjectHideFlags: 0
@@ -22903,7 +23059,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -23371,8 +23527,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Increase damage and crit power
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23678,17 +23834,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Sword Spin
-  skillDescription: 'You can throw your sword to spin it at one place.
-
-    Turns
-    your sword into a spinning saw that can trigger on hit effects'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274793689341952
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 1403133366}
   - {fileID: 1579487307}
   shouldBeUnlocked:
   - {fileID: 527616773}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1017618244
 GameObject:
   m_ObjectHideFlags: 0
@@ -23877,12 +24041,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 5000
   skillName: Blackhole
-  skillDescription: Create a blackhole that stop all enemies inside
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 356777505677312
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 900029859}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1019282531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24000,10 +24175,10 @@ RectTransform:
   m_Father: {fileID: 390996986}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1350, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021221904
 MonoBehaviour:
@@ -24821,15 +24996,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 6000
   skillName: Dodge Mirage
-  skillDescription: 'You have 10% chance to avoid attack.
-
-    You can summon time
-    image on dodge'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 362084818575360
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 1724460088}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1066289997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29899,10 +30082,10 @@ RectTransform:
   m_Father: {fileID: 943279700}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1350, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220983772
 MonoBehaviour:
@@ -30168,10 +30351,10 @@ RectTransform:
   m_Father: {fileID: 390996986}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260763529
 MonoBehaviour:
@@ -31029,7 +31212,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1312706574
@@ -32249,15 +32432,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 1000
   skillName: Aggresive Mirage
-  skillDescription: 'Your mirage has additional 80% of your attack
-
-    You mirage
-    can apply on hit effect'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 355657207078912
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 900029859}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1397278830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32631,17 +32822,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Sword Pierce
-  skillDescription: 'You can throw your sword to hit enemies.
-
-    Sword now can
-    pierce N enemies'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274740908220416
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 1014086487}
   - {fileID: 1579487307}
   shouldBeUnlocked:
   - {fileID: 527616773}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1408046175
 GameObject:
   m_ObjectHideFlags: 0
@@ -32790,11 +32989,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 100
   skillName: Dash
-  skillDescription: You can dash to avoid attacks
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 361834485735424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1420474295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33981,8 +34191,8 @@ RectTransform:
   m_Father: {fileID: 641180217}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -34151,7 +34361,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1508174156
@@ -39698,17 +39908,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 3000
   skillName: Sword Bounce
-  skillDescription: 'You can throw your sword to hit enemies.
-
-    Sword now can
-    bounce between N targets'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 352838232137728
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 1014086487}
   - {fileID: 1403133366}
   shouldBeUnlocked:
   - {fileID: 527616773}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1583891176
 GameObject:
   m_ObjectHideFlags: 0
@@ -42002,20 +42220,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 2500
   skillName: Multiple Mirage
-  skillDescription: '
-
-    Your mirage has only 20% of your attack
-
-    Your mirage
-    can apply on hit effect.
-
-    You mirage has chance to spawn another mirage'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 366807898480640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked:
   - {fileID: 320283074}
   shouldBeUnlocked:
   - {fileID: 1397278829}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1657382416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42356,7 +42578,18 @@ MonoBehaviour:
   statType: 0
   statValueText: {fileID: 1665498537}
   statNameText: {fileID: 1778658560}
-  statDescription: Maximum health you have
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274854708076544
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1665498537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47633,7 +47866,18 @@ MonoBehaviour:
   statType: 5
   statValueText: {fileID: 1693949500}
   statNameText: {fileID: 352682506}
-  statDescription: Chance to have critical attack
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 273832702992384
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1693949500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48138,7 +48382,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1700874039
@@ -48352,10 +48596,10 @@ RectTransform:
   m_Father: {fileID: 943279700}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 450, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714094444
 MonoBehaviour:
@@ -48591,10 +48835,10 @@ RectTransform:
   m_Father: {fileID: 943279700}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719080821
 MonoBehaviour:
@@ -48775,11 +49019,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 400
   skillName: Dodge
-  skillDescription: You have 10% chance to avoid incomn attack
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358339573538816
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1724460089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49494,17 +49749,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 2000
   skillName: Dash Double Clone
-  skillDescription: 'You can dash to avoid attacks.
-
-    You leave mirror image behind
-
-    You
-    create mirror image on arival.'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 361831121903616
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 2074968452}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1762118905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49922,7 +50183,7 @@ MonoBehaviour:
   m_text: Craft
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -49985,7 +50246,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1812217787
@@ -50569,7 +50830,18 @@ MonoBehaviour:
   statType: 2
   statValueText: {fileID: 1852634255}
   statNameText: {fileID: 1164984213}
-  statDescription: Your chance to avoid attack
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274854066348032
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1852634255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50721,13 +50993,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 10000
   skillName: Multiple Destruction
-  skillDescription: "Leave a crystal behind.\nYou can no longer return to crystal\nCrystal
-    slowly move\u2019s toward  enemies.\nYou can spawn up to 3 crystal ."
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 361835823718400
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 2028359347}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1865396974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50845,10 +51127,10 @@ RectTransform:
   m_Father: {fileID: 390996986}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867305251
 MonoBehaviour:
@@ -51802,7 +52084,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -51865,7 +52147,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1913900038
@@ -53015,7 +53297,18 @@ MonoBehaviour:
   statType: 3
   statValueText: {fileID: 1985934326}
   statNameText: {fileID: 1032816080}
-  statDescription: Decrease your magical dmg you take
+  localizedStatDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 274853487534080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1985934326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53611,13 +53904,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 5000
   skillName: Controlled Destruction
-  skillDescription: "Leave a crystal behind.\nYou can no longer return to crystal.\nCrystal
-    slowly move\u2019s toward  enemies"
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 358622055718912
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 652621588}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2028359348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54069,8 +54372,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 2000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
-  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
+  m_sharedMaterial: {fileID: 4622379950924309099, guid: 54e6bf956ac3de94b93ec4a737965778, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -54564,14 +54867,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrice: 500
   skillName: Dash Clone
-  skillDescription: 'You can dash to avoid attacks.
-
-    You leave mirror image behind'
   lockedSkillColor: {r: 0.3490566, g: 0.31744394, b: 0.31744394, a: 1}
+  localizedSkillDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 361832833179648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   unlocked: 0
   shouldBeLocked: []
   shouldBeUnlocked:
   - {fileID: 1420474294}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2074968453
 MonoBehaviour:
   m_ObjectHideFlags: 0
