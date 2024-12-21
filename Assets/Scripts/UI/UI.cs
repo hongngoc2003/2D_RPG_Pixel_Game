@@ -124,4 +124,9 @@ public class UI : MonoBehaviour, ISaveManager {
             _data.volumeSettings.Add(item.parameter, item.slider.value);
         }
     }
+
+    public void ExitUI(GameObject _ui) {
+        _ui.SetActive(false);
+        GameManager.instance.PauseGame(false);
+    }
 }

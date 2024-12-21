@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_vi
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: vi
+  m_SharedData: {fileID: 11400000, guid: 17b31b35de0cbfc42ad875dc5b93f52c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 147605774336
+    m_Localized: "GAME M\u1EDAI\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185467030822912
+    m_Localized: "TH\u1EEC L\u1EA0I"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194655547121664
+    m_Localized: "HI\u1EC6N THANH M\xC1U TR\xCAN NH\xC2N V\u1EACT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251432456249344
+    m_Localized: "B\u1EA0N \u0110\xC3 CH\u1EBET"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251587137986560
+    m_Localized: "NG\xD4N NG\u1EEE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251690598883328
+    m_Localized: "Nh\xE2n v\u1EADt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251824674004992
+    m_Localized: "K\u1EF9 n\u0103ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251980110716928
+    m_Localized: "Ch\u1EBF t\u1EA1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252078932713472
+    m_Localized: "C\xE0i \u0111\u1EB7t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252176441892864
+    m_Localized: "TI\u1EBEP T\u1EE4C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252322357534720
+    m_Localized: "THO\xC1T"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257943702167552
+    m_Localized: "Ch\u1EC9 s\u1ED1 t\u1EA5n c\xF4ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258105665216512
+    m_Localized: "Ch\u1EC9 s\u1ED1 ph\xF2ng th\u1EE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258217170788352
+    m_Localized: "S\xE1t th\u01B0\u01A1ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258316470935552
+    m_Localized: "T\u1EF7 l\u1EC7 BK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258621958873088
+    m_Localized: "S\xE1t th\u01B0\u01A1ng BK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258727881826304
+    m_Localized: "ST l\u1EEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258924183642112
+    m_Localized: "ST b\u0103ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258999102300160
+    m_Localized: "ST l\xF4i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259280804339712
+    m_Localized: "M\xE1u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259397372436480
+    m_Localized: "Gi\xE1p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259452061966336
+    m_Localized: "N\xE9 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259571566075904
+    m_Localized: "Kh\xE1ng ph\xE9p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259721302728704
+    m_Localized: "Kho \u0111\u1ED3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259811694174208
+    m_Localized: "Trang b\u1ECB"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

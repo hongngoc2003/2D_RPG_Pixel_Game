@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTable
+  m_TableCollectionNameGuidString: 17b31b35de0cbfc42ad875dc5b93f52c
+  m_Entries:
+  - m_Id: 185467030822912
+    m_Key: tryAgain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147605774336
+    m_Key: newGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194655547121664
+    m_Key: hpBarSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251432456249344
+    m_Key: deadMsg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251587137986560
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251690598883328
+    m_Key: character
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251824674004992
+    m_Key: skillTree
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251980110716928
+    m_Key: craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252078932713472
+    m_Key: options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252176441892864
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252322357534720
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257943702167552
+    m_Key: offStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258105665216512
+    m_Key: defStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258217170788352
+    m_Key: dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258316470935552
+    m_Key: critRate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258621958873088
+    m_Key: critPower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258727881826304
+    m_Key: fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258924183642112
+    m_Key: ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258999102300160
+    m_Key: lightning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259280804339712
+    m_Key: health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259397372436480
+    m_Key: armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259452061966336
+    m_Key: evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259571566075904
+    m_Key: magicRes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259721302728704
+    m_Key: inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259811694174208
+    m_Key: equipment
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4877214145344700704
+  references:
+    version: 2
+    RefIds:
+    - rid: 4877214145344700704
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1734712713112

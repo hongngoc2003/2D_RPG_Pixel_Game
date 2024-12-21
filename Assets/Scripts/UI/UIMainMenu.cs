@@ -25,6 +25,10 @@ public class UIMainMenu : MonoBehaviour
 
     }
 
+    public void Settings() {
+        
+    }
+
     IEnumerator LoadSceneWithFadeEffect(float _delay) {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(_delay);

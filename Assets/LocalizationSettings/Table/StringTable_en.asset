@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 17b31b35de0cbfc42ad875dc5b93f52c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 147605774336
+    m_Localized: NEW GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185467030822912
+    m_Localized: TRY AGAIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194655547121664
+    m_Localized: SHOW HP BAR ABOVE PLAYER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251432456249344
+    m_Localized: YOU DIED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251587137986560
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251690598883328
+    m_Localized: Character
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251824674004992
+    m_Localized: Skill tree
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251980110716928
+    m_Localized: Craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252078932713472
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252176441892864
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252322357534720
+    m_Localized: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257943702167552
+    m_Localized: Offensive stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258105665216512
+    m_Localized: Defensive stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258217170788352
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258316470935552
+    m_Localized: Crit rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258621958873088
+    m_Localized: Crit power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258727881826304
+    m_Localized: Fire dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258924183642112
+    m_Localized: Ice dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258999102300160
+    m_Localized: Lightning dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259280804339712
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259397372436480
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259452061966336
+    m_Localized: Evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259571566075904
+    m_Localized: Magic res
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259721302728704
+    m_Localized: Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 259811694174208
+    m_Localized: Equipment
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
