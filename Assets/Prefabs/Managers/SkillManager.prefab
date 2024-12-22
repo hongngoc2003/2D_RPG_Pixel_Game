@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2000902612890080624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000902612890080631}
+  - component: {fileID: 2000902612890080630}
+  - component: {fileID: 2000902612890080625}
+  - component: {fileID: 2000902612890080628}
+  - component: {fileID: 2000902612890080634}
+  - component: {fileID: 2000902612890080629}
+  - component: {fileID: 2000902612890080635}
+  - component: {fileID: 2000902612890080632}
+  - component: {fileID: 2000902612890080633}
+  m_Layer: 0
+  m_Name: SkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2000902612890080631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.3528357, y: -2.1734133, z: 0.7179388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000902612890080630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95475f4c587e6904fb97de6c2740c0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2000902612890080625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf2f140a2486324e8d570f3d5561543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 2
+  coolDownTimer: 0
+  dashUnlockedButton: {fileID: 0}
+  cloneOnDashUnlockedButton: {fileID: 0}
+  cloneOnArrivalUnlockedButton: {fileID: 0}
+--- !u!114 &2000902612890080628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b20b357dde6eb408be0a414186fc08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 2
+  coolDownTimer: 0
+  attackMultiplier: 0
+  clonePrefab: {fileID: 3236739661540353665, guid: 0da2d5aedc4c96748a92a016de055708, type: 3}
+  cloneDuration: 1.5
+  cloneAttackUnlockButton: {fileID: 0}
+  canAttack: 0
+  cloneAttackMultiplier: 0.3
+  aggresiveCloneUnlockButton: {fileID: 0}
+  aggresiveCloneAttackMultiplier: 0.8
+  multipleUnlockButton: {fileID: 0}
+  multipleCloneAttackMultiplier: 0.3
+  canDuplicateClone: 0
+  chanceToDuplicate: 99
+  cloneCrystalUnlockButton: {fileID: 0}
+  cloneCrystal: 0
+--- !u!114 &2000902612890080634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cca7867c09a3d6429266575a441e99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 60
+  coolDownTimer: 0
+  blackholeUnlockButton: {fileID: 0}
+  blackHolePrefab: {fileID: 1486728744174530325, guid: 2fcfc5afaefd61f4b926c2c844db996e, type: 3}
+  maxSize: 15
+  shrinkSpeed: 6
+  growSpeed: 3
+  amountOfAttack: 15
+  attackCooldown: 0.35
+  blackHoleDuration: 3
+--- !u!114 &2000902612890080629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c953b049e742945bd07317b644ed8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 5
+  coolDownTimer: 0
+  swordType: 1
+  bounceUnlockButton: {fileID: 0}
+  amountBounce: 4
+  bounceGravity: 5
+  bounceSpeed: 20
+  pierceUnlockButton: {fileID: 0}
+  amountPierce: 2
+  pierceGravity: 1
+  spinUnlockButton: {fileID: 0}
+  hitCoolDown: 0.35
+  maxTravelDistance: 7
+  spinDuration: 2
+  spinGravity: 1
+  swordUnlockButton: {fileID: 0}
+  swordPrefab: {fileID: 5164343033584871541, guid: 4980b690604f2fc4f90f4260a6bace7a, type: 3}
+  launchForce: {x: 30, y: 30}
+  swordGravity: 4
+  freezeTimeDuration: 1.5
+  returnSpeed: 15
+  numberOfDots: 20
+  spaceBetwwenDots: 0.07
+  dotPrefab: {fileID: 181027797714261832, guid: 6979a1472d9efa84584bd8ab7af6a765, type: 3}
+  dotParent: {fileID: 0}
+  timeStopUnlockButton: {fileID: 0}
+  vulnerableUnlockButton: {fileID: 0}
+--- !u!114 &2000902612890080635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9507b9d6b9b2ca4eb9172f22ca84374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 3
+  coolDownTimer: 0
+  crystalDuration: 1.5
+  crystalPrefab: {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  unlockCrystalButton: {fileID: 0}
+  unlockCrystalTurnIntoCloneButton: {fileID: 0}
+  crystalTurnIntoClone: 0
+  unlockExplosiveButton: {fileID: 0}
+  canExplode: 0
+  unlockMovingCrystalButton: {fileID: 0}
+  canMoveToEnemy: 0
+  moveSpeed: 5
+  unlockMultiCrystalButton: {fileID: 0}
+  canUseMultiStack: 0
+  amountOfStack: 3
+  multiStackCooldown: 4
+  useTimeWindow: 2.5
+  crystalLeft:
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+  - {fileID: 2377356312315965344, guid: da7099ccde3e7e7478bc219a94892a69, type: 3}
+--- !u!114 &2000902612890080632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0134c3d423526440b2886ed1efcc440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 1
+  coolDownTimer: 0
+  parryUnlockButton: {fileID: 0}
+  parryRestoreUnlockButton: {fileID: 0}
+  restoreHealthPercent: 0.387
+  parryWithMirageUnlockButton: {fileID: 0}
+--- !u!114 &2000902612890080633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000902612890080624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2310d6ffcf9e3684f83cd18d24bec787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  coolDownTimer: 0
+  unlockDodgeButton: {fileID: 0}
+  dodgeUnlocked: 0
+  evasionAmount: 10
+  unlockMirageDodgeButton: {fileID: 0}
+  dodgeMirageUnlocked: 0
