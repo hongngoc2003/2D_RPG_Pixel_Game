@@ -20,8 +20,11 @@ public class GameData {
 
     public int localeId;
 
+    public string lastScene;
+
     public GameData() {
         localeId = 0;
+        lastScene = "MainMenu";
 
         this.lostCurrencyX = 0;
         this.lostCurrencyY = 0;

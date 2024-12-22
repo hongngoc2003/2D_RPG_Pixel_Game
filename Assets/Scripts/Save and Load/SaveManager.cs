@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -46,6 +46,15 @@ public class SaveManager : MonoBehaviour {
         foreach (ISaveManager saveManager in saveManagers) {
             saveManager.LoadData(gameData);
         }
+    }
+
+    public GameData LoadGameData() {
+        gameData = dataHandler.Load(); // Tải dữ liệu từ file
+        if (this.gameData == null) {
+            Debug.Log("No saved data found");
+            NewGame(); // Nếu không có dữ liệu cũ, tạo dữ liệu mới
+        }
+        return gameData;  // Trả về gameData đã tải
     }
 
     public void SaveGame() {

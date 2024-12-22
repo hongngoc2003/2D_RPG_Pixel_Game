@@ -6,20 +6,26 @@ using UnityEngine.SceneManagement;
 public class UIMainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject continueButton;
-    [SerializeField] private string sceneName = "MainScene";
     [SerializeField] UIFadeScreen fadeScreen;
+    [SerializeField] private GameObject chooseLevel;
+    private GameData data;
     private void Start() {
         if(SaveManager.instance.HasNoSaveData())
             continueButton.SetActive(false);
+        data = SaveManager.instance.LoadGameData();
     }
     public void ContinueGame() {
-        StartCoroutine(LoadSceneWithFadeEffect(1.5f));
+        StartCoroutine(LoadSceneWithFadeEffect(1.5f, data.lastScene));
     }
 
-    public void NewGame() {
+    public void NewGame() {    
         SaveManager.instance.DeleteSaveData();
-        StartCoroutine(LoadSceneWithFadeEffect(1.5f));
+        chooseLevel.SetActive(true);
+        //StartCoroutine(LoadSceneWithFadeEffect(1.5f, sceneName));
     }
+
+    public void ChooseCastle() => SceneManager.LoadScene("Castle");
+    public void ChooseForest() => SceneManager.LoadScene("Forest");
 
     public void ExitGame() {
 
@@ -29,9 +35,9 @@ public class UIMainMenu : MonoBehaviour
         
     }
 
-    IEnumerator LoadSceneWithFadeEffect(float _delay) {
+    IEnumerator LoadSceneWithFadeEffect(float _delay,string _sceneName) {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(_delay);
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(_sceneName);
     }
 }
