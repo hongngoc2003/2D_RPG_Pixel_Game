@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SaveManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class SaveManager : MonoBehaviour {
     [SerializeField] private string fileName;
 
     private GameData gameData;
+
     private List<ISaveManager> saveManagers;
     private FileDataHandler dataHandler;
 
@@ -62,6 +64,12 @@ public class SaveManager : MonoBehaviour {
             saveManager.SaveData(ref gameData);
         }
 
+        dataHandler.Save(gameData);
+    }
+
+    public void SaveSettings() {
+        LocaleSelector.instance.SaveData(ref gameData);
+        AudioManager.instance.SaveData(ref gameData);
         dataHandler.Save(gameData);
     }
 

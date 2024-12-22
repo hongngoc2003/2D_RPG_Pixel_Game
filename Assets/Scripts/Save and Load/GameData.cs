@@ -1,8 +1,9 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.Localization.Settings;
 
-public class GameData {
+[System.Serializable]
+public class PlayerData {
     public int currency;
 
     public SerializableDictionary<string, bool> skillTree;
@@ -16,21 +17,9 @@ public class GameData {
     public float lostCurrencyY;
     public int lostCurrencyAmount;
 
-    public SerializableDictionary<string, float> volumeSettings;
-
-    public int localeId;
-
-    public string lastScene;
-
-    public GameData() {
-        localeId = 0;
-        lastScene = "MainMenu";
-
-        this.lostCurrencyX = 0;
-        this.lostCurrencyY = 0;
-        this.lostCurrencyAmount = 0;
-
+    public PlayerData() {
         this.currency = 0;
+
         skillTree = new SerializableDictionary<string, bool>();
         inventory = new SerializableDictionary<string, int>();
         equipmentId = new List<string>();
@@ -38,6 +27,32 @@ public class GameData {
         checkpoints = new SerializableDictionary<string, bool>();
         closestCheckpointId = string.Empty;
 
+        lostCurrencyX = 0;
+        lostCurrencyY = 0;
+        lostCurrencyAmount = 0;
+    }
+}
+
+[System.Serializable]
+public class SettingsData {
+    public SerializableDictionary<string, float> volumeSettings;
+    public int localeId;
+
+    public SettingsData() {
+        localeId = 0; // Mặc định là ngôn ngữ đầu tiên trong Localization
         volumeSettings = new SerializableDictionary<string, float>();
+    }
+}
+
+[System.Serializable]
+public class GameData {
+    public string lastScene;
+    public PlayerData playerData;
+    public SettingsData settingsData;
+
+    public GameData() {
+        lastScene = "MainMenu";
+        playerData = new PlayerData();
+        settingsData = new SettingsData();
     }
 }

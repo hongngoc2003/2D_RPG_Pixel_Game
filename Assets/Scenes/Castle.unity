@@ -49603,9 +49603,6 @@ MonoBehaviour:
   itemTooltip: {fileID: 815544236}
   statTooltip: {fileID: 661994534}
   craftWindow: {fileID: 478483648}
-  volumeSettings:
-  - {fileID: 1898495760}
-  - {fileID: 370907844}
 --- !u!1 &2103338286
 GameObject:
   m_ObjectHideFlags: 0
@@ -50308,6 +50305,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4426518960609807857, guid: 079e4cd8454b69d489d56208a1dab4b9, type: 3}
+      propertyPath: volumeSettings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426518960609807857, guid: 079e4cd8454b69d489d56208a1dab4b9, type: 3}
+      propertyPath: volumeSettings.Array.data[0]
+      value: 
+      objectReference: {fileID: 1898495760}
+    - target: {fileID: 4426518960609807857, guid: 079e4cd8454b69d489d56208a1dab4b9, type: 3}
+      propertyPath: volumeSettings.Array.data[1]
+      value: 
+      objectReference: {fileID: 370907844}
     - target: {fileID: 4426518960609807858, guid: 079e4cd8454b69d489d56208a1dab4b9, type: 3}
       propertyPath: m_Name
       value: AudioManager

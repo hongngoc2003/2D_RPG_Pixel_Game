@@ -25,13 +25,13 @@ public class LocaleSelector : MonoBehaviour, ISaveManager
     }
 
     public void LoadData(GameData _data) {
-        if (_data != null && _data.localeId >= 0) {
-            ChangeLocale(_data.localeId);
+        if (_data != null && _data.settingsData.localeId >= 0) {
+            ChangeLocale(_data.settingsData.localeId);
         }
     }
 
     public void SaveData(ref GameData _data) {
-        _data.localeId = localeId;
+        _data.settingsData.localeId = localeId;
     }
 
     IEnumerator SetLocale(int _localeID) {

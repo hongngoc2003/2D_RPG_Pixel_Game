@@ -1,8 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour, ISaveManager {
     public static AudioManager instance;
 
     [SerializeField] private float sfxMinDistance;
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource[] bgm;
     public bool playBgm;
     private int bgmIndex;
+
+    [SerializeField] private UIVolumeSlider[] volumeSettings;
 
     private bool canPlaySFX;
 
@@ -79,4 +82,21 @@ public class AudioManager : MonoBehaviour {
     }
 
     private void AllowSFX() => canPlaySFX = true;
+
+    public void LoadData(GameData _data) {
+        foreach (KeyValuePair<string, float> pair in _data.settingsData.volumeSettings) {
+            foreach (UIVolumeSlider item in volumeSettings) {
+                if (item.parameter == pair.Key)
+                    item.LoadSlider(pair.Value);
+            }
+        }
+    }
+
+    public void SaveData(ref GameData _data) {
+        _data.settingsData.volumeSettings.Clear();
+
+        foreach (UIVolumeSlider item in volumeSettings) {
+            _data.settingsData.volumeSettings.Add(item.parameter, item.slider.value);
+        }
+    }
 }

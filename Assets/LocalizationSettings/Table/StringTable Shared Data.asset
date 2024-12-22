@@ -261,6 +261,10 @@ MonoBehaviour:
     m_Key: castleLevel
     m_Metadata:
       m_Items: []
+  - m_Id: 671726836736000
+    m_Key: settingsLabel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

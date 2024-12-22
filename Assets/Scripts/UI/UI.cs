@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UI : MonoBehaviour, ISaveManager {
+public class UI : MonoBehaviour{
 
     [Header("End screen")]
     [SerializeField] private UIFadeScreen fadeScreen;
@@ -22,8 +22,6 @@ public class UI : MonoBehaviour, ISaveManager {
     public UIStatTooltip statTooltip;
 
     public UICraftWindow craftWindow;
-
-    [SerializeField] private UIVolumeSlider[] volumeSettings; 
 
     private void Awake() {
         SwitchTo(skillTreeUI); //can assign event ben uiskilltreeslot truoc khi assign event o skill script
@@ -104,26 +102,6 @@ public class UI : MonoBehaviour, ISaveManager {
     }
 
     public void RestartGameButton() => GameManager.instance.RestartScene();
-
-    public void LoadData(GameData _data) {
-        foreach (KeyValuePair<string, float> pair in _data.volumeSettings)
-        {
-            foreach (UIVolumeSlider item in volumeSettings)
-            {
-                if (item.parameter == pair.Key)
-                    item.LoadSlider(pair.Value);
-            }
-        }
-    }
-
-    public void SaveData(ref GameData _data) {
-        _data.volumeSettings.Clear();
-
-        foreach (UIVolumeSlider item in volumeSettings)
-        {
-            _data.volumeSettings.Add(item.parameter, item.slider.value);
-        }
-    }
 
     public void ExitUI(GameObject _ui) {
         _ui.SetActive(false);

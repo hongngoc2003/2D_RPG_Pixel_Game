@@ -25,10 +25,10 @@ public class PlayerManager : MonoBehaviour ,ISaveManager {
     public int GetCurrency() => currency;
 
     public void LoadData(GameData _data) {
-        this.currency = _data.currency;
+        this.currency = _data.playerData.currency;
     }
 
     public void SaveData(ref GameData _data) {
-        _data.currency = this.currency;
+        _data.playerData.currency = this.currency;
     }
 }

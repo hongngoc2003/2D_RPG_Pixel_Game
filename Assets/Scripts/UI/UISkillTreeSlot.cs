@@ -88,17 +88,17 @@ public class UISkillTreeSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
 
     public void LoadData(GameData _data) {
-        if(_data.skillTree.TryGetValue(skillName, out bool value)) {
+        if(_data.playerData.skillTree.TryGetValue(skillName, out bool value)) {
             unlocked = value;
         }
     }
 
     public void SaveData(ref GameData _data) {
-        if(_data.skillTree.TryGetValue(skillName, out bool value)) {
-            _data.skillTree.Remove(skillName);
-            _data.skillTree.Add(skillName, unlocked);
+        if(_data.playerData.skillTree.TryGetValue(skillName, out bool value)) {
+            _data.playerData.skillTree.Remove(skillName);
+            _data.playerData.skillTree.Add(skillName, unlocked);
         }
         else
-            _data.skillTree.Add(skillName, unlocked);
+            _data.playerData.skillTree.Add(skillName, unlocked);
     }
 }

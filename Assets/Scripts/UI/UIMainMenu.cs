@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class UIMainMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] UIFadeScreen fadeScreen;
     [SerializeField] private GameObject chooseLevel;
     [SerializeField] private GameObject settingsUI;
+    private SettingsData currentSetting;
     private GameData data;
     private void Start() {
         if(SaveManager.instance.HasNoSaveData())
@@ -16,12 +18,15 @@ public class UIMainMenu : MonoBehaviour
         data = SaveManager.instance.LoadGameData();
     }
     public void ContinueGame() {
-        StartCoroutine(LoadSceneWithFadeEffect(1.5f, data.lastScene));
+        StartCoroutine(LoadSceneWithFadeEffect(1.5f, data.lastScene) );
     }
 
-    public void NewGame() {    
-        SaveManager.instance.DeleteSaveData();
+    public void NewGame() {
         chooseLevel.SetActive(true);
+        SaveManager.instance.SaveSettings();
+        currentSetting = data.settingsData;
+        SaveManager.instance.NewGame();
+        data.settingsData = currentSetting;
         //StartCoroutine(LoadSceneWithFadeEffect(1.5f, sceneName));
     }
 

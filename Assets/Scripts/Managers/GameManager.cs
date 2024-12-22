@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
 
     private void LoadCheckpoint(GameData _data) {
-        foreach (KeyValuePair<string, bool> pair in _data.checkpoints) {
+        foreach (KeyValuePair<string, bool> pair in _data.playerData.checkpoints) {
             foreach (Checkpoint checkpoint in checkpoints) {
                 if (checkpoint.checkpointId == pair.Key && pair.Value == true)
                     checkpoint.ActivateCheckpoint();
@@ -52,9 +52,9 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
 
     private void LoadLostCurrency(GameData _data) {
-        lostCurrencyAmount = _data.lostCurrencyAmount;
-        lostCurrencyX = _data.lostCurrencyX;
-        lostCurrencyY = _data.lostCurrencyY;
+        lostCurrencyAmount = _data.playerData.lostCurrencyAmount;
+        lostCurrencyX = _data.playerData.lostCurrencyX;
+        lostCurrencyY = _data.playerData.lostCurrencyY;
 
         if(lostCurrencyAmount > 0) {
             GameObject newLastFall = Instantiate(lastFallPrefab, new Vector3(lostCurrencyX, lostCurrencyY), Quaternion.identity);
@@ -73,10 +73,10 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
 
     private void PlacePlayerAtClosestCheckpoint(GameData _data) {
-        if (_data.closestCheckpointId == null)
+        if (_data.playerData.closestCheckpointId == null)
             return;
 
-        closestCheckpointId = _data.closestCheckpointId;
+        closestCheckpointId = _data.playerData.closestCheckpointId;
 
         foreach (Checkpoint checkpoint in checkpoints) {
             if (closestCheckpointId == checkpoint.checkpointId)
@@ -85,18 +85,18 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
 
     public void SaveData(ref GameData _data) {
-        _data.lostCurrencyAmount = lostCurrencyAmount;
-        _data.lostCurrencyX = PlayerManager.instance.player.transform.position.x;
-        _data.lostCurrencyY = PlayerManager.instance.player.transform.position.y;
+        _data.playerData.lostCurrencyAmount = lostCurrencyAmount;
+        _data.playerData.lostCurrencyX = PlayerManager.instance.player.transform.position.x;
+        _data.playerData.lostCurrencyY = PlayerManager.instance.player.transform.position.y;
 
         if(FindClosestCheckpoint() != null)
-            _data.closestCheckpointId = FindClosestCheckpoint().checkpointId;
+            _data.playerData.closestCheckpointId = FindClosestCheckpoint().checkpointId;
 
-        _data.checkpoints.Clear();
+        _data.playerData.checkpoints.Clear();
 
         foreach (Checkpoint checkpoint in checkpoints)
         {
-            _data.checkpoints.Add(checkpoint.checkpointId, checkpoint.activationStatus);
+            _data.playerData.checkpoints.Add(checkpoint.checkpointId, checkpoint.activationStatus);
         }
     }
 
