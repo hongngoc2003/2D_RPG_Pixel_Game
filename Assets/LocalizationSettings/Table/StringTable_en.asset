@@ -317,6 +317,14 @@ MonoBehaviour:
     m_Localized: "Mirage has 20% dmg, has chance to spawn another mirage\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 628013536206848
+    m_Localized: Dark Forest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628151948238848
+    m_Localized: Medieval Castle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
