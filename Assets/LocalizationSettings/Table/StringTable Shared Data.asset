@@ -265,6 +265,12 @@ MonoBehaviour:
     m_Key: settingsLabel
     m_Metadata:
       m_Items: []
+  - m_Id: 1104028649742336
+    m_Key: 'noSavefileNofi
+
+'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

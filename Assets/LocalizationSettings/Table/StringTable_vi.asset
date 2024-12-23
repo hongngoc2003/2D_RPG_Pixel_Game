@@ -288,6 +288,10 @@ MonoBehaviour:
     m_Localized: "C\xC0I \u0110\u1EB6T"
     m_Metadata:
       m_Items: []
+  - m_Id: 1104028649742336
+    m_Localized: "Kh\xF4ng t\xECm th\u1EA5y file save n\xE0o"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
