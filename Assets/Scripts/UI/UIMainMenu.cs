@@ -13,7 +13,6 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private GameObject chooseLevel;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject mainMenuUI;
-    private SettingsData currentSetting;
     private GameData data;
     private void Start() {     
         noSavefileNofi.gameObject.SetActive(false);
@@ -52,17 +51,11 @@ public class UIMainMenu : MonoBehaviour
     }
 
     public void ChooseCastle() {
-        SaveManager.instance.SaveSettings();
-        currentSetting = data.settingsData;
         SaveManager.instance.NewGame();
-        data.settingsData = currentSetting;
         SceneManager.LoadScene("Castle");  
     }
     public void ChooseForest() {
-        SaveManager.instance.SaveSettings();
-        currentSetting = data.settingsData;
         SaveManager.instance.NewGame();
-        data.settingsData = currentSetting;
         SceneManager.LoadScene("Forest");
     }
 

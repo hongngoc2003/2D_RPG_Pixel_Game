@@ -69,11 +69,6 @@ public class SaveManager : MonoBehaviour {
         dataHandler.Save(gameData);
     }
 
-    public void SaveSettings() {
-        LocaleSelector.instance.SaveData(ref gameData);
-        dataHandler.Save(gameData);
-    }
-
     private void OnApplicationQuit() {
         SaveGame();
     }

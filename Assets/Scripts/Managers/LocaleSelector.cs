@@ -1,18 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
-public class LocaleSelector : MonoBehaviour, ISaveManager
+public class LocaleSelector : MonoBehaviour
 {
     public static LocaleSelector instance;
 
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+            LoadLocale();
+        }
     }
 
     private bool active = false;
@@ -24,20 +27,16 @@ public class LocaleSelector : MonoBehaviour, ISaveManager
         localeId = _localeID;                               
     }
 
-    public void LoadData(GameData _data) {
-        if (_data != null && _data.settingsData.localeId >= 0) {
-            ChangeLocale(_data.settingsData.localeId);
-        }
-    }
-
-    public void SaveData(ref GameData _data) {
-        _data.settingsData.localeId = localeId;
-    }
-
     IEnumerator SetLocale(int _localeID) {
         active = true;
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
         active = false;
+        PlayerPrefs.SetInt("LocaleID", _localeID);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadLocale() {
+        PlayerPrefs.GetInt("LocaleID", 1);
     }
 }

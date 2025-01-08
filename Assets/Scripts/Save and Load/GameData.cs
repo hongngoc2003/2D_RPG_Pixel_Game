@@ -33,26 +33,14 @@ public class PlayerData {
     }
 }
 
-[System.Serializable]
-public class SettingsData {
-    public SerializableDictionary<string, float> volumeSettings;
-    public int localeId;
-
-    public SettingsData() {
-        localeId = 0; // Mặc định là ngôn ngữ đầu tiên trong Localization
-        volumeSettings = new SerializableDictionary<string, float>();
-    }
-}
 
 [System.Serializable]
 public class GameData {
     public string lastScene;
     public PlayerData playerData;
-    public SettingsData settingsData;
 
     public GameData() {
         lastScene = "MainMenu";
         playerData = new PlayerData();
-        settingsData = new SettingsData();
     }
 }
