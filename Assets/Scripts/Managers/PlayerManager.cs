@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerManager : MonoBehaviour ,ISaveManager {
     public static PlayerManager instance;
@@ -7,10 +7,12 @@ public class PlayerManager : MonoBehaviour ,ISaveManager {
 
 
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+        }
     }
     public bool HaveEnoughMoney(int _price) {
         if (_price > currency) {

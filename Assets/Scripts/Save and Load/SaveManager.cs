@@ -21,10 +21,12 @@ public class SaveManager : MonoBehaviour {
     }
 
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+        }
     }
     private void Start() {
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
@@ -69,7 +71,6 @@ public class SaveManager : MonoBehaviour {
 
     public void SaveSettings() {
         LocaleSelector.instance.SaveData(ref gameData);
-        AudioManager.instance.SaveData(ref gameData);
         dataHandler.Save(gameData);
     }
 

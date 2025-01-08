@@ -57,7 +57,11 @@ public class UI : MonoBehaviour{
         }
 
         if (_menu != null) {
-            AudioManager.instance.PlaySFX(7, null);
+            if (AudioManager.instance != null) {
+                AudioManager.instance.PlaySFX(7, null);
+            } else {
+                Debug.LogWarning("AudioManager instance is null.");
+            }
             _menu.SetActive(true);
         }
 

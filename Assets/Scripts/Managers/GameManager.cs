@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +18,13 @@ public class GameManager : MonoBehaviour, ISaveManager
     [SerializeField] private float lostCurrencyY;
 
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+        }
 
         checkpoints = FindObjectsOfType<Checkpoint>();
     }

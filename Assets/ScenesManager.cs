@@ -8,6 +8,15 @@ public class ScenesManager : MonoBehaviour, ISaveManager
 {
     public static ScenesManager instance;
 
+    private void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+        }
+    }
+
     public void SaveData(ref GameData _data) {
         string currentScene = SceneManager.GetActiveScene().name; // Lấy tên scene hiện tại
         _data.lastScene = currentScene; // Lưu vào GameData
@@ -21,13 +30,6 @@ public class ScenesManager : MonoBehaviour, ISaveManager
         //}
     }
 
-
-    private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
-    }
 
 
 }

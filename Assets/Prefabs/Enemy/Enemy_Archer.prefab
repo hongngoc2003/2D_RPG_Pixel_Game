@@ -501,18 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfb51309dfae34459e1cd89c380617f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 2
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligent:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
   maxHealth:
     baseValue: 1000
     modifiers: 
@@ -631,7 +619,7 @@ MonoBehaviour:
   idleTime: 2
   aggroDistance: 4
   attackDistance: 15
-  attackCooldown: 0.4
+  attackCooldown: 1
   lastTimeAttack: 0
   battleTime: 5
   arrowPrefab: {fileID: 4049150423421266488, guid: d53cd53b44785b34a8234a760c0c63aa, type: 3}

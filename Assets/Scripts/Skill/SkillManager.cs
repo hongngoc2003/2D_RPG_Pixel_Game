@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +13,12 @@ public class SkillManager : MonoBehaviour
     public ParrySkill parry { get; private set;}
     public DodgeSkill dodge { get; private set;}
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+        }
     }
     private void Start() {
         dash = GetComponent<DashSkill>();

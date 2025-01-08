@@ -1,9 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AudioManager : MonoBehaviour, ISaveManager {
+public class AudioManager : MonoBehaviour {
     public static AudioManager instance;
 
     [SerializeField] private float sfxMinDistance;
@@ -17,10 +17,13 @@ public class AudioManager : MonoBehaviour, ISaveManager {
     private bool canPlaySFX;
 
     private void Awake() {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
-            instance = this;
+        if (instance != null && instance != this) {
+            Destroy(gameObject); // Hủy object mới nếu đã có instance
+        } else {
+            instance = this; // Gán instance mới
+            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+            LoadAudioSettings();
+        }
 
         Invoke("AllowSFX", 1f);
     }
@@ -82,21 +85,32 @@ public class AudioManager : MonoBehaviour, ISaveManager {
     }
 
     private void AllowSFX() => canPlaySFX = true;
-
-    public void LoadData(GameData _data) {
-        foreach (KeyValuePair<string, float> pair in _data.settingsData.volumeSettings) {
-            foreach (UIVolumeSlider item in volumeSettings) {
-                if (item.parameter == pair.Key)
-                    item.LoadSlider(pair.Value);
-            }
+    public void SetBGMVolume(float volume) {
+        foreach (var bgmSource in bgm) {
+            bgmSource.volume = volume;
         }
+        PlayerPrefs.SetFloat("BGMVolume", volume); // Lưu vào PlayerPrefs
+        PlayerPrefs.Save();
     }
 
-    public void SaveData(ref GameData _data) {
-        _data.settingsData.volumeSettings.Clear();
+    public void SetSFXVolume(float volume) {
+        foreach (var sfxSource in sfx) {
+            sfxSource.volume = volume;
+        }
+        PlayerPrefs.SetFloat("SFXVolume", volume); // Lưu vào PlayerPrefs
+        PlayerPrefs.Save();
+    }
+    private void LoadAudioSettings() {
+        // Lấy giá trị từ PlayerPrefs, nếu không có thì mặc định là 1
+        float bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        foreach (UIVolumeSlider item in volumeSettings) {
-            _data.settingsData.volumeSettings.Add(item.parameter, item.slider.value);
+        // Áp dụng giá trị cho tất cả AudioSources
+        foreach (var bgmSource in bgm) {
+            bgmSource.volume = bgmVolume;
+        }
+        foreach (var sfxSource in sfx) {
+            sfxSource.volume = sfxVolume;
         }
     }
 }
