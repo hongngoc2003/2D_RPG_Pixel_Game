@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80684778d36c5e94884d4b75963a8d6f, type: 3}
   m_Name: Armor Buff
   m_EditorClassIdentifier: 
-  effectDescription: Give 50 armor for 5s
-  buffType: 5
+  effectDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 7234391595900928
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  buffType: 1
   buffAmount: 50
   buffDuration: 5
+  references:
+    version: 2
+    RefIds: []

@@ -7,6 +7,7 @@ using UnityEngine.Localization.Settings;
 public class LocaleSelector : MonoBehaviour
 {
     public static LocaleSelector instance;
+    private bool active = false;
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -18,13 +19,10 @@ public class LocaleSelector : MonoBehaviour
         }
     }
 
-    private bool active = false;
-    private int localeId = 0;
     public void ChangeLocale(int _localeID) {
         if (active == true)
             return;
         StartCoroutine(SetLocale(_localeID));
-        localeId = _localeID;                               
     }
 
     IEnumerator SetLocale(int _localeID) {
@@ -37,6 +35,7 @@ public class LocaleSelector : MonoBehaviour
     }
 
     private void LoadLocale() {
-        PlayerPrefs.GetInt("LocaleID", 1);
+        int savedLocaleId  = PlayerPrefs.GetInt("LocaleID");
+        ChangeLocale(savedLocaleId);
     }
 }

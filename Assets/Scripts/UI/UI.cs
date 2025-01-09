@@ -109,6 +109,7 @@ public class UI : MonoBehaviour{
 
     public void ExitUI(GameObject _ui) {
         _ui.SetActive(false);
+        CheckForIngameUI();
         GameManager.instance.PauseGame(false);
     }
 }

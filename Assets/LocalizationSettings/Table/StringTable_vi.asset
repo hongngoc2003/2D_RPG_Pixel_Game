@@ -292,6 +292,40 @@ MonoBehaviour:
     m_Localized: "Kh\xF4ng t\xECm th\u1EA5y file save n\xE0o"
     m_Metadata:
       m_Items: []
+  - m_Id: 7234391595900928
+    m_Localized: "T\u0103ng 50 gi\xE1p trong 5s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234667765653504
+    m_Localized: "T\u0103ng 30% m\xE1u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235534669570048
+    m_Localized: "T\u0103ng 30% t\u1EF7 l\u1EC7 n\xE9 trong 3s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236164398178304
+    m_Localized: "T\u0103ng 2 dmg l\u1EEDa trong 3s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236667534303232
+    m_Localized: "\u0110\xF3ng b\u0103ng k\u1EBB \u0111\u1ECBch xung quanh trong
+      3s n\u1EBFu m\xE1u c\xF2n d\u01B0\u1EDBi 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7239350391496704
+    m_Localized: "H\xF4\xEC 10% HP m\u1ED7i l\u1EA7n t\u1EA5n c\xF4ng th\u01B0\u1EDDng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242055562387456
+    m_Localized: "V\u1EDBi m\u1ED7i \u0111\xF2n \u0111\xE1nh th\u1EE9 ba, tung ra
+      m\u1ED9t qu\u1EA3 c\u1EA7u b\u0103ng v\xE0 m\u1ED9t qu\u1EA3 c\u1EA7u l\u1EEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242548393107456
+    m_Localized: "Tung ra m\u1ED9t v\u1EE5 n\u1ED5 s\xE9t"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

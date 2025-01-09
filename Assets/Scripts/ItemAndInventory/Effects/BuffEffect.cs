@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 
 [CreateAssetMenu(fileName = "Buff Effect", menuName = "Data/Item Effect/Buff Effect")]
@@ -13,6 +14,7 @@ public class BuffEffect : ItemEffect
     [SerializeField] private StatType buffType;
     [SerializeField] private int buffAmount;
     [SerializeField] private int buffDuration;
+
 
     public override void ExecuteEffect(Transform _enemyPosition) {
         stats = PlayerManager.instance.player.GetComponent<PlayerStats>();

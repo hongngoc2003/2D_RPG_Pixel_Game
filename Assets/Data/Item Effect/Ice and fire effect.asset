@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d7410ceb9091498e23dd9ed79fb64, type: 3}
   m_Name: Ice and fire effect
   m_EditorClassIdentifier: 
-  effectDescription: Create a fire and ice ball on 3rd attack
+  effectDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 7242055562387456
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   iceAndFirePrefab: {fileID: 7254704116939733823, guid: 669062993da5f0f40b2325fd10985c31, type: 3}
   xVelocity: 10
+  references:
+    version: 2
+    RefIds: []

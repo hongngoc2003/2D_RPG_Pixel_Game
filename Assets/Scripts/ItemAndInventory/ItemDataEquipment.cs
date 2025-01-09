@@ -108,9 +108,9 @@ public class ItemDataEquipment : ItemData {
 
         for (int i = 0; i < itemEffects.Length; i++)
         {
-            if (itemEffects[i].effectDescription.Length > 0) {
+            if (itemEffects[i].effectDescription.GetLocalizedString().Length > 0) {
                 sb.AppendLine();
-                sb.AppendLine(itemEffects[i].effectDescription);
+                sb.AppendLine(itemEffects[i].effectDescription.GetLocalizedString());
                 descriptionLength++;
             }
 

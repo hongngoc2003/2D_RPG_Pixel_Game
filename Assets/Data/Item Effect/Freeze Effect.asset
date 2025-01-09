@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6728b0b3ba245794db36133a965a26ad, type: 3}
   m_Name: Freeze Effect
   m_EditorClassIdentifier: 
-  effectDescription: Freeze enemies got hit
+  effectDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 7236667534303232
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   duration: 3
+  references:
+    version: 2
+    RefIds: []

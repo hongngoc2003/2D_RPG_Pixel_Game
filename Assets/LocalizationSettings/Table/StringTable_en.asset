@@ -333,6 +333,38 @@ MonoBehaviour:
     m_Localized: Not found any save file
     m_Metadata:
       m_Items: []
+  - m_Id: 7234391595900928
+    m_Localized: Increase 50 armor in 5s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234667765653504
+    m_Localized: Increase 30% HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235534669570048
+    m_Localized: Increase 30% evasion in 3s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236164398178304
+    m_Localized: Increase 2 fireDmg in 3s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236667534303232
+    m_Localized: Freeze enemies round in 3s if HP <= 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7239350391496704
+    m_Localized: Heal 10% HP per hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242055562387456
+    m_Localized: Every third attack, release an ice and fire ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242548393107456
+    m_Localized: Release an explosive thunder
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

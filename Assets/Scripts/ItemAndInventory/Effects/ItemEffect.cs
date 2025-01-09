@@ -1,11 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class ItemEffect : ScriptableObject
 {
-    [TextArea]
-    public string effectDescription;
+    [SerializeField] public LocalizedString effectDescription;
+
     public virtual void ExecuteEffect(Transform _enemyPosition) {
         Debug.Log("Effect executed");
     }

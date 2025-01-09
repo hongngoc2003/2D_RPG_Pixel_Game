@@ -271,6 +271,38 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 7234391595900928
+    m_Key: armorBuffEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234667765653504
+    m_Key: healFlaskEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235534669570048
+    m_Key: evasionBuffEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236164398178304
+    m_Key: fireDmgOnHitEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7236667534303232
+    m_Key: freezeEnemyEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7239350391496704
+    m_Key: healOnHitEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242055562387456
+    m_Key: iceAndFireEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7242548393107456
+    m_Key: thunderExplodeEffect
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
