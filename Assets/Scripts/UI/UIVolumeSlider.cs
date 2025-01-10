@@ -12,7 +12,7 @@ public class UIVolumeSlider : MonoBehaviour {
     [SerializeField] private AudioMixer audioMixer; // Mixer âm thanh
     [SerializeField] private float multiplier = 20f; // Hệ số điều chỉnh âm lượng
 
-    private void Start() {
+    private void Awake() {
         // Khởi tạo giá trị thanh trượt từ PlayerPrefs
         bgmSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);

@@ -13,6 +13,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private GameObject chooseLevel;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private GameObject guideUI;
     private GameData data;
     private void Start() {     
         noSavefileNofi.gameObject.SetActive(false);
@@ -59,16 +60,24 @@ public class UIMainMenu : MonoBehaviour
         SceneManager.LoadScene("Forest");
     }
 
-    public void CloseButtonSettings() => settingsUI.SetActive(false);
-    public void CloseButtonChooseLevel() => chooseLevel.SetActive(false);
+    public void ExitUI(GameObject _ui) {
+        _ui.SetActive(false);
+        CheckForMainMenuUI();
+    }
     public void ExitGame() {
         Application.Quit();
     }
-
-    public void Settings() => settingsUI.SetActive(true);
     IEnumerator LoadSceneWithFadeEffect(float _delay,string _sceneName) {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(_delay);
         SceneManager.LoadScene(_sceneName);
+    }
+    private void CheckForMainMenuUI() {
+        for (int i = 0; i < transform.childCount; i++) {
+            if (transform.GetChild(i).gameObject.activeSelf && transform.GetChild(i).GetComponent<UIFadeScreen>() == null)
+                return;
+        }
+
+        SwitchTo(mainMenuUI);
     }
 }
