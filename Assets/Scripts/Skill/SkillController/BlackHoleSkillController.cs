@@ -52,7 +52,7 @@ public class BlackHoleSkillController : MonoBehaviour
                 FinishBlackHoleAbility();
         }
 
-        if (Input.GetKeyDown(KeyCode.F)) {
+        if (UserInput.instance.blackholeInput) {
             ReleaseCloneAttack();
         }
 

@@ -21,26 +21,26 @@ public class PlayerGroundedState : PlayerState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.F) && player.skill.blackHole.blackholeUnlocked) {
+        if (UserInput.instance.blackholeInput && player.skill.blackHole.blackholeUnlocked) {
             if (player.skill.blackHole.coolDownTimer > 0)
                 return;
 
             stateMachine.ChangeState(player.blackHole);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword() && player.skill.sword.swordUnlocked) 
+        if (UserInput.instance.aimInput && HasNoSword() && player.skill.sword.swordUnlocked) 
             stateMachine.ChangeState(player.aimSword);
 
-        if (Input.GetKeyDown(KeyCode.R) && player.skill.parry.parryUnlocked)
+        if (UserInput.instance.parryInput && player.skill.parry.parryUnlocked)
             stateMachine.ChangeState(player.counterAttack);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (UserInput.instance.attackInput)
             stateMachine.ChangeState(player.primaryAttack);
 
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
-        if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
+        if (UserInput.instance.jumpInput && player.IsGroundDetected())
             stateMachine.ChangeState(player.jumpState);
     }
     private bool HasNoSword() {

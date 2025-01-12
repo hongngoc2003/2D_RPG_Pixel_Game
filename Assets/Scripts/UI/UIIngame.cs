@@ -35,22 +35,22 @@ public class UIIngame : MonoBehaviour
     private void Update() {
         UpdateSoulsUI();
 
-        if (Input.GetKeyDown(KeyCode.E) && skills.dash.dashUnlocked)
+        if (UserInput.instance.dashInput && skills.dash.dashUnlocked)
             SetCooldownOf(dashImage);
 
-        if (Input.GetKeyDown(KeyCode.R) && skills.parry.parryUnlocked)
+        if (UserInput.instance.parryInput && skills.parry.parryUnlocked)
             SetCooldownOf(parryImage);
 
-        if (Input.GetKeyDown(KeyCode.Q) && skills.crystal.crystalUnlocked)
+        if (UserInput.instance.crystalInput && skills.crystal.crystalUnlocked)
             SetCooldownOf(crystalImage);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && skills.sword.swordUnlocked)
+        if (UserInput.instance.aimInput && skills.sword.swordUnlocked)
             SetCooldownOf(swordImage);
 
-        if (!Input.GetKeyDown(KeyCode.F) && skills.blackHole.blackholeUnlocked)
+        if (UserInput.instance.blackholeInput && skills.blackHole.blackholeUnlocked)
             SetCooldownOf(blackholeImage);
 
-        if (!Input.GetKeyDown(KeyCode.Alpha1) && Inventory.instance.GetEquipment(EquipmentType.Flask) != null)
+        if (UserInput.instance.flaskInput && Inventory.instance.GetEquipment(EquipmentType.Flask) != null)
             SetCooldownOf(flaskImage);
 
         CheckCooldownOf(dashImage, skills.dash.coolDown);

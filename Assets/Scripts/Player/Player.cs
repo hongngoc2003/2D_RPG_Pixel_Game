@@ -90,11 +90,11 @@ public class Player : Entity {
 
         CheckForDashInput();
 
-        if (Input.GetKeyDown(KeyCode.Q) && skill.crystal.crystalUnlocked) {
+        if (UserInput.instance.crystalInput && skill.crystal.crystalUnlocked) {
             skill.crystal.CanUseSkill();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+        if (UserInput.instance.flaskInput) {
             Inventory.instance.UseFlask();
         }
     }
@@ -136,8 +136,8 @@ public class Player : Entity {
         if (skill.dash.dashUnlocked == false)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) && SkillManager.instance.dash.CanUseSkill()) {
-            dashDir = Input.GetAxisRaw("Horizontal");
+        if (UserInput.instance.dashInput && SkillManager.instance.dash.CanUseSkill()) {
+            dashDir = UserInput.instance.moveInput.x;
 
             if (dashDir == 0)
                 dashDir = facingDir;
