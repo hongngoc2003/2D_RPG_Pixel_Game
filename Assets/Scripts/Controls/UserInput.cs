@@ -17,6 +17,10 @@ public class UserInput : MonoBehaviour
     public bool attackInput { get; private set; }
     public bool aimInput { get; private set; }
     public bool flaskInput { get; private set; }
+    public bool optionsInput { get; private set; }
+    public bool characterInput { get; private set; }
+    public bool skilltreeInput { get; private set; }
+    public bool craftInput { get; private set; }
 
     private PlayerInput playerInput;
 
@@ -29,8 +33,10 @@ public class UserInput : MonoBehaviour
     private InputAction attackAction;
     private InputAction aimAction;
     private InputAction flaskAction;
-
-
+    private InputAction optionsAction;
+    private InputAction characterAction;
+    private InputAction skilltreeAction;
+    private InputAction craftAction;
 
 
     private void Awake() {
@@ -57,7 +63,10 @@ public class UserInput : MonoBehaviour
         parryAction = playerInput.actions["Parry"];
         aimAction = playerInput.actions["Aim"];
         flaskAction = playerInput.actions["Flask"];
-
+        optionsAction = playerInput.actions["Options"];
+        characterAction = playerInput.actions["Character"];
+        craftAction = playerInput.actions["Craft"];
+        skilltreeAction = playerInput.actions["SkillTree"];
     }
 
     private void UpdateInput() {
@@ -70,5 +79,9 @@ public class UserInput : MonoBehaviour
         blackholeInput = blackholeAction.WasPressedThisFrame();
         aimInput = aimAction.IsPressed();
         flaskInput = flaskAction.WasPressedThisFrame(); 
+        optionsInput = optionsAction.WasPressedThisFrame();
+        characterInput = characterAction.WasPressedThisFrame();
+        skilltreeInput = skilltreeAction.WasPressedThisFrame();
+        craftInput = craftAction.WasPressedThisFrame();
     }
 }

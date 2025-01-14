@@ -38,16 +38,16 @@ public class UI : MonoBehaviour{
         statTooltip.gameObject.SetActive(false);
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.C)) 
+        if (UserInput.instance.characterInput) 
             SwitchWithKeyTo(characterUI);
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (UserInput.instance.craftInput)
             SwitchWithKeyTo(craftUI);
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (UserInput.instance.skilltreeInput)
             SwitchWithKeyTo(skillTreeUI);
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (UserInput.instance.optionsInput)
             SwitchWithKeyTo(optionUI);
 
     }
