@@ -39,7 +39,7 @@ public class UIMainMenu : MonoBehaviour
         }
     }
     public void ContinueGame() {
-        if (SaveManager.instance.HasNoSaveData() || data.lastScene == "MainMenu") {
+        if (SaveManager.instance.HasNoSaveData()) {
             noSavefileNofi.gameObject.SetActive(true); // Tự động fade in và fade out
         } else {
             StartCoroutine(LoadSceneWithFadeEffect(1.5f, data.lastScene));

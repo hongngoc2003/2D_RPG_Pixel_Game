@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine.Localization.Settings;
 
 [System.Serializable]
-public class PlayerData {
+public class GameData {
     public int currency;
 
     public SerializableDictionary<string, bool> skillTree;
@@ -17,7 +17,9 @@ public class PlayerData {
     public float lostCurrencyY;
     public int lostCurrencyAmount;
 
-    public PlayerData() {
+    public string lastScene;
+
+    public GameData() {
         this.currency = 0;
 
         skillTree = new SerializableDictionary<string, bool>();
@@ -26,21 +28,10 @@ public class PlayerData {
 
         checkpoints = new SerializableDictionary<string, bool>();
         closestCheckpointId = string.Empty;
-
+        lastScene = string.Empty;
         lostCurrencyX = 0;
         lostCurrencyY = 0;
         lostCurrencyAmount = 0;
     }
 }
 
-
-[System.Serializable]
-public class GameData {
-    public string lastScene;
-    public PlayerData playerData;
-
-    public GameData() {
-        lastScene = "MainMenu";
-        playerData = new PlayerData();
-    }
-}

@@ -277,7 +277,7 @@ public class Inventory : MonoBehaviour, ISaveManager {
     }
 
     public void LoadData(GameData _data) {
-        foreach (KeyValuePair<string, int> pair in _data.playerData.inventory) {
+        foreach (KeyValuePair<string, int> pair in _data.inventory) {
             foreach (var item in GetItemDatabase()) {
                 if (item != null && item.itemId == pair.Key) {
                     InventoryItem itemToLoad = new InventoryItem(item);
@@ -288,7 +288,7 @@ public class Inventory : MonoBehaviour, ISaveManager {
             }
         }
 
-        foreach (string loadedItemId in _data.playerData.equipmentId) {
+        foreach (string loadedItemId in _data.equipmentId) {
             foreach (var item in GetItemDatabase()) {
                 if (item != null && loadedItemId == item.itemId) {
                     loadedEquipments.Add(item as ItemDataEquipment);
@@ -298,19 +298,19 @@ public class Inventory : MonoBehaviour, ISaveManager {
     }
 
     public void SaveData(ref GameData _data) {
-        _data.playerData.inventory.Clear();
-        _data.playerData.equipmentId.Clear();
+        _data.inventory.Clear();
+        _data.equipmentId.Clear();
 
         foreach (KeyValuePair<ItemData, InventoryItem> pair in inventoryDictionary) {
-            _data.playerData.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
+            _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
         foreach (KeyValuePair<ItemData, InventoryItem> pair in stashDictionary) {
-            _data.playerData.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
+            _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
         foreach (KeyValuePair<ItemDataEquipment, InventoryItem> pair in equipmentDictionary) {
-            _data.playerData.equipmentId.Add(pair.Key.itemId);
+            _data.equipmentId.Add(pair.Key.itemId);
         }
 
     }

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class UI : MonoBehaviour{
 
@@ -20,12 +22,10 @@ public class UI : MonoBehaviour{
     public UISkillTooltip skillTooltip;
     public UIItemTooltip itemTooltip;
     public UIStatTooltip statTooltip;
-
     public UICraftWindow craftWindow;
 
     private void Awake() {
-        SwitchTo(skillTreeUI); //can assign event ben uiskilltreeslot truoc khi assign event o skill script
-        SwitchTo(optionUI);
+        OpenOptionUIAndSkillTreeUI();
 
         fadeScreen.gameObject.SetActive(true);
     }
@@ -114,5 +114,10 @@ public class UI : MonoBehaviour{
         _ui.SetActive(false);
         CheckForIngameUI();
         GameManager.instance.PauseGame(false);
+    }
+
+    private void OpenOptionUIAndSkillTreeUI() { // the SkillTreeUI was NOT active when getting SaveManagers. so the fix would be to activate it before getting the list of save manager
+        optionUI.SetActive(true);
+        skillTreeUI.SetActive(true);
     }
 }
