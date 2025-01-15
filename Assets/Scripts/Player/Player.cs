@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Player : Entity {
@@ -10,6 +10,9 @@ public class Player : Entity {
     [Header("Move info")]
     public float moveSpeed = 12f;
     public float jumpForce;
+    public float doubleJumpForce;
+    public bool canDoubleJump;
+
     public float swordReturnImpact;
     private float defaultMoveSpeed;
     private float defaultJumpForce;
@@ -31,6 +34,7 @@ public class Player : Entity {
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
+    public PlayerDoubleJumpState doubleJumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
     public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
@@ -51,10 +55,13 @@ public class Player : Entity {
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
+        doubleJumpState = new PlayerDoubleJumpState(this, stateMachine, "Jump");
+
         airState = new PlayerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
+
 
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
@@ -149,6 +156,9 @@ public class Player : Entity {
 
     protected override void SetupZeroKnockbackPower() {
         knockbackPower = new Vector2(0, 0);
+    }
+    public void ResetDoubleJump() {
+        canDoubleJump = true; // Reset Double Jump khi nhân vật chạm đất
     }
 
     public override void Die() {

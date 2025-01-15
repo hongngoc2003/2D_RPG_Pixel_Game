@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,8 +40,10 @@ public class PlayerGroundedState : PlayerState
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
-        if (UserInput.instance.jumpInput && player.IsGroundDetected())
+        if (UserInput.instance.jumpInput && player.IsGroundDetected()) {
             stateMachine.ChangeState(player.jumpState);
+        }
+
     }
     private bool HasNoSword() {
         if (!player.sword)

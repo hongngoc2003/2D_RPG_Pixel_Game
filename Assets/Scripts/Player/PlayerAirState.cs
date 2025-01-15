@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +22,13 @@ public class PlayerAirState : PlayerState
     {
         base.Update();
 
+        if(player.IsGroundDetected())
+            player.ResetDoubleJump();
+
+        if (UserInput.instance.jumpInput && player.canDoubleJump) {
+            stateMachine.ChangeState(player.doubleJumpState);
+            player.canDoubleJump = false;
+        }
 
         if (player.IsWallDetected())
             stateMachine.ChangeState(player.wallSlide);
