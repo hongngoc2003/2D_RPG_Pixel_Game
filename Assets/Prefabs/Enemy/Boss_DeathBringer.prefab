@@ -390,7 +390,7 @@ MonoBehaviour:
   soulsDropAmount:
     baseValue: 0
     modifiers: 
-  level: 3
+  level: 1
   percentModifier: 0.397
 --- !u!114 &7276638305338842817
 MonoBehaviour:

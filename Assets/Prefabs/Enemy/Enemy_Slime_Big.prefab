@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 1000
+    baseValue: 2000
     modifiers: 
   armor:
     baseValue: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 15
+    baseValue: 500
     modifiers: 
   critRate:
     baseValue: 0

@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 1000
+    baseValue: 2000
     modifiers: 
   armor:
     baseValue: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 100
+    baseValue: 500
     modifiers: 
   critRate:
     baseValue: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
   soulsDropAmount:
     baseValue: 0
     modifiers: 
-  level: 3
+  level: 1
   percentModifier: 0.397
 --- !u!114 &3407684625657157544
 MonoBehaviour:

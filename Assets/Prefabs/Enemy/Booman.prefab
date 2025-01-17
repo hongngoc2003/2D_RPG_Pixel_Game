@@ -729,13 +729,13 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   fireDmg:
-    baseValue: 0
+    baseValue: 5
     modifiers: 
   iceDmg:
     baseValue: 0
     modifiers: 
   lightningDmg:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   isIgnited: 0
   isFreezed: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   soulsDropAmount:
     baseValue: 0
     modifiers: 
-  level: 3
+  level: 1
   percentModifier: 0.397
 --- !u!114 &7723760769921261412
 MonoBehaviour:
