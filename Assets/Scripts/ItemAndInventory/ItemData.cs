@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public enum ItemType{ 
     Material,
@@ -13,7 +14,7 @@ public enum ItemType{
 public class ItemData : ScriptableObject
 {
     public ItemType itemType;
-    public string itemName;
+    public LocalizedString itemName;
     public Sprite icon;
     public string itemId;
 

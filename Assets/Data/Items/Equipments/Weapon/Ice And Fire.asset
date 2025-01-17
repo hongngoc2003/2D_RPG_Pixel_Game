@@ -13,19 +13,23 @@ MonoBehaviour:
   m_Name: Ice And Fire
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Ice And Fire
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10100014290132992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 1398721256, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 539d0bdab78c5124b855513cc8b570d5
   dropChance: 14.3
   equipmentType: 0
   itemCooldown: 0
   itemEffects:
   - {fileID: 11400000, guid: 99e3a9422422aec46988d54e4d4e3f74, type: 2}
   - {fileID: 11400000, guid: f2c62a92696ff5e46b68fdcb5f76cc9b, type: 2}
-  itemEffectDescription: Third attack launch an ice and fire ball
-  strength: 0
-  agility: 0
-  intelligence: 0
-  vitality: 0
   health: 0
   armor: 0
   evasion: 0
@@ -39,3 +43,6 @@ MonoBehaviour:
   craftingMaterials:
   - data: {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
     stackSize: 1
+  references:
+    version: 2
+    RefIds: []

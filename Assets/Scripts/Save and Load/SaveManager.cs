@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour {
 
@@ -35,10 +36,14 @@ public class SaveManager : MonoBehaviour {
         LoadGame();
     }
     public void NewGame() {
+        DeleteSaveData();
         gameData = new GameData();
     }
 
     public void LoadGame() {
+        if (SceneManager.GetActiveScene().name == "EndlessMode") {
+            return;
+        }
 
         gameData = dataHandler.Load();
 
@@ -56,12 +61,16 @@ public class SaveManager : MonoBehaviour {
         gameData = dataHandler.Load(); // Tải dữ liệu từ file
         if (this.gameData == null) {
             Debug.Log("No saved data found");
-            NewGame(); // Nếu không có dữ liệu cũ, tạo dữ liệu mới
         }
         return gameData;  // Trả về gameData đã tải
     }
 
     public void SaveGame() {
+        if (SceneManager.GetActiveScene().name == "EndlessMode" && SceneManager.GetActiveScene().name == "MainMenu") {
+            Debug.Log("Skipping save in endless mode");
+            return;
+        }
+
         foreach (ISaveManager saveManager in saveManagers) {
             saveManager.SaveData(ref gameData);
         }

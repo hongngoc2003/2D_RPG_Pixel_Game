@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 2573825937690337816}
   m_Layer: 7
   m_Name: Enemy_Slime_Small
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,18 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfb51309dfae34459e1cd89c380617f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 0
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligent:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
   maxHealth:
     baseValue: 75
     modifiers: 

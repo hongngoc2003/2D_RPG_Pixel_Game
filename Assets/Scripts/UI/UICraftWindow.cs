@@ -35,7 +35,7 @@ public class UICraftWindow : MonoBehaviour
         }
 
         itemIcon.sprite = _data.icon;
-        itemName.text = _data.itemName;
+        itemName.text = _data.itemName.GetLocalizedString();
         itemDescription.text = _data.GetDescription();
 
         craftButton.onClick.AddListener(() => Inventory.instance.CanCraft(_data, _data.craftingMaterials));

@@ -365,6 +365,74 @@ MonoBehaviour:
     m_Localized: Release an explosive thunder
     m_Metadata:
       m_Items: []
+  - m_Id: 10029591053557760
+    m_Localized: QUIT GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10068586294763520
+    m_Localized: RESOLUTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099078746431488
+    m_Localized: Golden Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099177534873600
+    m_Localized: Golden Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099269943779328
+    m_Localized: Blue Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099411207938048
+    m_Localized: Evade Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099533249601536
+    m_Localized: 'Iron Armor '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099655001858048
+    m_Localized: Armor Flask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099765685346304
+    m_Localized: Fire Flask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099823386386432
+    m_Localized: Heal Flask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099917284270080
+    m_Localized: Blood Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100014290132992
+    m_Localized: Ice And Fire Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100127901245440
+    m_Localized: Stolen Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100228631650304
+    m_Localized: Thunder Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100327210377216
+    m_Localized: Animal Skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100421661908992
+    m_Localized: Iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100540083888128
+    m_Localized: Wooden Sword
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

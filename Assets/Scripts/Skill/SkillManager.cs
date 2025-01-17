@@ -17,7 +17,7 @@ public class SkillManager : MonoBehaviour
             Destroy(gameObject); // Hủy object mới nếu đã có instance
         } else {
             instance = this; // Gán instance mới
-            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+            //DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
         }
     }
     private void Start() {

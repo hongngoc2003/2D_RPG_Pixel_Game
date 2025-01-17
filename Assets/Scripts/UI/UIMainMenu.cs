@@ -8,18 +8,21 @@ using UnityEngine.SceneManagement;
 public class UIMainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject continueButton;
-    [SerializeField] UIFadeScreen fadeScreen;
     [SerializeField] private TextMeshProUGUI noSavefileNofi;
     [SerializeField] private GameObject chooseLevel;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject guideUI;
     private GameData data;
-    private void Start() {     
-        noSavefileNofi.gameObject.SetActive(false);
+
+    private void Awake() {
+
+    }
+    private void Start() {
         data = SaveManager.instance.LoadGameData();
         SwitchTo(settingsUI);
         SwitchTo(mainMenuUI);
+        noSavefileNofi.gameObject.SetActive(false);
     }
     public void SwitchTo(GameObject _menu) {
 
@@ -39,10 +42,10 @@ public class UIMainMenu : MonoBehaviour
         }
     }
     public void ContinueGame() {
-        if (SaveManager.instance.HasNoSaveData()) {
+        if (SaveManager.instance.HasNoSaveData() || data.lastScene == null) {
             noSavefileNofi.gameObject.SetActive(true); // Tự động fade in và fade out
         } else {
-            StartCoroutine(LoadSceneWithFadeEffect(1.5f, data.lastScene));
+            ScenesManager.instance.LoadScene(data.lastScene);
         }
     }
    
@@ -53,11 +56,15 @@ public class UIMainMenu : MonoBehaviour
 
     public void ChooseCastle() {
         SaveManager.instance.NewGame();
-        SceneManager.LoadScene("Castle");  
+        ScenesManager.instance.LoadScene("Castle");
     }
     public void ChooseForest() {
         SaveManager.instance.NewGame();
-        SceneManager.LoadScene("Forest");
+        ScenesManager.instance.LoadScene("Forest");
+    }
+
+    public void ChooseEndlessMode() {
+        ScenesManager.instance.LoadScene("EndlessMode");
     }
 
     public void ExitUI(GameObject _ui) {
@@ -66,11 +73,6 @@ public class UIMainMenu : MonoBehaviour
     }
     public void ExitGame() {
         Application.Quit();
-    }
-    IEnumerator LoadSceneWithFadeEffect(float _delay,string _sceneName) {
-        fadeScreen.FadeOut();
-        yield return new WaitForSeconds(_delay);
-        SceneManager.LoadScene(_sceneName);
     }
     private void CheckForMainMenuUI() {
         for (int i = 0; i < transform.childCount; i++) {

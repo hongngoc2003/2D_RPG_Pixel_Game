@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: Iron
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10100421661908992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 1025795234, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 5cf6e5df1b28bf84ab99d78151ba557d
   dropChance: 17
+  references:
+    version: 2
+    RefIds: []

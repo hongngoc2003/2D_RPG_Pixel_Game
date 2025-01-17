@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour ,ISaveManager {
             Destroy(gameObject); // Hủy object mới nếu đã có instance
         } else {
             instance = this; // Gán instance mới
-            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+            //DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
         }
     }
     public bool HaveEnoughMoney(int _price) {

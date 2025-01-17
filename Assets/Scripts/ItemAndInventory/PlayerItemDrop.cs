@@ -20,7 +20,7 @@ public class PlayerItemDrop : ItemDrop {
         }
 
         for (int i = 0; i < itemsToUnequiped.Count; i++) {
-            inventory.UnequipedItem(itemsToUnequiped[i].data as ItemDataEquipment);
+            inventory.UnequipItem(itemsToUnequiped[i].data as ItemDataEquipment);
         }
 
         foreach (InventoryItem item in inventory.GetStashList()) {

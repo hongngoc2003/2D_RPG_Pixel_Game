@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public enum EquipmentType {
     Weapon,
@@ -13,6 +14,8 @@ public enum EquipmentType {
 [CreateAssetMenu(fileName = "New Item Data", menuName = "Data/Equipment")]
 public class ItemDataEquipment : ItemData {
     public EquipmentType equipmentType;
+
+    private static Dictionary<string, LocalizedString> localizedStrings;
 
     [Header("Unique effect")]
     public float itemCooldown;
@@ -38,6 +41,21 @@ public class ItemDataEquipment : ItemData {
     public List<InventoryItem> craftingMaterials;
 
     private int descriptionLength;
+
+    static ItemDataEquipment() {
+        localizedStrings = new Dictionary<string, LocalizedString> {
+            { "Health", new LocalizedString { TableReference = "StringTable", TableEntryReference = "health" } },
+            { "Armor", new LocalizedString { TableReference = "StringTable", TableEntryReference = "armor" } },
+            { "Evasion", new LocalizedString { TableReference = "StringTable", TableEntryReference = "evasion" } },
+            { "MagicResist", new LocalizedString { TableReference = "StringTable", TableEntryReference = "magicRes" } },
+            { "Damage", new LocalizedString { TableReference = "StringTable", TableEntryReference = "dmg" } },
+            { "CritRate", new LocalizedString { TableReference = "StringTable", TableEntryReference = "critRate" } },
+            { "CritPower", new LocalizedString { TableReference = "StringTable", TableEntryReference = "critPower" } },
+            { "FireDmg", new LocalizedString { TableReference = "StringTable", TableEntryReference = "fire" } },
+            { "IceDmg", new LocalizedString { TableReference = "StringTable", TableEntryReference = "ice" } },
+            { "LightningDmg", new LocalizedString { TableReference = "StringTable", TableEntryReference = "lightning" } }
+        };
+    }
 
     public void AddModifiers() {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
@@ -86,21 +104,21 @@ public class ItemDataEquipment : ItemData {
     public override string GetDescription() {
         sb.Length = 0;
         descriptionLength = 0;
-      
+
+
+
         AddDescription(health, "Health");
         AddDescription(armor, "Armor");
         AddDescription(evasion, "Evasion");
-        AddDescription(magicResist, "Magic Res");
+        AddDescription(magicResist, "MagicResist");
 
-        
         AddDescription(damage, "Damage");
-        AddDescription(critRate, "Crit Rate");
-        AddDescription(critPower, "Crit Power");
+        AddDescription(critRate, "CritRate");
+        AddDescription(critPower, "CritPower");
 
-        
-        AddDescription(fireDmg, "Fire Dmg");
-        AddDescription(iceDmg, "Ice Dmg");
-        AddDescription(lightningDmg, "Lightning Dmg");
+        AddDescription(fireDmg, "FireDmg");
+        AddDescription(iceDmg, "IceDmg");
+        AddDescription(lightningDmg, "LightningDmg");
 
         sb.AppendLine();
 
@@ -128,13 +146,16 @@ public class ItemDataEquipment : ItemData {
         return sb.ToString();
     }
 
-    private void AddDescription(int _value, string _name) {
-        if(_value != 0) {
-            if(sb.Length > 0) 
+    private void AddDescription(int value, string key) {
+        if (value != 0) {
+            if (sb.Length > 0)
                 sb.AppendLine();
 
-            if(_value > 0 )
-                sb.Append("+ " + _value + " " + _name);
+            LocalizedString localizedString = localizedStrings[key];
+            string localizedName = localizedString.GetLocalizedString();
+
+            if (value > 0)
+                sb.Append("+ " + value + " " + localizedName);
 
             descriptionLength++;
         }

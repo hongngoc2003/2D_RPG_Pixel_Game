@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Animal Skin
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: Animal Skin
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10100327210377216
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: -973012730, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: deb821e1a9472b54b898e0c8671b42b7
   dropChance: 53.1
+  references:
+    version: 2
+    RefIds: []

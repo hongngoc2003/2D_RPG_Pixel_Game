@@ -13,14 +13,21 @@ MonoBehaviour:
   m_Name: Wooden Sword
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Wooden Sword
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10100540083888128
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 1025091068, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 404e38c306c447c4db8dbd9658030d3d
   dropChance: 26.2
   equipmentType: 0
-  strength: 0
-  agility: 0
-  intelligent: 0
-  vitality: 0
+  itemCooldown: 0
+  itemEffects: []
   health: 0
   armor: 0
   evasion: 0
@@ -32,3 +39,6 @@ MonoBehaviour:
   iceDmg: 0
   lightningDmg: 0
   craftingMaterials: []
+  references:
+    version: 2
+    RefIds: []

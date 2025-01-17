@@ -13,18 +13,22 @@ MonoBehaviour:
   m_Name: Evade Armor
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Evade Armor
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10099411207938048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: -1547736094, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 41e73cfec31520f4fa428d9e246caccd
   dropChance: 0
   equipmentType: 1
   itemCooldown: 0
   itemEffects:
   - {fileID: 11400000, guid: ed485771444635c459ef0f12a6a2801d, type: 2}
-  itemEffectDescription: Increase evasion on each taken hit
-  strength: 0
-  agility: 0
-  intelligence: 0
-  vitality: 0
   health: 100
   armor: 0
   evasion: 0
@@ -38,3 +42,6 @@ MonoBehaviour:
   craftingMaterials:
   - data: {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
     stackSize: 1
+  references:
+    version: 2
+    RefIds: []

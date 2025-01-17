@@ -119,5 +119,15 @@ public class UI : MonoBehaviour{
     private void OpenOptionUIAndSkillTreeUI() { // the SkillTreeUI was NOT active when getting SaveManagers. so the fix would be to activate it before getting the list of save manager
         optionUI.SetActive(true);
         skillTreeUI.SetActive(true);
+        characterUI.SetActive(true);
+    }
+
+    public void ExitToMainMenu() {
+        ScenesManager.instance.LoadScene("MainMenu");
+        SaveManager.instance.SaveGame();
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 }

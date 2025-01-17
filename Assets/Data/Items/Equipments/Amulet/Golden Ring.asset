@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Golden Ring
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Golden Ring
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10099177534873600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: -878758905, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   itemId: 980aebb2cffaf31439edb152afbc93b6
   dropChance: 20.2
@@ -34,3 +42,6 @@ MonoBehaviour:
   craftingMaterials:
   - data: {fileID: 11400000, guid: 5cf6e5df1b28bf84ab99d78151ba557d, type: 2}
     stackSize: 1
+  references:
+    version: 2
+    RefIds: []

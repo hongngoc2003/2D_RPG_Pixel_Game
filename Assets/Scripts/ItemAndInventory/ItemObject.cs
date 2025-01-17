@@ -13,7 +13,7 @@ public class ItemObject : MonoBehaviour
             return;
 
         GetComponent<SpriteRenderer>().sprite = itemData.icon;
-        gameObject.name = "Item object - " + itemData.itemName;
+        gameObject.name = "Item object - " + itemData.itemName.GetLocalizedString();
     }
 
     public void SetupItem(ItemData _itemData, Vector2 _velocity) {

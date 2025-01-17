@@ -303,6 +303,76 @@ MonoBehaviour:
     m_Key: thunderExplodeEffect
     m_Metadata:
       m_Items: []
+  - m_Id: 10029591053557760
+    m_Key: 'quitGameButton
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10068586294763520
+    m_Key: resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099078746431488
+    m_Key: goldenAmulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099177534873600
+    m_Key: goldenRing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099269943779328
+    m_Key: blueArmor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099411207938048
+    m_Key: evadeArmor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099533249601536
+    m_Key: ironArmor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099655001858048
+    m_Key: armorFlask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099765685346304
+    m_Key: fireFlask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099823386386432
+    m_Key: healFlask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10099917284270080
+    m_Key: bloodSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100014290132992
+    m_Key: iceAndFireSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100127901245440
+    m_Key: stolenSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100228631650304
+    m_Key: thunderSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100327210377216
+    m_Key: animalSkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100421661908992
+    m_Key: iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10100540083888128
+    m_Key: woodenSword
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

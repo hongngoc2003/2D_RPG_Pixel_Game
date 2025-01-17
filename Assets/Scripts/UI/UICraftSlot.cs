@@ -15,7 +15,7 @@ public class UICraftSlot : UIItemSlot {
         item.data = _data;
 
         itemImage.sprite = _data.icon;
-        itemText.text = _data.itemName;
+        itemText.text = _data.itemName.GetLocalizedString();
     }
     private void OnEnable() {
         UpdateSlot(item);

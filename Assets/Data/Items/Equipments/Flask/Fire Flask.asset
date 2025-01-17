@@ -13,17 +13,22 @@ MonoBehaviour:
   m_Name: Fire Flask
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Fire Flask
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10099765685346304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 185240797, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 998fd839f8fe1ca4cad5b88f83c12a49
   dropChance: 0
   equipmentType: 3
   itemCooldown: 5
   itemEffects:
   - {fileID: 11400000, guid: f2c62a92696ff5e46b68fdcb5f76cc9b, type: 2}
-  strength: 0
-  agility: 0
-  intelligence: 0
-  vitality: 0
   health: 0
   armor: 0
   evasion: 0
@@ -37,3 +42,6 @@ MonoBehaviour:
   craftingMaterials:
   - data: {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
     stackSize: 2
+  references:
+    version: 2
+    RefIds: []

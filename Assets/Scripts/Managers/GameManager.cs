@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour, ISaveManager
         if (instance != null && instance != this) {
             Destroy(gameObject); // Hủy object mới nếu đã có instance
         } else {
-            instance = this; // Gán instance mới
-            DontDestroyOnLoad(gameObject); // Đảm bảo instance tồn tại xuyên scene
+            instance = this; // Gán instance mới // Đảm bảo instance tồn tại xuyên scene
         }
 
         checkpoints = FindObjectsOfType<Checkpoint>();
@@ -32,13 +31,10 @@ public class GameManager : MonoBehaviour, ISaveManager
     private void Start() {
     }
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.N))
-            RestartScene();
     }
     public void RestartScene() {
-        SaveManager.instance.SaveGame();
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        ScenesManager.instance.LoadScene(scene.name);
     }
 
     public void LoadData(GameData _data) {

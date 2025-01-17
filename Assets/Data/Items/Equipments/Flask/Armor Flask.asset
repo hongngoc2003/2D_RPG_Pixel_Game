@@ -13,17 +13,22 @@ MonoBehaviour:
   m_Name: Armor Flask
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Armor Flask
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:17b31b35de0cbfc42ad875dc5b93f52c
+    m_TableEntryReference:
+      m_KeyId: 10099655001858048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: -1740531083, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 7a59b077ff1620a47a132a56fe9b2e0a
   dropChance: 20
   equipmentType: 3
   itemCooldown: 15
   itemEffects:
   - {fileID: 11400000, guid: 6da4615c16497a7469881b7710a15c2d, type: 2}
-  strength: 0
-  agility: 0
-  intelligence: 0
-  vitality: 0
   health: 0
   armor: 0
   evasion: 0
@@ -37,3 +42,6 @@ MonoBehaviour:
   craftingMaterials:
   - data: {fileID: 11400000, guid: deb821e1a9472b54b898e0c8671b42b7, type: 2}
     stackSize: 1
+  references:
+    version: 2
+    RefIds: []

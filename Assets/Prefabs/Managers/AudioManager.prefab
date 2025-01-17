@@ -2079,6 +2079,9 @@ MonoBehaviour:
   - {fileID: 4426518961196282985}
   - {fileID: 4426518960882028318}
   playBgm: 1
+  volumeSettings:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4426518960621790331
 GameObject:
   m_ObjectHideFlags: 0

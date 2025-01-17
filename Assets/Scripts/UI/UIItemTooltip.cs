@@ -13,7 +13,7 @@ public class UIItemTooltip : UITooltip
         if(item == null)
             return;
 
-        itemNameText.text = item.itemName;
+        itemNameText.text = item.itemName.GetLocalizedString();
         itemTypeText.text = item.equipmentType.ToString();
         itemDescription.text = item.GetDescription();
 

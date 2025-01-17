@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cd0fffb026e084891f6aeb6df16f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointId: 6fde7917-e304-4356-9d4e-cf5b3e4dbe5a
+  checkpointId: d39b7bc6-3887-4840-925d-3e411483b41c
   activationStatus: 0
 --- !u!95 &3174813854516532348
 Animator:
