@@ -17,6 +17,8 @@ public class BoomanBattleState : EnemyState
     public override void Enter() {
         base.Enter();
 
+        AudioManager.instance.PlaySFX(36, enemy.transform);
+
         defaultSpeed = enemy.moveSpeed;
 
         enemy.moveSpeed = enemy.battleStateMoveSpeed;

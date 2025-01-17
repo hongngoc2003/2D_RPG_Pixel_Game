@@ -28,13 +28,12 @@ public class AudioManager : MonoBehaviour {
         Invoke("AllowSFX", 1f);
     }
 
+    private void Start() {
+        PlayBGM(0);
+    }
+
     private void Update() {
-        if (!playBgm)
-            StopAllBGM();
-        else {
-            if (!bgm[bgmIndex].isPlaying)
-                PlayBGM(bgmIndex);
-        }
+        
     }
 
     private IEnumerator DecreaseVolume(AudioSource _audio) {
@@ -75,6 +74,7 @@ public class AudioManager : MonoBehaviour {
     public void PlayBGM(int _bgmIndex) {
         StopAllBGM();
         bgmIndex = _bgmIndex;
+        bgm[bgmIndex].loop = true;
         bgm[bgmIndex].Play();
     }
 

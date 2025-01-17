@@ -11,6 +11,7 @@ public class SlimeAttackState : EnemyState
 
     public override void Enter() {
         base.Enter();
+        AudioManager.instance.PlaySFX(20, enemy.transform);
     }
 
     public override void Exit() {

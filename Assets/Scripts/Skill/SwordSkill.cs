@@ -108,6 +108,8 @@ public class SwordSkill : Skill
         player.AssignNewSword(newSword);
 
         DotsActive(false);
+
+        AudioManager.instance.PlaySFX(27,null);
     }
     #region Aim region
     public Vector2 AimDirection() {

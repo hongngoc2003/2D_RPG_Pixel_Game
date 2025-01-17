@@ -217,10 +217,10 @@ MonoBehaviour:
   lastTimeAttack: 0
   battleTime: 5
   slimeType: 1
-  amountSlimeCreate: 2
+  slimesToCreate: 0
   slimePrefab: {fileID: 2573825937690337817, guid: 8b9685a3b9d05cf44ae2d795f9dc2e02, type: 3}
-  minCreateVec: {x: 10, y: 10}
-  maxCreateVec: {x: 18, y: 18}
+  minCreationVelocity: {x: 0, y: 0}
+  maxCreationVelocity: {x: 0, y: 0}
 --- !u!1 &1913425727125732364
 GameObject:
   m_ObjectHideFlags: 0

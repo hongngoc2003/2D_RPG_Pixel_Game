@@ -15,6 +15,9 @@ public class DeathBringerSpellCastState : EnemyState {
     public override void Enter() {
         base.Enter();
 
+        AudioManager.instance.PlaySFX(20, enemy.transform);
+
+
         amountOfSpell = enemy.amountOfSpell;
         spellTimer = .5f;
     }

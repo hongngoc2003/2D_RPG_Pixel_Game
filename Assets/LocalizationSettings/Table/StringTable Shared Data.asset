@@ -373,6 +373,14 @@ MonoBehaviour:
     m_Key: woodenSword
     m_Metadata:
       m_Items: []
+  - m_Id: 10210922379173888
+    m_Key: adventurer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10211944736579584
+    m_Key: guide
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
